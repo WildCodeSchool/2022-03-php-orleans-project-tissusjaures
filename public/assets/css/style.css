@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
+
+:root {
+    --primary-color: #FFF4E2;
+    --secondary-color: #F55651;
+    --light-color: #FFFBF5;
+    --dark-color: #4D3C3C;
+    --admin-color: #6F4494;
+
+    --header-font: 'Kotta One', serif;
+    --text-font: 'Lora', serif;
+    --title-font: 'Merriweather', serif;
+
+    --font-size: 20px;
+    --header-font-size: 96px;
+    --title-font-size: 36px;
+
+    --spacing: 8px;
+}
