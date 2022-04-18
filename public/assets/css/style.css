@@ -39,3 +39,17 @@ h2 {
     font-size: var(--title-font-size);
     color: var(--dark-color);
 }
+
+p {
+    font-family: var(--text-font);
+    font-size: calc(var(--font-size) - 4px);
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+.btn:hover {
+    color: var(--dark-color);
+}
