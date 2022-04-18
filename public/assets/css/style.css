@@ -20,7 +20,8 @@
 
 .header {
     display: flex;
-    background-color: var(--secondary-color);
+    background-image: url("../images/header.jpg");
+    background-position: center;
     height: 400px;
     align-items: center;
     justify-content: center;
@@ -31,4 +32,10 @@
     font-size: calc(var(--header-font-size) * 1);
     color: var(--light-color);
     text-shadow: 2px 2px var(--dark-color);
+}
+
+h2 {
+    font-family: var(--header-font);
+    font-size: var(--title-font-size);
+    color: var(--dark-color);
 }
