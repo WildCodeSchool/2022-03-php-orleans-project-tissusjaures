@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\ItemManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,6 +11,10 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $itemManager = new ItemManager();
+        $items = $itemManager->selectAll('title');
+
+        return $this->twig->render('Home/index.html.twig', ['items' => $items]);
     }
+
 }

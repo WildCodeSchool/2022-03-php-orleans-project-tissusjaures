@@ -1,75 +1,58 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="container-fluid header">
-    <h1 >Bienvenue <br> chez Tissus Jaurès</h1> </div>
-    <div class="container boutique">
-    <section id="boutique" class="boutique">
-    <h2 class="d-flex justify-content-center">Notre boutique </h2>
-    <div class="boutique-description">
-    <img src="https://picsum.photos/id/239/400/200" class="boutique-img m-2" alt="...">
-    <p class="m-3 boutique-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Qui impedit, distinctio reiciendis accusamus quis voluptatum minima ipsam 
-    voluptas perspiciatis? Dignissimos eum distinctio 
-    sapiente deserunt doloremque perspiciatis ipsa blanditiis in eligendi. 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quidem eaque, 
-    odit in doloremque asperiores assumenda doloribus quas delectus illo molestiae 
-    inventore quasi eos 
-    reprehenderit labore nisi debitis explicabo? Autem!
-    Dignissimos eum distinctio 
-    sapiente deserunt doloremque perspiciatis ipsa blanditiis in eligendi. 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quidem eaque, 
-    odit in doloremque asperiores assumenda doloribus quas delectus illo molestiae 
-    inventore quasi eos 
-    reprehenderit labore nisi debitis explicabo? Autem! </p>
-    </div>
-    </section>
-    </div>
-    <div class="container cards-new-arrivals">
-    <section id="new-arrivals">
-    <h2 class="d-flex justify-content-center">Nos nouveautées </h2>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-  <div class="col">
-    <div class="card h-100">
-      <img src="https://picsum.photos/id/238/200/200" class="card-img-top" alt="...">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text mb-4">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <a href="#" class="btn m-1">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="https://picsum.photos/id/137/200/200" class="card-img-top" alt="...">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text mb-4">This is a short card.</p>
-        <a href="#" class="btn m-1">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="https://picsum.photos/id/237/200/200" class="card-img-top" alt="...">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text mb-4">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn m-1">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 ">
-      <img src="https://picsum.photos/id/1000/200/200" class="card-img-top" alt="...">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text mb-4">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <a href="#" class="btn m-1">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
-    </section>
-    </div>
+	<div class="container-fluid header">
+		<h1>Bienvenue
+			<br>
+			chez Tissus Jaurès</h1>
+	</div>
+	<div class="container boutique">
+		<section id="boutique" class="boutique">
+			<h2 class="d-flex justify-content-center">Notre boutique
+			</h2>
+			<div class="boutique-description">
+				<img src="https://picsum.photos/id/239/400/200" class="boutique-img m-2" alt="...">
+				<p class="m-3 boutique-text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+															    Qui impedit, distinctio reiciendis accusamus quis voluptatum minima ipsam 
+															    voluptas perspiciatis? Dignissimos eum distinctio 
+															    sapiente deserunt doloremque perspiciatis ipsa blanditiis in eligendi. 
+															    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quidem eaque, 
+															    odit in doloremque asperiores assumenda doloribus quas delectus illo molestiae 
+															    inventore quasi eos 
+															    reprehenderit labore nisi debitis explicabo? Autem!
+															    Dignissimos eum distinctio 
+															    sapiente deserunt doloremque perspiciatis ipsa blanditiis in eligendi. 
+															    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quidem eaque, 
+															    odit in doloremque asperiores assumenda doloribus quas delectus illo molestiae 
+															    inventore quasi eos 
+															    reprehenderit labore nisi debitis explicabo? Autem!
+				</p>
+			</div>
+		</section>
+	</div>
+	<div class="container cards-new-arrivals">
+		<section id="new-arrivals">
+			<h2 class="d-flex justify-content-center">Nos nouveautées
+			</h2>
+
+			<div class="row">
+
+				{% for item in items %}
+					<div class="col-lg-3 mb-2">
+						<figure class="card h-100">
+							<img src="https://picsum.photos/id/238/200/200" class="card-img-top" alt="">
+							<div class="card-body">
+								<h5 class="card-title">{{ item.title }}</h5>
+								<p class="card-text mb-4">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+								<a href="#" class="btn m-1">Go somewhere</a>
+							</div>
+						</figure>
+					</div>
+				{% endfor %}
+			</div>
+
+			{# {% endfor %} #}
+		</section>
+	</div>
 {% endblock %}
