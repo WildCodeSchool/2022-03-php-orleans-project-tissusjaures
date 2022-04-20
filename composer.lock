@@ -1522,16 +1522,16 @@
         },
         {
             "name": "phpro/grumphp",
-            "version": "v1.10.0",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "27220e27eac6f15a6e0d4279614b4f532a57b0d4"
+                "reference": "b75d29d663d1ef5b52c48fe95504a4d0364672bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/27220e27eac6f15a6e0d4279614b4f532a57b0d4",
-                "reference": "27220e27eac6f15a6e0d4279614b4f532a57b0d4",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/b75d29d663d1ef5b52c48fe95504a4d0364672bb",
+                "reference": "b75d29d663d1ef5b52c48fe95504a4d0364672bb",
                 "shasum": ""
             },
             "require": {
@@ -1545,7 +1545,7 @@
                 "laravel/serializable-closure": "^1.1",
                 "monolog/monolog": "^2.0",
                 "ondram/ci-detector": "^4.0",
-                "php": "^8.0",
+                "php": "^7.4 || ^8.0",
                 "psr/container": "^1.1 || ^2.0",
                 "seld/jsonlint": "~1.8",
                 "symfony/config": "~5.3 || ~6.0",
@@ -1632,22 +1632,22 @@
             "description": "A composer plugin that enables source code quality checks.",
             "support": {
                 "issues": "https://github.com/phpro/grumphp/issues",
-                "source": "https://github.com/phpro/grumphp/tree/v1.10.0"
+                "source": "https://github.com/phpro/grumphp/tree/v1.11.0"
             },
-            "time": "2022-03-25T14:28:50+00:00"
+            "time": "2022-04-15T11:39:48+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.5.5",
+            "version": "1.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "d77a607667f29ae099c0686f99664bd451fd23df"
+                "reference": "799dd8c2d2c9c704bb55d2078078cb970cf0f6d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d77a607667f29ae099c0686f99664bd451fd23df",
-                "reference": "d77a607667f29ae099c0686f99664bd451fd23df",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/799dd8c2d2c9c704bb55d2078078cb970cf0f6d1",
+                "reference": "799dd8c2d2c9c704bb55d2078078cb970cf0f6d1",
                 "shasum": ""
             },
             "require": {
@@ -1673,7 +1673,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.5.5"
+                "source": "https://github.com/phpstan/phpstan/tree/1.5.6"
             },
             "funding": [
                 {
@@ -1693,7 +1693,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-14T12:20:26+00:00"
+            "time": "2022-04-15T11:13:37+00:00"
         },
         {
             "name": "psr/container",
