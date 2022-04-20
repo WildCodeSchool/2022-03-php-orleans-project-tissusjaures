@@ -16,6 +16,8 @@
     --title-font-size: 36px;
 
     --spacing: 8px;
+
+    line-height: 1.5;
 }
 
 body {
@@ -45,9 +47,20 @@ h2 {
     margin: var(--spacing);
 }
 
-p {
+div .boutique-description {
     font-family: var(--text-font);
     font-size: var(--font-size);
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+img .boutique-text {
+    width: 100%;
+}
+
+p .boutique-text {
+    width: 50%;
 }
 
 .btn {
