@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
 
 :root {
-    --primary-color: #FFF4E2;
-    --secondary-color: #F55651;
-    --light-color: #FFFBF5;
+    --bs-primary-rgb: 255, 244, 226;
+    --bs-secondary-rgb: 245, 86, 81;
+    --bs-light-rgb: 255, 251, 245;
     --dark-color: #4D3C3C;
     --admin-color: #6F4494;
 
@@ -14,6 +14,35 @@
     --font-size: 20px;
     --header-font-size: 96px;
     --title-font-size: 36px;
+    --font-size-nav: 28px;
+
+    --font-weight:700;
 
     --spacing: 8px;
+}
+
+.navbar{
+    font-family: var(--text-font);
+    font-size: var(--font-size);
+}
+
+.navbar-brand{
+    font-size: var(--font-size-nav);
+    font-weight: var(--font-weight);
+}
+.navbar-brand:hover{
+    color: var(--dark-color)!important;
+}
+.nav-link:focus{
+    color: var(--dark-color)!important;
+}
+.nav-link:hover{
+    color: var(--dark-color)!important;
+}
+.dropdown-item:hover {
+    color: var(--dark-color)!important;
+    background-color: transparent;
+}
+.dropdown-item:focus{
+    background-color: transparent;
 }
