@@ -1,22 +1,12 @@
-row-cols-5 > * {
-    flex: 0 0 auto;
-    width: 20%;
-  }
-  .col {
-    flex: 1 0 0%;
-  }
-  .row > * {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
-    margin-top: var(--bs-gutter-y);
-  }
-  *, ::after, ::before {
-    box-sizing: border-box;
-  }
-  .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-  }
+.principal {
+    width: auto;
+    display: flex;
+}
+
+.col {
+    flex-direction: row;
+}
+
+.index {
+    justify-items: center;
+}
