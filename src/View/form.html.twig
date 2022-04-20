@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+{# TODO : manage errors display #}
+
+<form method="post">
+	<form>
+  
+    <legend>Formulaire</legend>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Prénom</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="prénom">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Nom</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="nom">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Téléphone</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="0610506080">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Mail</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="adresse.mail@hotmail.fr">
+    </div>
+    <div class="mb-3">
+      <label for="object" class="form-label">Objet</label>
+      <select id="disabledSelect" class="form-select">
+        <option>Information </option>
+        <option>Cours</option>
+        <option>Devis</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  
+</form>
+</form>
+{% endblock %}
