@@ -21,28 +21,3 @@
     --spacing: 8px;
 }
 
-.navbar{
-    font-family: var(--text-font);
-    font-size: var(--font-size);
-}
-
-.navbar-brand{
-    font-size: var(--font-size-nav);
-    font-weight: var(--font-weight);
-}
-.navbar-brand:hover{
-    color: var(--dark-color)!important;
-}
-.nav-link:focus{
-    color: var(--dark-color)!important;
-}
-.nav-link:hover{
-    color: var(--dark-color)!important;
-}
-.dropdown-item:hover {
-    color: var(--dark-color)!important;
-    background-color: transparent;
-}
-.dropdown-item:focus{
-    background-color: transparent;
-}
