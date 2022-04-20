@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\ClothManager;
-use App\Model\CategoriesManager;
 
 class AdminClothController extends AbstractController
 {
@@ -44,11 +43,6 @@ class AdminClothController extends AbstractController
 
         if (empty($cloth['cloth_categories_id'])) {
             $errors[] = 'Le champ catégorie est obligatoire';
-        }
-        if (!empty($cloth['cloth_categories_id'])) {
-            if (!in_array($cloth['cloth_categories_id'], $categories['name'])) {
-                $errors[]= 'Merci de choisir une catégorie valide';
-            }
         }
         return $errors;
     }
