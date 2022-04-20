@@ -1,0 +1,12 @@
+footer {
+    width: fit-content;
+}
+
+.facebook {
+    justify-items: center;
+}
+
+.Copy {
+    display: flex;
+    justify-content: center;
+}
