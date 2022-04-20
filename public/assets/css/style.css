@@ -3,7 +3,7 @@
 :root {
     --bs-primary-rgb: 255, 244, 226;
     --bs-secondary-rgb: 245, 86, 81;
-    --bs-light-rgb: 255, 251, 245;
+    --light: #fffbf5;
     --dark-color: #4D3C3C;
     --admin-color: #6F4494;
 

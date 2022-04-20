@@ -3,23 +3,29 @@
     font-size: var(--font-size);
 }
 
-.navbar-brand{
+.navbar-light .navbar-brand{
+    color: var(--light);
     font-size: var(--font-size-nav);
     font-weight: var(--font-weight);
 }
-.navbar-brand:hover{
+.navbar-light .navbar-brand:hover{
     color: var(--dark-color);
 }
-.nav-link:focus{
-    color: var(--dark-color)!important;
+
+.navbar-light .navbar-nav .nav-link{
+    color: var(--light);
 }
-.nav-link:hover{
-    color: var(--dark-color)!important;
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: var(--dark-color);
 }
-.dropdown-item:hover {
-    color: var(--dark-color)!important;
-    background-color: transparent;
+
+
+
+
+
+.dropdown-toggle::after{
+
+    vertical-align: middle;
 }
-.dropdown-item:focus{
-    background-color: transparent;
-}
+
