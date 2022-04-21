@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class MachinesManager extends AbstractManager
+class MachineManager extends AbstractManager
 {
     public const TABLE = 'machines';
 }

@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class ClothesManager extends AbstractManager
+class ClothManager extends AbstractManager
 {
     public const TABLE = 'cloth';
 }

@@ -38,9 +38,6 @@ CREATE TABLE `item` (
 INSERT INTO `item` (`id`, `title`) VALUES
 (1, 'Stuff'),
 (2, 'Doodads'),
-(3, 'More stuff'),
-(4, 'Even more'),
-(5, 'Always more');
 
 --
 -- Index pour les tables exportées
