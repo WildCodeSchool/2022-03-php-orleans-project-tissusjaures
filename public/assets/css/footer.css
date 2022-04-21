@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
 }
-.facebook, .special, iframe, small {
+.facebook, .special, small {
     display: flex;
     justify-self: center;
 }
@@ -23,6 +23,7 @@
 footer {
     background-color: var(--primary-color);
     font-size: var(--footer-font-size);
+    margin: none;
 }
 
 small, .Copy {
@@ -33,4 +34,8 @@ h3 {
     font-size: var(--title-font-size);
     align-items: center;
     height: 50px;
+}
+
+a {
+    color: var(--dark-color);
 }
