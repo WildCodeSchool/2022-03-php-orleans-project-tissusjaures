@@ -18,8 +18,10 @@ class ProductController extends AbstractController
         $machinesManager = new MachinesManager();
         $machines = $machinesManager->selectAll();
 
-        return $this->twig->render('Item/index.html.twig', ['products' => $products, 'machines' => $machines,
-        'categories' => $productCategories],);
+        return $this->twig->render('Item/index.html.twig', [
+            'products' => $products, 'machines' => $machines,
+            'categories' => $productCategories,
+        ]);
     }
 
     public function productCategory(): string
