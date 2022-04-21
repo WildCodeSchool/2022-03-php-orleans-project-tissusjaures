@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
 }
-.facebook, h3, iframe, small {
+.facebook, .special, iframe, small {
     display: flex;
     justify-self: center;
 }
@@ -31,4 +31,6 @@ small, .Copy {
 
 h3 {
     font-size: var(--title-font-size);
+    align-items: center;
+    height: 50px;
 }
