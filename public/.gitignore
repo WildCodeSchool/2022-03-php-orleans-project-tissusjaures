@@ -1,0 +1,8 @@
+/vendor/
+/temp/*
+.phpcs-cache
+*.cache
+db.php
+.idea
+.vscode
+.DS_Store
