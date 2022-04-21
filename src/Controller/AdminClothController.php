@@ -15,9 +15,7 @@ class AdminClothController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
-            $errors = $this->clothValidate($clothItems);
-            var_dump($clothItems['cloth_categories_id']);
-            var_dump($clothItems['price']);
+            $errors = $this->clothValidate($clothItems, $categories);
 
             if (empty($errors)) {
                 $clothManager = new AdminClothManager();
@@ -30,7 +28,7 @@ class AdminClothController extends AbstractController
             'errors' => $errors
         ]);
     }
-    private function clothValidate($clothItems): array
+    private function clothValidate(array $clothItems, array $categories): array
     {
         $errors = [];
         if (empty($clothItems['name'])) {
@@ -53,6 +51,12 @@ class AdminClothController extends AbstractController
         if (empty($clothItems['cloth_categories_id'])) {
             $errors[] = 'Le champ catégorie est obligatoire';
         }
+        if (!empty($clothItems['cloth_categories_id'])) {
+            if (!in_array($clothItems['cloth_categories_id'], array_column($categories, 'id'))) {
+                $errors[] = "Merci de choisir une catégorie valide";
+            }
+        }
+
         return $errors;
     }
 }
