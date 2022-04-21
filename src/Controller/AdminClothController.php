@@ -2,52 +2,55 @@
 
 namespace App\Controller;
 
-use App\Model\ClothManager;
+use App\Model\AdminClothManager;
 use App\Model\CategoryManager;
 
 class AdminClothController extends AbstractController
 {
     public function addCloth()
     {
+        $clothItems = $errors = [];
         $adminCategories = new CategoryManager();
         $categories = $adminCategories->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $cloth = array_map('trim', $_POST);
-
-            $errors = $this->clothValidate($cloth);
+            $clothItems = array_map('trim', $_POST);
+            $errors = $this->clothValidate($clothItems);
+            var_dump($clothItems['cloth_categories_id']);
+            var_dump($clothItems['price']);
 
             if (empty($errors)) {
-                $clothManager = new ClothManager();
-                $clothManager->insert($cloth);
-                header('Location: /admin/tissus');
+                $clothManager = new AdminClothManager();
+                $clothManager->insert($clothItems);
+                header('Location: /admin/addcloth');
             }
         }
         return $this->twig->render('Admin/Cloth/add.html.twig', [
-            'categories' => $categories,
+            'categories' => $categories, 'clothItems' => $clothItems,
+            'errors' => $errors
         ]);
     }
-    public function clothValidate($cloth): array
+    private function clothValidate($clothItems): array
     {
         $errors = [];
-        if (empty($cloth['name'])) {
+        if (empty($clothItems['name'])) {
             $errors[] = 'Le champ nom est obligatoire';
         }
 
         $nameMaxLength = 100;
-        if (strlen($cloth['name']) > $nameMaxLength) {
+        if (strlen($clothItems['name']) > $nameMaxLength) {
             $errors[] = 'Le nom ne doit pas dépasser les 100 caractères';
         }
 
-        if (empty($cloth['price'])) {
+        if (empty($clothItems['price'])) {
             $errors[] = 'Le champ prix est obligatoire';
         }
 
-        if (!is_float($cloth['price'])) {
+        if (!is_float(floatval($clothItems['price']))) {
             $errors[] = 'Le prix doit être un nombre';
         }
 
-        if (empty($cloth['cloth_categories_id'])) {
+        if (empty($clothItems['cloth_categories_id'])) {
             $errors[] = 'Le champ catégorie est obligatoire';
         }
         return $errors;
