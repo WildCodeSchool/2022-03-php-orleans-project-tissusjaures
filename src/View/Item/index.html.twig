@@ -1,13 +1,36 @@
 {% extends 'layout.html.twig' %}
-
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/products.css">{% endblock %}
 {% block content %}
-    <h1>Items</h1>
-    <ul>
-        {% for item in items %}
-            <li><a href="/items/show?id={{ item.id }}">{{ item.id }}. {{ item.title }}</a></li>
-        {% else %}
-            <li>Nothing to display</li>
-        {% endfor %}
-    </ul>
-    <a href="/items/add">Ajouter</a>
+    <div class="container-fluid header">
+		<h1>Produits</h1>
+	</div>
+    <div class="container categories mt-3">
+    <div class="row">
+    {% for item in items %}
+    <div class="col-lg-4 mt-1 mx-auto">
+    <button type="button" class="btn btn-lg m-1 categories">{{ item.title }}</button>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
+<div class="container cards-products">
+		<section id="products">
+			<h2 class="d-flex justify-content-center">Nos produits
+			</h2>
+			<div class="row">
+				{% for item in items %}
+					<div class="col-lg-3 mb-2 mx-auto">
+						<figure class="card h-100">
+							<img src="https://picsum.photos/200/150" class="card-img-top" alt="">
+							<div class="card-body">
+								<h5 class="card-title">{{ item.title }}</h5>
+								<div class="prix m-2"> 5 €</a>
+							</div>
+						</figure>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+
 {% endblock %}

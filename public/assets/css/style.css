@@ -70,6 +70,7 @@ p .boutique-text {
 }
 
 .btn {
+    font-family: var(--text-font);
     background-color: var(--secondary-color);
     color: var(--light-color);
     position: absolute;
@@ -104,4 +105,8 @@ p .boutique-text {
     font-family: var(--text-font);
     color: var(--dark-color);
     padding-bottom: 12px;
+}
+
+.slogan {
+    font-size: calc(var(--title-font-size) - 0.5rem);
 }

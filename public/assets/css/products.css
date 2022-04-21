@@ -1,0 +1,32 @@
+.prix {
+    color: var(--dark-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.header {
+    display: flex;
+    background-image: url("../images/headerproducts.jpeg");
+    background-position: 80% 48%;
+    background-size: 120%;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    box-shadow: var(--shadow);
+    position: initial;
+    width: 23rem;
+}
+
+.btn:hover {
+    color: var(--secondary-color);
+}
+
+.categories {
+    justify-content: center;
+}
