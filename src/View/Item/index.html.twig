@@ -19,12 +19,12 @@
 			<h2 class="d-flex justify-content-center mb-3">Nos produits
 			</h2>
 			<div class="row">
-				{% for item in items %}
+				{% for product in products %}
 					<div class="col-lg-3 mb-2 mx-auto">
 						<figure class="card h-100">
 							<img src="https://picsum.photos/200/150" class="card-img-top" alt="">
 							<div class="card-body">
-								<h5 class="card-title">{{ item.title }}</h5>
+								<h5 class="card-title">{{ product.name }}</h5>
 								<div class="prix m-2">
 									5 €</a>
 							</div>
