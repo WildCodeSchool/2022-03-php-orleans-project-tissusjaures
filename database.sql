@@ -37,10 +37,7 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`id`, `title`) VALUES
 (1, 'Stuff'),
-(2, 'Doodads'),
-(3, 'More stuff'),
-(4, 'Even more'),
-(5, 'Always more');
+(2, 'Doodads')
 
 --
 -- Index pour les tables exportées
@@ -77,19 +74,16 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema tissus_jaures
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `tissus_jaures` DEFAULT CHARACTER SET utf8 ;
-USE `tissus_jaures` ;
-​
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
+CREATE TABLE IF NOT EXISTS `cloth_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-​
+
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
@@ -100,11 +94,11 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 (4, "Tissus couture", 'public/assets/images/tss1'),
 (5, "Voilage", 'public/assets/images/tss1'),
 (6, "Décoration", 'public/assets/images/tss1');
-​
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
+CREATE TABLE IF NOT EXISTS `cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `price` FLOAT NOT NULL,
@@ -120,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-​
+
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
@@ -131,11 +125,11 @@ INSERT INTO `cloth` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`, `clo
 (4, "Tissu rouge", 150, 'public/assets/images/tss1', 0, 1, 2),
 (5, "Tissu violet", 1, 'public/assets/images/tss1', 1, 1, 1),
 (6, "Tissu orange", 4.5, 'public/assets/images/tss1', 1, 0, 4);
-​
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
+CREATE TABLE IF NOT EXISTS `machines` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `price` FLOAT NOT NULL,
@@ -144,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
   `is_new` TINYINT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-​
+
 -- -- -----------------------------------------------------
 -- -- Content `tissus_jaures`.`machines`
 -- -- -----------------------------------------------------
@@ -153,19 +147,18 @@ INSERT INTO `machines` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`) V
 (2, "Machine Singer", 300, 'public/assets/images/mchn1', 1, 1),
 (3, "Machine Singer", 150.5, 'public/assets/images/mchn1', 1, 0),
 (4, "Machine Singer", 10000, 'public/assets/images/mchn1', 0, 1);
-​
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
+CREATE TABLE IF NOT EXISTS `tutorials` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
   `content` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-​
-​
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
@@ -175,19 +168,17 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `definition` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-​
-​
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
+CREATE TABLE IF NOT EXISTS `tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `content` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-​
-​
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
