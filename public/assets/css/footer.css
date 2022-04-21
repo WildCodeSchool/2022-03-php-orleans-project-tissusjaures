@@ -1,12 +1,17 @@
-footer {
-    width: fit-content;
-}
-
-.facebook {
-    justify-items: center;
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    max-width:100%;
 }
 
 .Copy {
     display: flex;
     justify-content: center;
+}
+.facebook {
+    display: flex;
+    justify-self: center;
+}
+
+.row {
+    justify-content: space-around;
+    margin: 2rem;
 }
