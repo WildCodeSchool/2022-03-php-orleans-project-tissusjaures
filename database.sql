@@ -8,16 +8,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema tissus_jaures
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema tissus_jaures
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `tissus_jaures` DEFAULT CHARACTER SET utf8 ;
-USE `tissus_jaures` ;
-
--- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
