@@ -5,6 +5,7 @@
     --secondary-color: #F55651;
     --light-color: #FFFBF5;
     --dark-color: #4D3C3C;
+    --shadow-color: rgba(77, 60, 60, 0.2);
     --admin-color: #6F4494;
 
     --header-font: 'Kotta One', serif;
@@ -27,7 +28,8 @@ body {
 .header {
     display: flex;
     background-image: url("../images/header.jpeg");
-    background-position: 70% 45%;
+    background-position: 80% 48%;
+    background-size: 120%;
     height: 400px;
     align-items: center;
     justify-content: center;
@@ -76,6 +78,12 @@ p .boutique-text {
 .btn:hover {
     color: var(--light-color);
     opacity: 100%;
+}
+
+.card {
+    box-shadow: 2px 1px 4px var(--shadow-color);
+    outline: 1.5px dashed var(--dark-color);
+    outline-offset: -6px;
 }
 
 .card-body {
