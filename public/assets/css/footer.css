@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
 }
-.facebook, h5, iframe, small {
+.facebook, h3, iframe, small {
     display: flex;
     justify-self: center;
 }
@@ -27,4 +27,8 @@ footer {
 
 small, .Copy {
     font-size: var(--font-size)
+}
+
+h3 {
+    font-size: var(--title-font-size);
 }
