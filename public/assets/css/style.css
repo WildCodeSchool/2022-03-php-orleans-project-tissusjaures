@@ -18,6 +18,8 @@
 
     --spacing: 8px;
 
+    --shadow: 2px 1px 4px var(--shadow-color);
+
     line-height: 1.5;
 }
 
@@ -58,8 +60,9 @@ div .boutique-description {
     width: auto;
 }
 
-img .boutique-text {
+.boutique-img {
     width: 100%;
+    box-shadow: var(--shadow); 
 }
 
 p .boutique-text {
@@ -81,7 +84,7 @@ p .boutique-text {
 }
 
 .card {
-    box-shadow: 2px 1px 4px var(--shadow-color);
+    box-shadow: var(--shadow);
     outline: 1.5px dashed var(--dark-color);
     outline-offset: -6px;
 }
