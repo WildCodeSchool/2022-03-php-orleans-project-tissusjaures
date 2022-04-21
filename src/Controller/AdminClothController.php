@@ -3,11 +3,15 @@
 namespace App\Controller;
 
 use App\Model\ClothManager;
+use App\Model\CategoryManager;
 
 class AdminClothController extends AbstractController
 {
     public function addCloth()
     {
+        $adminCategories = new CategoryManager();
+        $categories = $adminCategories->selectAll();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $cloth = array_map('trim', $_POST);
 
@@ -19,7 +23,9 @@ class AdminClothController extends AbstractController
                 header('Location: /admin/tissus');
             }
         }
-        return $this->twig->render('addCloth.html.twig');
+        return $this->twig->render('Admin/Cloth/add.html.twig', [
+            'categories' => $categories,
+        ]);
     }
     public function clothValidate($cloth): array
     {
