@@ -18,6 +18,11 @@
     --spacing: 8px;
 }
 
+* {
+    font-family: var(--text-font);
+    font-size: var(--font-size);
+}
+
 .btn {
     background-color: var(--admin-color);
     color: var(--light-color);
@@ -26,4 +31,12 @@
 
 label {
     padding-top: var(--spacing);
+}
+
+.addclothtitle {
+    margin: none;
+    text-align:center;
+    font-size: var(--title-font-size);
+    font-family: var(--title-font);
+    padding: var(--spacing)
 }
