@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
 }
-.facebook {
+.facebook, h5, iframe, small {
     display: flex;
     justify-self: center;
 }
@@ -14,4 +14,17 @@
 .row {
     justify-content: space-around;
     margin: 2rem;
+}
+
+.facebook {
+    color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    font-size: var(--footer-font-size);
+}
+
+small, .Copy {
+    font-size: var(--font-size)
 }
