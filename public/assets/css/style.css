@@ -1,23 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
-
+@import url('navbarStyle.css');
 :root {
     --bs-primary-rgb: 255, 244, 226;
     --bs-secondary-rgb: 245, 86, 81;
     --light: #fffbf5;
     --dark-color: #4D3C3C;
     --admin-color: #6F4494;
-
     --header-font: 'Kotta One', serif;
     --text-font: 'Lora', serif;
     --title-font: 'Merriweather', serif;
-
     --font-size: 20px;
     --header-font-size: 96px;
     --title-font-size: 36px;
     --font-size-nav: 28px;
-
-    --font-weight:700;
-
-    --spacing: 8px;
 }
 
