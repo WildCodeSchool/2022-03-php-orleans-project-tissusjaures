@@ -14,7 +14,7 @@ small, .copy {
     font-size: var(--font-size);
 }
 
-.special {
+.horaires {
     font-size: var(--title-font-size);
     height: 50px;
 }
