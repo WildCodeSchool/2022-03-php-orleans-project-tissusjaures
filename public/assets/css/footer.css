@@ -30,7 +30,7 @@ small, .Copy {
     font-size: var(--font-size)
 }
 
-h3 {
+.special {
     font-size: var(--title-font-size);
     align-items: center;
     height: 50px;
@@ -38,4 +38,8 @@ h3 {
 
 a {
     color: var(--dark-color);
+}
+
+h3 {
+    padding-left: 8px;
 }
