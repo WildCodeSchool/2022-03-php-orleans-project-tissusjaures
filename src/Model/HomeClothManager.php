@@ -4,7 +4,7 @@ namespace App\Model;
 
 class HomeClothManager extends AbstractManager
 {
-    public const TABLE = 'cloth'; 
+    public const TABLE = 'cloth';
 
         /**
      * Get one row from database by isNew.

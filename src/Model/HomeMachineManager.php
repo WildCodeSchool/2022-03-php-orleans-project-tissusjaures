@@ -4,7 +4,7 @@ namespace App\Model;
 
 class HomeMachineManager extends AbstractManager
 {
-    public const TABLE = 'machines'; 
+    public const TABLE = 'machines';
 
         /**
      * Get one row from database by isNew.
