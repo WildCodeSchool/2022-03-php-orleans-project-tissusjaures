@@ -1,43 +1,54 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
 
 {% block content %}
-	<div class="container-fluid header">
-		<h1>Bienvenue
-			<br>
-			chez Tissus Jaurès</h1>
+	<div class="container-fluid d-flex justify-content-center align-items-center header">
+		<h1 class="text-light">Bienvenue chez Tissus Jaurès</h1>
 	</div>
 	<div class="container boutique">
 		<section id="boutique" class="boutique">
-			<h2 class="d-flex justify-content-center">Notre boutique
+			<h2 class="d-flex justify-content-center text-dark">Notre boutique
 			</h2>
-			<div class="boutique-description">
-				<img src="https://picsum.photos/id/239/350/200" class="boutique-img m-2" alt="...">
-				<p class="m-3 boutique-text">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Qui impedit, distinctio reiciendis accusamus quis voluptatum minima ipsam 
-					voluptas perspiciatis? Dignissimos eum distinctio 
-					sapiente deserunt doloremque perspiciatis ipsa blanditiis in eligendi. 
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quidem eaque, 
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam laboriosam perspiciatis! 
-					Repudiandae incidunt, dolor sunt distinctio error delectus hic architecto! Sequi libero consequatur voluptatem. 
-                    Suscipit recusandae est quo quod.
+			<div class="boutique-description d-flex justify-content-center w-auto">
+				<img src="https://picsum.photos/id/239/350/200" class="boutique-img m-2" alt="boutique">
+				<p class="m-3 mt-5 boutique-text text-dark">
+					Vous trouverez dans notre très vaste magasin, des milliers de mètres de Tissus d'Ameublement, 
+															de Voilages, de Tissus Couture et Haute Couture, une très grande Mercerie et un large choix en Décoration, 
+															rideaux prêts à poser…
+										          Nous déstockons les plus grandes maisons de textile et pouvons donc vous proposer et vous garantir une très bonne qualité à prix malins !
 				</p>
 			</div>
 		</section>
 	</div>
 	<div class="container cards-new-arrivals">
 		<section id="new-arrivals">
-			<h2 class="d-flex justify-content-center">Nos nouveautées
+			<h2 class="d-flex justify-content-center text-dark">Nos nouveautées
 			</h2>
 			<div class="row">
-				{% for item in items %}
+				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/200/200" class="card-img-top" alt="nouveautée">
-							<div class="card-body">
-								<h5 class="card-title">{{ item.title }}</h5>
-								<p class="card-text mb-4">Voici notre nouveau produit. </p>
-								<a href="#" class="btn m-2">Découvrir</a>
+							<img src="https://picsum.photos/200/200" class="card-img-top" alt="nouveautée tissus">
+							<div class="card-body bg-primary">
+								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
+								<p class="card-text text-dark mb-4">Voici notre nouveau produit.
+								</p>
+								<a href="#" class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
+							</div>
+						</figure>
+					</div>
+				{% endfor %}
+				{% for machine in machines %}
+					<div class="col-lg-3 mb-2">
+						<figure class="card h-100">
+							<img src="https://picsum.photos/id/50/200/200" class="card-img-top" alt="nouveautée machine">
+							<div class="card-body bg-primary">
+								<h5 class="card-title text-dark">{{ machine.name }}</h5>
+								<p class="card-text text-dark mb-5">Voici notre nouveau produit.
+								</p>
+								<a href="#" class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 							</div>
 						</figure>
 					</div>
