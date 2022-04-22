@@ -4,21 +4,21 @@
 }
 
 .navbar-dark .navbar-brand{
-    color: var(--light);
+    color: var(--bs-light);
     font-size: var(--font-size-nav);
     font-weight: var(--font-weight);
 }
 
 .navbar-dark .navbar-brand:hover{
-    color: var(--dark-color);
+    color: var(--bs-dark);
 }
 
 .navbar-dark .navbar-nav .nav-link{
-    color: var(--light);
+    color: var(--bs-light);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: var(--dark-color);
+    color: var(--bs-dark);
 }
 
 .navbar-dark .navbar-toggler{
