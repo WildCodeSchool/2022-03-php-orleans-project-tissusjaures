@@ -14,12 +14,12 @@ class ProductController extends AbstractController
         $productCategories = $categoryManager->selectAll();
 
         $clothManager = new ClothManager();
-        $products = $clothManager->selectAll();
+        $clothes = $clothManager->selectAll();
         $machineManager = new MachineManager();
         $machines = $machineManager->selectAll();
 
-        return $this->twig->render('Item/index.html.twig', [
-            'products' => $products, 'machines' => $machines,
+        return $this->twig->render('Products/index.html.twig', [
+            'clothes' => $clothes, 'machines' => $machines,
             'categories' => $productCategories,
         ]);
     }
