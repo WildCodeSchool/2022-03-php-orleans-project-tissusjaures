@@ -2,44 +2,23 @@
     max-width:100%;
 }
 
-.Copy {
-    display: flex;
-    justify-content: center;
-}
-.facebook, .special, small {
-    display: flex;
-    justify-self: center;
-}
-
 .row {
-    justify-content: space-around;
     margin: 2rem;
 }
 
-.facebook {
-    color: var(--secondary-color);
-}
-
 footer {
-    background-color: var(--primary-color);
-    font-size: var(--footer-font-size);
-    margin: none;
+    font-size: var(--font-size-footer);
 }
 
 small, .Copy {
-    font-size: var(--font-size)
+    font-size: var(--font-size);
 }
 
 .special {
     font-size: var(--title-font-size);
-    align-items: center;
     height: 50px;
 }
 
-a {
-    color: var(--dark-color);
-}
-
 h3 {
-    padding-left: 8px;
+    padding-left: var(--spacing);
 }
