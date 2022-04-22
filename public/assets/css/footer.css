@@ -1,0 +1,24 @@
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    max-width:100%;
+}
+
+.row {
+    margin: 2rem;
+}
+
+footer {
+    font-size: var(--font-size-footer);
+}
+
+small, .copy {
+    font-size: var(--font-size);
+}
+
+.horaires {
+    font-size: var(--title-font-size);
+    height: 50px;
+}
+
+h3 {
+    padding-left: var(--spacing);
+}
