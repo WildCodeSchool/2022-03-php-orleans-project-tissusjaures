@@ -10,7 +10,7 @@ footer {
     font-size: var(--font-size-footer);
 }
 
-small, .Copy {
+small, .copy {
     font-size: var(--font-size);
 }
 
