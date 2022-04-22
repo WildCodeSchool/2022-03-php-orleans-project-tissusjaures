@@ -34,8 +34,6 @@ label {
 }
 
 .addclothtitle {
-    margin: none;
-    text-align:center;
     font-size: var(--title-font-size);
     font-family: var(--title-font);
     padding: var(--spacing)
