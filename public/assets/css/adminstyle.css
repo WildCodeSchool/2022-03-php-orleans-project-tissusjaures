@@ -46,7 +46,7 @@ label {
     padding-top: var(--spacing);
 }
 
-h2 {
+.addClothTitle {
     font-size: var(--title-font-size);
     font-family: var(--title-font);
     padding: var(--spacing)
