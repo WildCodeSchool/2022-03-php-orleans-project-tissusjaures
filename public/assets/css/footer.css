@@ -1,24 +1,74 @@
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
-    max-width:100%;
+.footer {
+    height: 476px;
 }
 
-.row {
-    margin: 2rem;
-}
-
-footer {
-    font-size: var(--font-size-footer);
-}
-
-small, .copy {
-    font-size: var(--font-size);
-}
-
-.horaires {
-    font-size: var(--title-font-size);
-    height: 50px;
+svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--bs-secondary);
 }
 
 h3 {
     padding-left: var(--spacing);
+    
 }
+
+.div-footer {
+    height: 420px;
+}
+
+.title-footer {
+    height: 42px;
+}
+
+p {
+    font-size: var(--font-size-footer);
+}
+
+.icon-facebook {
+    margin-left: 1rem;
+    fill: var(--bs-secondary);
+}
+
+.icon-facebook:hover {
+    fill:var(--admin-color);
+}
+
+tbody, td, tfoot, th, thead, tr{
+    border-color: var(--bs-secondary);
+}
+
+th {
+    text-align: center;
+    width: 50%;
+    font-size: var(--font-size-table);
+}
+
+td {
+    text-align: center;
+    font-size: var(--font-size);
+}
+  
+th, td {
+    padding: 2px;
+    letter-spacing: 2px;
+}
+
+.close {
+    color: var(--bs-secondary);
+}
+
+.map {
+    width: 582px;
+    height: 338px;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    max-width: 100%;
+}
+
