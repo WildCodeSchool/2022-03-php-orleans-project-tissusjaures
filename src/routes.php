@@ -14,5 +14,5 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'admin/cloth/add' => ['AdminClothController', 'addCloth' ],
-    'admin/cloth' => ['AdminClothController', 'index'],
+    'admin/cloth' => ['AdminClothController', 'index',],
 ];

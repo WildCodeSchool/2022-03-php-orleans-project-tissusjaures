@@ -11,7 +11,7 @@ class AdminClothController extends AbstractController
     {
         $clothList = new AdminClothManager();
         $clothItems = $clothList->selectAll();
-        return $this->twig->render('Home/index.html.twig', ['clothItems' => $clothItems]);
+        return $this->twig->render('Admin/Cloth/show.html.twig', ['clothItems' => $clothItems]);
     }
 
     public function addCloth()
