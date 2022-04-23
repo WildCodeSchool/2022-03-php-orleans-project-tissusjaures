@@ -27,7 +27,7 @@ class AdminClothController extends AbstractController
             if (empty($errors)) {
                 $clothManager = new AdminClothManager();
                 $clothManager->insert($clothItems);
-                header('Location: /admin/cloth');
+                header('Location: /admin/cloth/');
             }
         }
         return $this->twig->render('Admin/Cloth/add.html.twig', [
