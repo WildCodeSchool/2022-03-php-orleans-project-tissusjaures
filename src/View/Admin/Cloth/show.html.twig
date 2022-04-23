@@ -3,4 +3,15 @@
   {{ parent() }} - Liste des tissus
 {% endblock %}
 {% block content %}
+<h2 class="addClothTitle col-8 col-md-8 mx-auto text-center mt-2">Liste des tissus</h2>
+<div class="container d-flex flex-column align-items-end mx-auto">
+<a href="add" class ="btn d-flex mx-auto col-3 col-sm-2 col-lg-1 justify-content-around align-items-center">
+				<img class="svg" src="/assets/images/round-add-button.svg" height="16px" width="16px">Ajouter</img>
+</a>
+<ul class="list-group col-8 col-md-8 mx-auto mt-2">
+{% for clothItem in clothItems %}
+  <li class="list-group-item m-1 border-0 bg-primary text-dark shadow-sm">{{ clothItem.name }}</li>
+{% endfor %}
+</ul>
+</div>
 {% endblock %}
