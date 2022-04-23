@@ -5,7 +5,7 @@
 		{% endfor %}
 	</div>
 {% endif %}
-<h2 class="addClothTitle col-8 col-md-6 mx-auto text-center">Ajouter un tissu</h2>
+<h2 class="addClothTitle col-8 col-md-6 mx-auto text-center">{{ title_name|default('Ajouter un tissu')}}</h2>
 <div class="container">
 	<form method="POST" enctype="multipart/form-data">
 		<div class="form-row">
@@ -25,7 +25,8 @@
 					{% endfor %}
 				</select>
 				<button type="submit" class="d-flex justify-content-around align-items-center btn btn-md">
-				<img class="svg" src="/assets/images/round-add-button.svg" height="16px" width="16px">Ajouter</img>
+				<img class="svg" src="/assets/images/round-add-button.svg" height="16px" width="16px"></img>
+				{{ button_name|default('Ajouter')}}
 			</button>
 		</div>
 	</div>
