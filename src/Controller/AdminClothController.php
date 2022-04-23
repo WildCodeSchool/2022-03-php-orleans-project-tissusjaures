@@ -56,7 +56,7 @@ class AdminClothController extends AbstractController
                 $errors[] = "Merci de choisir une catégorie valide";
             }
         }
-
+        
         return $errors;
     }
 }
