@@ -13,7 +13,9 @@
   </div>
 	<ul class="list-group col-8 col-md-8 mx-auto mt-1">
 		{% for clothItem in clothItems %}
+    <a href="/admin/cloth/edit?id= {{ clothItem.id }}"
 			<li class="list-group-item my-1 border-0 bg-primary text-dark shadow-sm">{{ clothItem.name }}</li>
+    </a>
 		{% endfor %}
 	</ul>
 </div>{% endblock %}

@@ -36,20 +36,21 @@ class AdminClothController extends AbstractController
         ]);
     }
 
-    public function editCloth($id):string
+    public function editCloth($id): string
     {
-        $clothItems = $errors = [];
+        $errors = $clothItems = [];
         $adminCategories = new CategoryManager();
-        $categories = $adminCategories->selectOneById($id);
-
+        $categories = $adminCategories->selectAll();
+        $clothList = new AdminClothManager();
+        $clothItems = $clothList->selectOneById($id);
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
             $clothItems['id'] = $id;
             $errors = $this->clothValidate($clothItems, $categories);
 
             if (empty($errors)) {
-                $clothManager = new AdminClothManager();
-                $clothManager->update($clothItems);
+                $clothList->update($clothItems);
                 header('Location: /admin/cloth/');
             }
         }

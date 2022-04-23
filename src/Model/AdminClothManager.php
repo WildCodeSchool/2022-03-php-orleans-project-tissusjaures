@@ -29,6 +29,7 @@ class AdminClothManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `price` = :price, 
         `cloth_categories_id` = :cloth_categories_id WHERE id=:id");
+        $statement->bindValue('id', $cloth['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $cloth['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $cloth['price'], \PDO::PARAM_STR);
         $statement->bindValue('cloth_categories_id', $cloth['cloth_categories_id'], \PDO::PARAM_INT);
