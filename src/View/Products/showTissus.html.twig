@@ -5,20 +5,20 @@
 {% endblock %}
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">Produits</h1>
+		<h1 class="text-light">Tissus</h1>
 	</div>
 	<div class="container justify-content-center categories mt-3">
 		<div class="row">
 			{% for category in categories %}
 				<div class="col-lg-4 mt-1 mx-auto">
-					<button type="button" class="btn btn-lg w-100 m-1 bg-primary categories">{{ category.name }}</button>
+					<button type="button" href="showTissus.html.twig" class="btn btn-lg w-100 m-1 bg-primary categories">{{ category.name }}</button>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
-			<h2 class="d-flex justify-content-center text-dark mb-3">Nos produits
+			<h2 class="d-flex justify-content-center text-dark mb-3">Nos tissus
 			</h2>
 			<div class="row">
 				{% for cloth in clothes %}
