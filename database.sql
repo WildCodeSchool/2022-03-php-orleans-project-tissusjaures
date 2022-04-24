@@ -31,6 +31,7 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
@@ -62,6 +63,7 @@ INSERT INTO `cloth` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`, `clo
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
@@ -84,6 +86,7 @@ INSERT INTO `machines` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`) V
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
+  
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
@@ -96,7 +99,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
+
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
@@ -107,6 +112,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,

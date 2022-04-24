@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/home.css">
+	<link rel="stylesheet" href="/assets/css/products.css">
+{% endblock %}
+{% block content %}
+	<div class="container-fluid d-flex justify-content-center align-items-center header">
+		<h1 class="text-light">Produits</h1>
+	</div>
+	<div class="container justify-content-center categories mt-3">
+		<div class="row">
+			{% for category in categories %}
+				<div class="col-lg-4 mt-1 mx-auto">
+					<button type="button" class="btn btn-lg w-100 m-1 bg-primary categories">{{ category.name }}</button>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="container cards-products mt-3">
+		<section id="products">
+			<h2 class="d-flex justify-content-center text-dark mb-3">Nos produits
+			</h2>
+			<div class="row">
+				{% for cloth in clothes %}
+					<div class="col-lg-3 mb-2 mx-auto">
+						<figure class="card h-100">
+							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="Tissus">
+							<div class="card-body bg-primary">
+								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
+								<div class="prix position-absolute bottom-0 end-0 m-2">
+									5 €</a>
+							</div>
+						</figure>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+{% endblock %}

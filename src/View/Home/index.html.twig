@@ -1,1 +1,48 @@
 {% extends 'layout.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid header">
+		<h1>Bienvenue
+			<br>
+			chez Tissus Jaurès</h1>
+	</div>
+	<div class="container boutique">
+		<section id="boutique" class="boutique">
+			<h2 class="d-flex justify-content-center">Notre boutique
+			</h2>
+			<div class="boutique-description">
+				<img src="https://picsum.photos/id/239/350/200" class="boutique-img m-2" alt="...">
+				<p class="m-3 boutique-text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Qui impedit, distinctio reiciendis accusamus quis voluptatum minima ipsam 
+					voluptas perspiciatis? Dignissimos eum distinctio 
+					sapiente deserunt doloremque perspiciatis ipsa blanditiis in eligendi. 
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quidem eaque, 
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam laboriosam perspiciatis! 
+					Repudiandae incidunt, dolor sunt distinctio error delectus hic architecto! Sequi libero consequatur voluptatem. 
+                    Suscipit recusandae est quo quod.
+				</p>
+			</div>
+		</section>
+	</div>
+	<div class="container cards-new-arrivals">
+		<section id="new-arrivals">
+			<h2 class="d-flex justify-content-center">Nos nouveautées
+			</h2>
+			<div class="row">
+				{% for item in items %}
+					<div class="col-lg-3 mb-2">
+						<figure class="card h-100">
+							<img src="https://picsum.photos/200/200" class="card-img-top" alt="">
+							<div class="card-body">
+								<h5 class="card-title">{{ item.title }}</h5>
+								<p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+								<a href="#" class="btn m-2">Découvrir</a>
+							</div>
+						</figure>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+{% endblock %}
