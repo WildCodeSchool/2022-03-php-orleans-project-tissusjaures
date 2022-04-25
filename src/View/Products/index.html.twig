@@ -14,6 +14,11 @@
 					<button type="button" class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</button>
 				</div>
 			{% endfor %}
+			{% for machineCategory in machineCategories %}
+				<div class="col-lg-4 mt-1 mx-auto">
+					<button type="button" class="btn btn-lg w-100 m-1 bg-primary categories">{{ machineCategory.name }}</button>
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 	<div class="container cards-products mt-3">
@@ -28,7 +33,7 @@
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
 								<div class="prix position-absolute bottom-0 end-0 m-2">
-									{{ cloth.price }}</a>
+									{{ cloth.price }} €</a>
 							</div>
 						</figure>
 					</div>
@@ -40,7 +45,7 @@
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ machine.name }}</h5>
 								<div class="prix position-absolute bottom-0 end-0 m-2">
-									{{ machine.price }}</a>
+									{{ machine.price }} €</a>
 							</div>
 						</figure>
 					</div>
