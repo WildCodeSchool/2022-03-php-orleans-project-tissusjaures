@@ -9,7 +9,7 @@
 	</div>
 	<div class="container boutique">
 		<section id="boutique" class="boutique">
-			<h2 class="d-flex justify-content-center text-dark mt-3">Notre boutique
+			<h2 class="text-center text-dark mt-3">Notre boutique
 			</h2>
 			<div class="boutique-description d-flex justify-content-center w-auto">
 				<img src="https://picsum.photos/id/239/350/200" class="boutique-img m-2" alt="boutique">
@@ -24,17 +24,17 @@
 	</div>
 	<div class="container cards-new-arrivals">
 		<section id="new-arrivals">
-			<h2 class="d-flex justify-content-center text-dark">Nos nouveautées
+			<h2 class="text-center text-dark">Nos nouveautées
 			</h2>
 			<div class="row">
 				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/200/200" class="card-img-top" alt="nouveautée tissus">
+							<img src="https://picsum.photos/200/200" class="card-img-top" alt="Nouveau tissus : {{ cloth.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
-								<p class="card-text text-dark mb-4">Voici notre nouveau produit.
-								</p>
+								<p class="card-text text-dark mb-5">Voici notre nouveau produit.
+								</p> 
 								<a href="#" class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 							</div>
 						</figure>
@@ -43,11 +43,11 @@
 				{% for machine in machines %}
 					<div class="col-lg-3 mb-2">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/id/50/200/200" class="card-img-top" alt="nouveautée machine">
+							<img src="https://picsum.photos/id/50/200/200" class="card-img-top" alt="Nouvelle machine : {{ machine.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ machine.name }}</h5>
 								<p class="card-text text-dark mb-5">Voici notre nouveau produit.
-								</p>
+								</p> 
 								<a href="#" class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 							</div>
 						</figure>
