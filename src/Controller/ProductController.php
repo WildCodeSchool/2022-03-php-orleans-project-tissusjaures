@@ -13,8 +13,8 @@ class ProductController extends AbstractController
     {
         $clothCategoryManager = new ClothCategoryManager();
         $clothCategories = $clothCategoryManager->selectAll();
-        $machineCategoryManager = new MachineCategoryManager();
-        $machineCategories = $machineCategoryManager->selectAll();
+        $machCategoryManager = new MachineCategoryManager();
+        $machineCategories = $machCategoryManager->selectAll();
 
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectAll();
@@ -26,5 +26,4 @@ class ProductController extends AbstractController
             'clothCategories' => $clothCategories, 'machineCategories' => $machineCategories,
         ]);
     }
-
 }
