@@ -4,14 +4,14 @@ namespace App\Controller;
 
 use App\Model\ClothManager;
 use App\Model\MachineManager;
-use App\Model\ProductCategoryManager;
+use App\Model\ClothCategoryManager;
 
 class ProductController extends AbstractController
 {
     public function index(): string
     {
-        $categoryManager = new ProductCategoryManager();
-        $productCategories = $categoryManager->selectAll();
+        $clothCategoryManager = new ClothCategoryManager();
+        $clothCategories = $clothCategoryManager->selectAll();
 
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectAll();
@@ -20,7 +20,7 @@ class ProductController extends AbstractController
 
         return $this->twig->render('Products/index.html.twig', [
             'clothes' => $clothes, 'machines' => $machines,
-            'categories' => $productCategories,
+            'clothCategories' => $clothCategories,
         ]);
     }
 
