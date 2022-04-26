@@ -1,7 +1,6 @@
 .header {
-    background-image: url("../images/header.jpeg");
-    background-position: 80% 60%;
-    height: 400px;
+    background-image: url("../images/headerproduits.jpeg");
+    height: 300px;
 }
 
 .header h1 {
@@ -20,21 +19,15 @@ h3 {
     font-size: calc(var(--title-font-size) - 4px);
 }
 
-div .boutique-description {
-    font-family: var(--text-font);
-    font-size: var(--font-size);
-}
-
-.boutique-img {
-    box-shadow: var(--shadow); 
-}
-
 .btn {
-    opacity: 90%;
+    box-shadow: var(--shadow);
+    position: initial;
+    font-family: var(--text-font);
 }
 
 .btn:hover {
-    opacity: 100%;
+    color: var(--bs-secondary);
+    transform: scale(1.03);
 }
 
 .card {
