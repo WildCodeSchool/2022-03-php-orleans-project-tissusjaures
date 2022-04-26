@@ -1,6 +1,5 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/home.css">
 	<link rel="stylesheet" href="/assets/css/products.css">
 {% endblock %}
 {% block content %}
@@ -32,7 +31,7 @@
 							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="{{ cloth.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
-								<div class="prix position-absolute bottom-0 end-0 m-2">
+								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
 									{{ cloth.price }} €</a>
 							</div>
 						</figure>
@@ -44,7 +43,7 @@
 							<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ machine.name }}</h5>
-								<div class="prix position-absolute bottom-0 end-0 m-2">
+								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
 									{{ machine.price }} €</a>
 							</div>
 						</figure>
