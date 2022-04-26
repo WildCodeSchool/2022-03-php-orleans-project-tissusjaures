@@ -1,6 +1,5 @@
 .header {
     background-image: url("../images/header.jpeg");
-    background-position: 80% 60%;
     height: 400px;
 }
 
@@ -13,6 +12,11 @@
 h2 {
     font-family: var(--header-font);
     font-size: var(--title-font-size);
+}
+
+h3 {
+    font-family: var(--header-font);
+    font-size: calc(var(--title-font-size) - 4px);
 }
 
 div .boutique-description {

@@ -1,6 +1,6 @@
 .navbar{
     font-family: var(--text-font);
-    font-size: var(--font-size);
+    font-size: var(--font-size-link);
 }
 
 .navbar-dark .navbar-brand{

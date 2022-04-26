@@ -35,6 +35,7 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
+  `description` TEXT NULL,
   `price` FLOAT NOT NULL,
   `image` VARCHAR(100) NULL,
   `is_on_sale` TINYINT NULL,
@@ -52,13 +53,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
-INSERT INTO `cloth` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`, `cloth_categories_id`) VALUES
-(1, "Tissu bleu", 5, 'public/assets/images/tss1', 0, 0, 1),
-(2, "Tissu vert", 4, 'public/assets/images/tss1', 0, 0, 3),
-(3, "Tissu jaune", 2.5, 'public/assets/images/tss1', 1, 0, 4),
-(4, "Tissu rouge", 150, 'public/assets/images/tss1', 0, 1, 2),
-(5, "Tissu violet", 1, 'public/assets/images/tss1', 1, 1, 1),
-(6, "Tissu orange", 4.5, 'public/assets/images/tss1', 1, 0, 4);
+INSERT INTO `cloth` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`, `cloth_categories_id`) VALUES
+(1, "Tissu bleu", "Un joli tissu bleu", 5, 'public/assets/images/tss1', 0, 0, 1),
+(2, "Tissu vert", "Un joli tissu vert", 4, 'public/assets/images/tss1', 0, 0, 3),
+(3, "Tissu jaune", "Un joli tissu jaune", 2.5, 'public/assets/images/tss1', 1, 0, 4),
+(4, "Tissu rouge", "Un joli tissu rouge", 150, 'public/assets/images/tss1', 0, 1, 2),
+(5, "Tissu violet", "Un joli tissu violet", 1, 'public/assets/images/tss1', 1, 1, 1),
+(6, "Tissu orange", "Un joli tissu orange", 4.5, 'public/assets/images/tss1', 1, 0, 4);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
@@ -67,6 +68,7 @@ INSERT INTO `cloth` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`, `clo
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
+  `description` TEXT NULL,
   `price` FLOAT NOT NULL,
   `image` VARCHAR(100) NULL,
   `is_on_sale` TINYINT NULL,
@@ -77,25 +79,25 @@ ENGINE = InnoDB;
 -- -- -----------------------------------------------------
 -- -- Content `tissus_jaures`.`machines`
 -- -- -----------------------------------------------------
-INSERT INTO `machines` (`id`, `name`, `price`, `image`,`is_on_sale`, `is_new`) VALUES
-(1, "Machine Singer", 400, 'public/assets/images/mchn1', 0, 0),
-(2, "Machine Singer", 300, 'public/assets/images/mchn1', 1, 1),
-(3, "Machine Singer", 150.5, 'public/assets/images/mchn1', 1, 0),
-(4, "Machine Singer", 10000, 'public/assets/images/mchn1', 0, 1);
+INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`) VALUES
+(1, "Machine Singer", "Une machine Singer", 400, 'public/assets/images/mchn1', 0, 0),
+(2, "Machine Singer", "Une belle machine Singer", 300, 'public/assets/images/mchn1', 1, 1),
+(3, "Machine Singer", "Une superbe machine Singer", 150.5, 'public/assets/images/mchn1', 1, 0),
+(4, "Machine Singer", "Une magnifique machine Singer", 10000, 'public/assets/images/mchn1', 0, 1);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
   
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
+
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
   `content` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-
-
+  
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
@@ -108,7 +110,6 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
@@ -119,7 +120,6 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   `content` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
