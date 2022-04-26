@@ -6,9 +6,17 @@ class AdminClothManager extends AbstractManager
 {
     public const TABLE = 'cloth';
 
-    /**
-     * Insert new item in database
-     */
+    public function selectOneById(int $id): array|false
+    {
+        $statement = $this->pdo->prepare("SELECT c.name, c.price, cc.name AS 
+        Cat, cc.id AS CatId FROM " . static::TABLE . " AS c INNER JOIN cloth_categories as cc"
+        . " ON cc.id = c.cloth_categories_id" . " WHERE c.id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
+
     public function insert(array $cloth): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `price`, 

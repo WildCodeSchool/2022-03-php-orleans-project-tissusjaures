@@ -43,7 +43,7 @@ class AdminClothController extends AbstractController
         $categories = $adminCategories->selectAll();
         $clothList = new AdminClothManager();
         $clothItems = $clothList->selectOneById($id);
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
             $clothItems['id'] = $id;
