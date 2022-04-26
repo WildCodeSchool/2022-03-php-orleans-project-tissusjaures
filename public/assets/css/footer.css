@@ -10,7 +10,7 @@ svg {
 
 h3 {
     padding-left: var(--spacing);
-    
+
 }
 
 .div-footer {
@@ -19,10 +19,13 @@ h3 {
 
 .title-footer {
     height: 42px;
+    font-family: var(--title-font);
+
 }
 
 p {
     font-size: var(--font-size-footer);
+    font-family: var(--text-font);
 }
 
 .icon-facebook {
@@ -31,10 +34,15 @@ p {
 }
 
 .icon-facebook:hover {
-    fill:var(--admin-color);
+    fill: var(--admin-color);
 }
 
-tbody, td, tfoot, th, thead, tr{
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
     border-color: var(--bs-secondary);
 }
 
@@ -42,14 +50,17 @@ th {
     text-align: center;
     width: 50%;
     font-size: var(--font-size-table);
+    font-family: var(--title-font);
 }
 
 td {
     text-align: center;
     font-size: var(--font-size);
+    font-family: var(--text-font);
 }
-  
-th, td {
+
+th,
+td {
     padding: 2px;
     letter-spacing: 2px;
 }
@@ -60,7 +71,7 @@ th, td {
 
 .map {
     width: 582px;
-    height: 338px;
+    height: 322px;
 }
 
 .container,
@@ -71,4 +82,3 @@ th, td {
 .container-xxl {
     max-width: 100%;
 }
-
