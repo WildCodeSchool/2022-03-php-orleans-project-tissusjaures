@@ -10,7 +10,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cloth_categories` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
