@@ -31,7 +31,7 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machine_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `machine_categories` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machine_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
@@ -47,7 +47,7 @@ INSERT INTO `machine_categories` (`id`, `name`, `image`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cloth` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `description` TEXT NULL,
@@ -103,7 +103,7 @@ INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sal
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tutorials` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
@@ -114,7 +114,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `lexicon` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
@@ -124,7 +124,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tips` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `content` TEXT NOT NULL,
