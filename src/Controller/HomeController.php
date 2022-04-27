@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\HomeClothManager;
+use App\Model\HomeMachineManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,6 +12,11 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $homeClothManager = new HomeClothManager();
+        $newClothes = $homeClothManager->selectByIsNew();
+        $homeMachineManager = new HomeMachineManager();
+        $newMachines = $homeMachineManager->selectByIsNew();
+
+        return $this->twig->render('Home/index.html.twig', ['clothes' => $newClothes, 'machines' => $newMachines]);
     }
 }

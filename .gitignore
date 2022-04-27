@@ -5,3 +5,7 @@
 db.php
 .idea
 .vscode
+.DS_Store
+src/.DS_Store
+config/.DS_Store
+public/.DS_Store
