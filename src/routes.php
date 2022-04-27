@@ -15,4 +15,9 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'admin/cloth/add' => ['AdminClothController', 'addCloth' ],
     'admin/cloth' => ['AdminClothController', 'index',],
+    'machines' => ['HomeMachineController', 'index',],
+    'machines/edit' => ['MachineController', 'edit', ['id']],
+    'machines/show' => ['MachineController', 'show', ['id']],
+    'machines/add' => ['MachineController', 'add',],
+    'machines/delete' => ['MachineController', 'delete',],
 ];
