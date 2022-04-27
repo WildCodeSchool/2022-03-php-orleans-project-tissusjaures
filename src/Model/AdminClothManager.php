@@ -30,9 +30,6 @@ class AdminClothManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-    /**
-     * Update item in database
-     */
     public function update(array $cloth): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `price` = :price, 
