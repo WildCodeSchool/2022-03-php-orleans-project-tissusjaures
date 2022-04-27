@@ -8,61 +8,64 @@ class ContactController extends AbstractController
     protected const PHONE_LENGTH = 50;
     public function index(): string
     {
-        $errors = null;
-        $errorsTwo = null;
+        $errorsEmpty = null;
+        $errorsFormat = null;
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $contact = array_map("trim", $_POST);
-            $errors = $this->validate($contact);
-            $errorsTwo = $this->validateFormat($contact);
+            $errorsEmpty = $this->validate($contact);
+            $errorsFormat = $this->validateFormat($contact);
         }
-        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'errorsTwo' => $errorsTwo]);
+        return $this->twig->render('contact.html.twig', [
+            'errorsEmpty' => $errorsEmpty,
+            'errorsFormat' => $errorsFormat,
+        ]);
     }
 
     private function validate(array $contact): array
     {
-        $errors = [];
+        $errorsEmpty = [];
 
         if (empty($contact["firstname"])) {
-            $errors[] = "Le prénom est obligatoire";
+            $errorsEmpty[] = "Le prénom est obligatoire";
         }
 
 
         if (empty($contact["lastname"])) {
-            $errors[] = "Le nom est obligatoire";
+            $errorsEmpty[] = "Le nom est obligatoire";
         }
         if (empty($contact["phone"])) {
-            $errors[] = "Le numéro de téléphone est obligatoire";
+            $errorsEmpty[] = "Le numéro de téléphone est obligatoire";
         }
 
 
         if (empty($contact["email"])) {
-            $errors[] = "Le email est obligatoire";
+            $errorsEmpty[] = "Le email est obligatoire";
         }
 
         if (empty($contact["message"])) {
-            $errors[] = "N'oubliez pas votre message";
+            $errorsEmpty[] = "N'oubliez pas votre message";
         }
 
-        return $errors;
+        return $errorsEmpty;
     }
     private function validateFormat(array $contact): array
     {
-        $errorsTwo = [];
+        $errorsFormat = [];
 
         if (strlen($contact["firstname"]) > self::NAME_LENGTH) {
-            $errorsTwo[] = "Le prénom doit faire moins de " . self::NAME_LENGTH . " caractères";
+            $errorsFormat[] = "Le prénom doit faire moins de " . self::NAME_LENGTH . " caractères";
         }
         if (strlen($contact["lastname"]) > self::NAME_LENGTH) {
-            $errorsTwo[] = "Le prénom doit faire moins de " . self::NAME_LENGTH . " caractères";
+            $errorsFormat[] = "Le prénom doit faire moins de " . self::NAME_LENGTH . " caractères";
         }
 
         if (strlen($contact["phone"]) > self::PHONE_LENGTH) {
-            $errorsTwo[] = "Le numéro de téléphone doit faire moins de " . self::PHONE_LENGTH . " caractères";
+            $errorsFormat[] = "Le numéro de téléphone doit faire moins de " . self::PHONE_LENGTH . " caractères";
         }
         if (!filter_var($contact['email'], FILTER_VALIDATE_EMAIL)) {
-            $errorsTwo[] = "Mauvais format pour l'email " . $contact["email"];
+            $errorsFormat[] = "Mauvais format pour l'email " . $contact["email"];
         }
-        return $errorsTwo;
+        return $errorsFormat;
     }
 }
