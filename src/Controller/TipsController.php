@@ -6,7 +6,6 @@ use App\Model\TipsManager;
 
 class TipsController extends AbstractController
 {
-
     public function tips(): string
     {
         $tipManager = new TipsManager();
