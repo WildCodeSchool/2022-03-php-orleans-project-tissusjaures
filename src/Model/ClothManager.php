@@ -9,8 +9,8 @@ class ClothManager extends AbstractManager
     public function selectAllById(int $id): array|false
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE .
-         "INNER JOIN cloth_categories c ON cloth_categories_id = c.id WHERE id=:id");
+        $statement = $this->pdo->prepare("SELECT cc.* FROM " . static::TABLE . " cc
+          INNER JOIN cloth_categories c ON cc.cloth_categories_id = c.id WHERE cc.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
 

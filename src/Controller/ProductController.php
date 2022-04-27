@@ -26,20 +26,4 @@ class ProductController extends AbstractController
             'clothCategories' => $clothCategories, 'machineCategories' => $machineCategories,
         ]);
     }
-
-    public function showClothByCategory(int $id): string
-    {
-        $clothCategoryManager = new ClothCategoryManager();
-        $clothCategories = $clothCategoryManager->selectAll();
-        $machCategoryManager = new MachineCategoryManager();
-        $machineCategories = $machCategoryManager->selectAll();
-
-        $clothManager = new ClothManager();
-        $clothes = $clothManager->selectAllById($id);
-
-        return $this->twig->render('Products/index.html.twig', [
-            'clothes' => $clothes,
-            'clothCategories' => $clothCategories, 'machineCategories' => $machineCategories,
-        ]);
-    }
 }

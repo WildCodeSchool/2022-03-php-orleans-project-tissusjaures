@@ -10,7 +10,7 @@
 		<div class="row">
 			{% for clothCategory in clothCategories %}
 				<div class="col-lg-4 mt-1 mx-auto">
-					<button type="button" href="tissus.html.twig" class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</button>
+					<button type="button" onclick="window.location.href='/tissus/category?id={{ clothCategory.id }}';" class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</button>
 				</div>
 			{% endfor %}
 			{% for machineCategory in machineCategories %}

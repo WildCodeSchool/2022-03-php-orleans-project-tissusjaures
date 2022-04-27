@@ -10,6 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'products' => ['ProductController', 'index',],
     'tissus' => ['ClothController', 'index',],
+    'tissus/category' => ['ClothController', 'showClothByCategory', ['id']],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
