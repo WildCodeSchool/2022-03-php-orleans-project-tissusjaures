@@ -110,6 +110,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
+  `image` VARCHAR(100)NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

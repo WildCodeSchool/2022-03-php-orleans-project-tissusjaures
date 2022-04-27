@@ -46,6 +46,7 @@ class ContactController extends AbstractController
         }
         return $errorsEmpty;
     }
+
     private function validateFormat(array $contact): array
     {
         $errorsFormat = [];
