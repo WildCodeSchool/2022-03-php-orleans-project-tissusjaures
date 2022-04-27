@@ -29,9 +29,24 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 (6, "Décoration", 'public/assets/images/tss1');
 
 -- -----------------------------------------------------
+-- Table `tissus_jaures`.`machine_categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machine_categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Content `tissus_jaures`.`machine_categories`
+-- -----------------------------------------------------
+INSERT INTO `machine_categories` (`id`, `name`, `image`) VALUES
+(1, "Machines à coudre", 'public/assets/images/mchn1');
+
+-- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
@@ -88,9 +103,7 @@ INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sal
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
-  
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
-
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
@@ -101,9 +114,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
-
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
@@ -113,7 +124,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,

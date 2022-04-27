@@ -11,7 +11,7 @@
     --text-font: 'Lora', serif;
     --title-font: 'Merriweather', serif;
 
-    --font-size: 20px;
+    --font-size: 16px;
     --header-font-size: 96px;
     --title-font-size: 36px;
 
@@ -29,6 +29,11 @@
     margin-top: var(--spacing);
 }
 
+.btn:hover {
+    color: var(--light-color);
+    background-color: var(--secondary-color);
+}
+
 label {
     padding-top: var(--spacing);
 }
@@ -37,4 +42,8 @@ label {
     font-size: var(--title-font-size);
     font-family: var(--title-font);
     padding: var(--spacing)
+}
+
+.svg {
+    margin-right:var(--spacing)
 }

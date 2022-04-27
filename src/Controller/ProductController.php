@@ -4,14 +4,17 @@ namespace App\Controller;
 
 use App\Model\ClothManager;
 use App\Model\MachineManager;
-use App\Model\ProductCategoryManager;
+use App\Model\ClothCategoryManager;
+use App\Model\MachineCategoryManager;
 
 class ProductController extends AbstractController
 {
     public function index(): string
     {
-        $categoryManager = new ProductCategoryManager();
-        $productCategories = $categoryManager->selectAll();
+        $clothCategoryManager = new ClothCategoryManager();
+        $clothCategories = $clothCategoryManager->selectAll();
+        $machCategoryManager = new MachineCategoryManager();
+        $machineCategories = $machCategoryManager->selectAll();
 
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectAll();
@@ -20,15 +23,23 @@ class ProductController extends AbstractController
 
         return $this->twig->render('Products/index.html.twig', [
             'clothes' => $clothes, 'machines' => $machines,
-            'categories' => $productCategories,
+            'clothCategories' => $clothCategories, 'machineCategories' => $machineCategories,
         ]);
     }
 
-    public function productCategory(): string
+    public function showClothByCategory(int $id): string
     {
-        $categoryManager = new ProductCategoryManager();
-        $productCategories = $categoryManager->selectAll();
+        $clothCategoryManager = new ClothCategoryManager();
+        $clothCategories = $clothCategoryManager->selectAll();
+        $machCategoryManager = new MachineCategoryManager();
+        $machineCategories = $machCategoryManager->selectAll();
 
-        return $this->twig->render('Item/index.html.twig', ['categories' => $productCategories]);
+        $clothManager = new ClothManager();
+        $clothes = $clothManager->selectAllById($id);
+
+        return $this->twig->render('Products/index.html.twig', [
+            'clothes' => $clothes,
+            'clothCategories' => $clothCategories, 'machineCategories' => $machineCategories,
+        ]);
     }
 }

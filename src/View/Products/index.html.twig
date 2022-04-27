@@ -1,6 +1,5 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/home.css">
 	<link rel="stylesheet" href="/assets/css/products.css">
 {% endblock %}
 {% block content %}
@@ -9,9 +8,14 @@
 	</div>
 	<div class="container justify-content-center categories mt-3">
 		<div class="row">
-			{% for category in categories %}
+			{% for clothCategory in clothCategories %}
 				<div class="col-lg-4 mt-1 mx-auto">
-					<button type="button" onclick="window.location.href='/tissus';" class="btn btn-lg w-100 m-1 bg-primary categories">{{ category.name }}</button>
+					<button type="button" onclick="window.location.href='/tissus';" class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</button>
+				</div>
+			{% endfor %}
+			{% for machineCategory in machineCategories %}
+				<div class="col-lg-4 mt-1 mx-auto">
+					<button type="button" onclick="window.location.href='/tissus';" class="btn btn-lg w-100 m-1 bg-primary categories">{{ machineCategory.name }}</button>
 				</div>
 			{% endfor %}
 		</div>
@@ -24,11 +28,11 @@
 				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2 mx-auto">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="Tissus">
+							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="{{ cloth.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
-								<div class="prix position-absolute bottom-0 end-0 m-2">
-									5 €</a>
+								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
+									{{ cloth.price }} €</a>
 							</div>
 						</figure>
 					</div>
@@ -36,11 +40,11 @@
 				{% for machine in machines %}
 					<div class="col-lg-3 mb-2 mx-auto">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="Machine">
+							<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ machine.name }}</h5>
-								<div class="prix position-absolute bottom-0 end-0 m-2">
-									100 €</a>
+								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
+									{{ machine.price }} €</a>
 							</div>
 						</figure>
 					</div>

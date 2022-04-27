@@ -3,21 +3,25 @@
 namespace App\Controller;
 
 use App\Model\ClothManager;
-use App\Model\ProductCategoryManager;
+use App\Model\ClothCategoryManager;
+use App\Model\MachineCategoryManager;
 
 class ClothController extends AbstractController
 {
     public function index(): string
     {
-        $categoryManager = new ProductCategoryManager();
-        $productCategories = $categoryManager->selectAll();
+        $clothCategoryManager = new ClothCategoryManager();
+        $clothCategories = $clothCategoryManager->selectAll();
+        $machCategoryManager = new MachineCategoryManager();
+        $machineCategories = $machCategoryManager->selectAll();
 
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectAll();
 
-        return $this->twig->render('Products/showTissus.html.twig', [
+        return $this->twig->render('Products/tissus.html.twig', [
             'clothes' => $clothes,
-            'categories' => $productCategories,
+            'clothCategories' => $clothCategories,
+            'machineCategories' => $machineCategories
         ]);
     }
 }
