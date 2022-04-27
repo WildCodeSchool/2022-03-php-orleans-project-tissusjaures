@@ -35,6 +35,31 @@ class AdminClothController extends AbstractController
             'errors' => $errors
         ]);
     }
+
+    public function editCloth($id): string
+    {
+        $errors = $clothItems = [];
+        $adminCategories = new CategoryManager();
+        $categories = $adminCategories->selectAll();
+        $clothList = new AdminClothManager();
+        $clothItems = $clothList->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $clothItems = array_map('trim', $_POST);
+            $clothItems['id'] = $id;
+            $errors = $this->clothValidate($clothItems, $categories);
+
+            if (empty($errors)) {
+                $clothList->update($clothItems);
+                header('Location: /admin/cloth/');
+            }
+        }
+        return $this->twig->render('Admin/Cloth/edit.html.twig', [
+            'categories' => $categories, 'clothItems' => $clothItems,
+            'errors' => $errors
+        ]);
+    }
+
     private function clothValidate(array $clothItems, array $categories): array
     {
         $errors = [];
