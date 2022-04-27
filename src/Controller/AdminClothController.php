@@ -7,6 +7,13 @@ use App\Model\CategoryManager;
 
 class AdminClothController extends AbstractController
 {
+    public function index(): string
+    {
+        $clothList = new AdminClothManager();
+        $clothItems = $clothList->selectAll();
+        return $this->twig->render('Admin/Cloth/show.html.twig', ['clothItems' => $clothItems]);
+    }
+
     public function addCloth()
     {
         $clothItems = $errors = [];
@@ -20,7 +27,7 @@ class AdminClothController extends AbstractController
             if (empty($errors)) {
                 $clothManager = new AdminClothManager();
                 $clothManager->insert($clothItems);
-                header('Location: /admin/cloth/add');
+                header('Location: /admin/cloth/');
             }
         }
         return $this->twig->render('Admin/Cloth/add.html.twig', [
