@@ -59,3 +59,12 @@ label {
 svg {
     margin-right:var(--spacing)
 }
+
+a {
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
