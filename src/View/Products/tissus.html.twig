@@ -5,14 +5,14 @@
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
 		<h1 class="text-light">
-		{% for clothCategory in clothCategories %}
-		{% if id == clothCategory.id %}
-		{{ clothCategory.name }}
-		{% endif %}
-		{% endfor %}
-		{% if id is empty %}
-		Tissus
-		{% endif %}
+			{% for clothCategory in clothCategories %}
+				{% if id == clothCategory.id %}
+					{{ clothCategory.name }}
+				{% endif %}
+			{% endfor %}
+			{% if id is empty %}
+				Tissus
+			{% endif %}
 		</h1>
 	</div>
 	<div class="container justify-content-center categories mt-3">
@@ -31,7 +31,15 @@
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
-			<h2 class="d-flex justify-content-center text-dark mb-3">Nos tissus
+			<h2 class="d-flex justify-content-center text-dark mb-3">
+				{% for clothCategory in clothCategories %}
+					{% if id == clothCategory.id %}
+						{{ clothCategory.name }}
+					{% endif %}
+				{% endfor %}
+				{% if id is empty %}
+					Tissus
+				{% endif %}
 			</h2>
 			<div class="row">
 				{% for cloth in clothes %}
@@ -40,8 +48,8 @@
 							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="Tissus">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
-								<div class="prix position-absolute bottom-0 end-0 m-2">
-									5 €</a>
+								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
+									{{ cloth.price }} €</a>
 							</div>
 						</figure>
 					</div>
