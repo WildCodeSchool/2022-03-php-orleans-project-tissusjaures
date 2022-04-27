@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
   `content` TEXT NOT NULL,
+  `is_monthly_tip` TINYINT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
   
