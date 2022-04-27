@@ -3,55 +3,46 @@
 namespace App\Controller;
 
 use App\Model\AdminMachineManager;
-use App\Model\CategoryManager;
 
-class AdminClothController extends AbstractController
+class AdminMachineController extends AbstractController
 {
     public function addMachine()
     {
-        $machines = $errors = [];
-        $adminCategories = new CategoryManager();
-        $categories = $adminCategories->selectAll();
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $machineManager = array_map('trim', $_POST);
-            $errors = $this->machineValidate($machines);
+            $machine = array_map('trim', $_POST);
+            $errors = $this->machineValidate($machine);
 
             if (empty($errors)) {
                 $machineManager = new AdminMachineManager();
-                $machineManager->insert($machines);
-                header('Location: /admin/machine/add');
+                $machineManager->insert($machine);
+                header('Location: /admin/machine/');
             }
         }
-        return $this->twig->render('Admin/machine/add.html.twig', [
-            'categories' => $categories, 'machines' => $machines,
-            'errors' => $errors
-        ]);
+        return $this->twig->render('Admin/Machine/add.html.twig');
     }
-    private function machineValidate(array $machines): array
+    private function machineValidate(array $machine): array
     {
         $errors = [];
-        if (empty($machines['name'])) {
+        if (empty($machine['name'])) {
             $errors[] = 'Le champ nom est obligatoire';
         }
 
         $nameMaxLength = 100;
-        if (strlen($machines['name']) > $nameMaxLength) {
+        if (strlen($machine['name']) > $nameMaxLength) {
             $errors[] = 'Le nom ne doit pas dépasser les 100 caractères';
         }
 
-        if (empty($machines['price'])) {
+        if (empty($machine['price'])) {
             $errors[] = 'Le champ prix est obligatoire';
         }
 
-        if (!is_float(floatval($machines['price']))) {
+        if (!is_float(floatval($machine['price']))) {
             $errors[] = 'Le prix doit être un nombre';
         }
 
-        if (empty($machines['description'])) {
+        if (empty($machine['description'])) {
             $errors[] = 'Le champ description est obligatoire';
         }
-
         return $errors;
     }
 }

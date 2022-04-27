@@ -13,11 +13,7 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'admin/cloth/add' => ['AdminClothController', 'addCloth' ],
+    'admin/cloth/add' => ['AdminClothController', 'addCloth'],
     'admin/cloth' => ['AdminClothController', 'index',],
-    'machines' => ['HomeMachineController', 'index',],
-    'machines/edit' => ['MachineController', 'edit', ['id']],
-    'machines/show' => ['MachineController', 'show', ['id']],
-    'machines/add' => ['MachineController', 'add',],
-    'machines/delete' => ['MachineController', 'delete',],
+    'admin/machine/add' => ['AdminMachineController', 'addMachine',],
 ];
