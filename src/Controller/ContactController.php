@@ -29,10 +29,10 @@ class ContactController extends AbstractController
             $errorsEmpty[] = "Le prénom est obligatoire";
         }
 
-
         if (empty($contact["lastname"])) {
             $errorsEmpty[] = "Le nom est obligatoire";
         }
+
         if (empty($contact["phone"])) {
             $errorsEmpty[] = "Le numéro de téléphone est obligatoire";
         }
@@ -59,6 +59,7 @@ class ContactController extends AbstractController
         if (strlen($contact["phone"]) > self::PHONE_LENGTH) {
             $errorsFormat[] = "Le numéro de téléphone doit faire moins de " . self::PHONE_LENGTH . " caractères";
         }
+
         if (!filter_var($contact['email'], FILTER_VALIDATE_EMAIL)) {
             $errorsFormat[] = "Mauvais format pour l'email " . $contact["email"];
         }
