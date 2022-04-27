@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	{# TODO : manage errors display #}
+	<div class="container">
+		<form method="POST">
+			<form>
+				{% if errors is not empty and errorsTwo is not empty %}
+					<div class="alert alert-danger">
+						{% for error in errors  %}
+							<p>{{error}}</p>
+						{% endfor %}
+						{% for errorTwo in errorsTwo  %}
+							<p>{{errorTwo}}</p>
+						{% endfor %}
+					</div>
+
+				{% elseif errors is not null and errorsTwo is not null %}
+					<p>
+						Le message a bien été envoyé.</p>
+				{% endif %}
+				<h1 class="d-flex justify-content-center">Formulaire de contact
+				</h1>
+				<div class="row">
+					<div class="col-lg-6 col-md-12 mt-2 ">
+						<label for="firstname" class="form-label">Prénom</label>
+						<input type="text" name="firstname" id="firstname" class="form-control" placeholder="Jean">
+					</div>
+					<div class="col-lg-6 col-md-12 mt-2">
+						<label for="lastname" class="form-label">Nom</label>
+						<input type="text" name="lastname" id="lastname" class="form-control" placeholder="Dupond">
+					</div>
+
+					<div class="col-lg-6 col-md-12 mt-2">
+						<label for="phone" class="form-label">Téléphone</label>
+						<input type="text" name="phone" id="phone" class="form-control" placeholder="0610506080">
+					</div>
+					<div class="col-lg-6 col-md-12 mt-2">
+						<label for="email" class="form-label">Mail</label>
+						<input type="text" name="email" id="email" class="form-control" placeholder="adresse.mail@hotmail.fr">
+					</div>
+					<div class="sendMessage mt-2">
+						<label for="object" class="form-label">Objet</label>
+						<select name="object" id="object" class="form-select ">
+							<option>Information
+							</option>
+							<option>Cours</option>
+							<option>Devis</option>
+							<option>Autre</option>
+						</select>
+					</div>
+					<div class="d-flex justify-content-center">
+						<textarea name="message" id="message" rows="8" cols="936" placeholder="Votre message..."></textarea>
+					</div>
+					<div class="d-flex justify-content-center mt-3">
+						<button type="submit" id='submit' class="btn btn-primary">Envoyer</button>
+					</div>
+				</div>
+			</form>
+		</form>
+	</div>
+{% endblock %}
