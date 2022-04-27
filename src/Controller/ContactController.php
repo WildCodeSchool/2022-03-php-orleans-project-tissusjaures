@@ -18,14 +18,13 @@ class ContactController extends AbstractController
         }
         return $this->twig->render('contact.html.twig', [
             'errorsEmpty' => $errorsEmpty,
-            'errorsFormat' => $errorsFormat,
+            'errorsFormat' => $errorsFormat
         ]);
     }
 
     private function validate(array $contact): array
     {
         $errorsEmpty = [];
-
         if (empty($contact["firstname"])) {
             $errorsEmpty[] = "Le prénom est obligatoire";
         }
@@ -46,13 +45,11 @@ class ContactController extends AbstractController
         if (empty($contact["message"])) {
             $errorsEmpty[] = "N'oubliez pas votre message";
         }
-
         return $errorsEmpty;
     }
     private function validateFormat(array $contact): array
     {
         $errorsFormat = [];
-
         if (strlen($contact["firstname"]) > self::NAME_LENGTH) {
             $errorsFormat[] = "Le prénom doit faire moins de " . self::NAME_LENGTH . " caractères";
         }
