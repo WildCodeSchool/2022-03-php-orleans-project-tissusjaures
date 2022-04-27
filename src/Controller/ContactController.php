@@ -37,7 +37,6 @@ class ContactController extends AbstractController
             $errorsEmpty[] = "Le numéro de téléphone est obligatoire";
         }
 
-
         if (empty($contact["email"])) {
             $errorsEmpty[] = "Le email est obligatoire";
         }

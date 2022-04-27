@@ -22,7 +22,6 @@ label, #objet {
 input, #object, textarea {
     border: none;
     box-shadow: var(--shadow);
-
 }
 
 #object {
