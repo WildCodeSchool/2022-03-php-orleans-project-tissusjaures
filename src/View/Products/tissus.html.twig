@@ -4,7 +4,16 @@
 {% endblock %}
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">Tissus</h1>
+		<h1 class="text-light">
+		{% for clothCategory in clothCategories %}
+		{% if id == clothCategory.id %}
+		{{ clothCategory.name }}
+		{% endif %}
+		{% endfor %}
+		{% if id is empty %}
+		Tissus
+		{% endif %}
+		</h1>
 	</div>
 	<div class="container justify-content-center categories mt-3">
 		<div class="row">

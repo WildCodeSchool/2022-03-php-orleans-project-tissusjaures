@@ -36,6 +36,7 @@ class ClothController extends AbstractController
 
         return $this->twig->render('Products/tissus.html.twig', [
             'clothes' => $clothes,
+            'id' => $id,
             'clothCategories' => $clothCategories,
             'machineCategories' => $machineCategories,
         ]);
