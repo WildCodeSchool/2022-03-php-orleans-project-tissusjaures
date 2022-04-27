@@ -1,7 +1,3 @@
-.footer {
-    height: 476px;
-}
-
 svg {
     width: 28px;
     height: 28px;
@@ -10,17 +6,11 @@ svg {
 
 h3 {
     padding-left: var(--spacing);
-
-}
-
-.div-footer {
-    height: 420px;
 }
 
 .title-footer {
     height: 42px;
     font-family: var(--title-font);
-
 }
 
 p {
@@ -37,24 +27,17 @@ p {
     fill: var(--admin-color);
 }
 
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
+tbody {
     border-color: var(--bs-secondary);
 }
 
 th {
-    text-align: center;
     width: 50%;
     font-size: var(--font-size-table);
     font-family: var(--title-font);
 }
 
 td {
-    text-align: center;
     font-size: var(--font-size);
     font-family: var(--text-font);
 }
@@ -70,15 +53,14 @@ td {
 }
 
 .map {
-    width: 582px;
-    height: 322px;
+    width: 100%;
+    height: 65%;
 }
 
-.container,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
+.map-md{
+    height:77%;
+}
+
+.container {
     max-width: 100%;
 }
