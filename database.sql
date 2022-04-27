@@ -134,7 +134,7 @@ Ce pied étant assez cher pour des travaux occasionnels, nous avons une astuces 
 
 Celle-ci consiste à coller sous un pied presseur normal, du ruban adhésif de peintre (ruban de masquage). Vous devrez ensuite couper le surplus de ruban adhésif afin qu’il ne dépasse pas du pied…
 
-….vous avez un pied pour coudre de la toile enduite.", 0),
+….vous avez un pied pour coudre de la toile enduite.", 0);
 
 
 
