@@ -65,9 +65,9 @@ class AdminClothController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $clothManager = new AdminClothManager();
-            $clothManager->delete($id);
+            $clothManager->delete((int)$id);
 
-            header('Location:/admin/cloth');
+            header('Location:/admin/cloth/');
         }
     }
 
