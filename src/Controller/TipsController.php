@@ -6,7 +6,7 @@ use App\Model\TipsManager;
 
 class TipsController extends AbstractController
 {
-    public function tips(): string
+    public function showTips(): string
     {
         $tipManager = new TipsManager();
         $tips = $tipManager->selectAll();
