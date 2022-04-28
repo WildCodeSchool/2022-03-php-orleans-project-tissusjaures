@@ -20,7 +20,7 @@ class AdminMachineController extends AbstractController
         }
         return $this->twig->render('Admin/Machine/add.html.twig');
     }
-    
+
     private function machineValidate(array $machine): array
     {
         $errors = [];
