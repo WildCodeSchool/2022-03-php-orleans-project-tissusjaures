@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
 
 :root {
+    --bs-primary-rgb: 255, 244, 226;
+    --bs-primary: #FFF4E2;
+    --bs-secondary-rgb: 245, 86, 81;
+    --bs-secondary:#f55651;
+    --bs-light-rgb:255, 251, 245;
+    --bs-light:#fffbf5;
+    --bs-dark-rgb: 77, 60, 60;
+    --bs-dark:#4d3c3c;
     --primary-color: #FFF4E2;
     --secondary-color: #F55651;
     --light-color: #FFFBF5;
@@ -38,12 +46,25 @@ label {
     padding-top: var(--spacing);
 }
 
-.addclothtitle {
+.addClothTitle {
     font-size: var(--title-font-size);
     font-family: var(--title-font);
     padding: var(--spacing)
 }
 
-.svg {
+.list-group-item:hover {
+    transform: scale(1.03);
+}
+
+svg {
     margin-right:var(--spacing)
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
 }
