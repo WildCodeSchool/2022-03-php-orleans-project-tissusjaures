@@ -9,8 +9,8 @@ class TipsController extends AbstractController
     public function showMonthlyTip(): string
     {
         $tipManager = new TipsManager();
-        $tips = $tipManager->selectByIsMonthlyTip();
+        $monthlyTip = $tipManager->selectMonthlyTip();
 
-        return $this->twig->render('Tips/tips.html.twig', ['tips' => $tips]);
+        return $this->twig->render('Tips/tips.html.twig', ['monthlyTip' => $monthlyTip]);
     }
 }
