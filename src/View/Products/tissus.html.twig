@@ -31,16 +31,6 @@
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
-			 <h2 class="d-flex justify-content-center text-dark mb-3">
-				{% for clothCategory in clothCategories %}
-					{% if id == clothCategory.id %}
-						{{ clothCategory.name }}
-					{% endif %}
-				{% endfor %}
-				{% if id is empty %}
-					Tissus
-				{% endif %}
-			</h2> 
 			<div class="row">
 				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2 mx-auto">
