@@ -22,7 +22,7 @@ class AdminMachineController extends AbstractController
             if (empty($errors)) {
                 $machineManager = new AdminMachineManager();
                 $machineManager->insert($machine);
-                header('Location: /admin/machine/');
+                header('Location: /admin/machines/');
             }
         }
         return $this->twig->render('Admin/Machine/add.html.twig');

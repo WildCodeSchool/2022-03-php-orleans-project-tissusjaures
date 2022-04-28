@@ -27,7 +27,7 @@ class AdminClothController extends AbstractController
             if (empty($errors)) {
                 $clothManager = new AdminClothManager();
                 $clothManager->insert($clothItems);
-                header('Location: /admin/cloth/');
+                header('Location: /admin/tissus/');
             }
         }
         return $this->twig->render('Admin/Cloth/add.html.twig', [
@@ -51,7 +51,7 @@ class AdminClothController extends AbstractController
 
             if (empty($errors)) {
                 $clothList->update($clothItems);
-                header('Location: /admin/cloth/');
+                header('Location: /admin/tissus/');
             }
         }
         return $this->twig->render('Admin/Cloth/edit.html.twig', [
@@ -67,7 +67,7 @@ class AdminClothController extends AbstractController
             $clothManager = new AdminClothManager();
             $clothManager->delete((int)$id);
 
-            header('Location:/admin/cloth/');
+            header('Location:/admin/tissus/');
         }
     }
 
