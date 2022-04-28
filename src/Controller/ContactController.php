@@ -4,22 +4,23 @@ namespace App\Controller;
 
 class ContactController extends AbstractController
 {
-    protected const NAME_LENGTH = 255;
+    protected const NAME_LENGTH = 100;
     protected const PHONE_LENGTH = 50;
 
     public function index(): string
     {
-        $errorsEmpty = null;
-        $errorsFormat = null;
+        $errorsEmpty = [];
+        $errorsFormat = [];
+        $errors = [];
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $contact = array_map("trim", $_POST);
             $errorsEmpty = $this->validate($contact);
             $errorsFormat = $this->validateFormat($contact);
+            $errors = [...$errorsEmpty, ...$errorsFormat];
         }
         return $this->twig->render('contact.html.twig', [
-            'errorsEmpty' => $errorsEmpty,
-            'errorsFormat' => $errorsFormat
+            'errors' => $errors,
         ]);
     }
 

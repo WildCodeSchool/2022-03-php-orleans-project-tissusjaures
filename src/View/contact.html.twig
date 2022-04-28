@@ -5,17 +5,14 @@
 {% block content %}
 	<div class="container">
 		<form method="POST">
-			{% if errorsEmpty is not empty and errorsFormat is not empty %}
+			{% if errors is not empty %}
 				<div class="alert alert-danger">
-					{% for errorEmpty in errorsEmpty  %}
-						<p>{{errorEmpty}}</p>
-					{% endfor %}
-					{% for errorFormat in errorsFormat  %}
-						<p>{{errorFormat}}</p>
+					{% for error in errors %}
+						<p>{{error}}</p>
 					{% endfor %}
 				</div>
 
-			{% elseif errorsEmpty is not null and errorsFormat is not null %}
+			{% elseif errors is not empty %}
 				<p>
 					Le message a bien été envoyé.</p>
 			{% endif %}
