@@ -7,7 +7,7 @@
 	<div class="container d-flex flex-column align-items-end mx-auto">
 		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
 			<h2 class="addMachineTitle mb-0">Machines</h2>
-			<a href="/admin/machine/add" class="mt-0 btn d-flex btn-lg justify-content-around align-items-center align-self-center">
+			<a href="/admin/machines/ajouter" class="mt-0 btn d-flex btn-lg justify-content-around align-items-center align-self-center">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewbox="0 0 16 16">
 					<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 					<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -16,7 +16,7 @@
 		<ul class="list-group col-8 mx-auto mt-1">
 			{% for machine in machines %}
 				<li class="list-group-item py-1 px-2 my-1 border-0 bg-primary text-dark shadow-sm d-flex justify-content-between align-items-center">{{ machine.name }}
-					<form action="/admin/machine/delete" method="POST">
+					<form action="/admin/machine/supprimer" method="POST">
 						<input type="hidden" name="id" value="{{ machine.id }}">
 						<button class="btn d-flex btn-md justify-content-around align-items-center align-self-center my-1">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewbox="0 0 16 16">

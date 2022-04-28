@@ -22,7 +22,7 @@ class AdminMachineController extends AbstractController
             if (empty($errors)) {
                 $machineManager = new AdminMachineManager();
                 $machineManager->insert($machine);
-                header('Location: /admin/machine/');
+                header('Location: /admin/machines/');
             }
         }
         return $this->twig->render('Admin/Machine/add.html.twig');
@@ -32,8 +32,8 @@ class AdminMachineController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $clothManager = new AdminMachineManager();
-            $clothManager->delete((int)$id);
+            $machineManager = new AdminMachineManager();
+            $machineManager->delete((int)$id);
 
             header('Location:/admin/machine/');
         }
