@@ -4,10 +4,6 @@ svg {
     fill: var(--bs-secondary);
 }
 
-h3 {
-    padding-left: var(--spacing);
-}
-
 .title-footer {
     height: 42px;
     font-family: var(--title-font);
@@ -44,7 +40,6 @@ td {
 
 th,
 td {
-    padding: 2px;
     letter-spacing: 2px;
 }
 
