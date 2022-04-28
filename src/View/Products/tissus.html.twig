@@ -15,23 +15,23 @@
 			{% endif %}
 		</h1>
 	</div>
-	<div class="container justify-content-center categories mt-3">
-		<div class="row">
+	<div class="container categories mt-3">
+		<div class="row justify-content-center">
 			{% for clothCategory in clothCategories %}
-				<div class="col-lg-4 mt-1 mx-auto">
-					<button type="button" onclick="window.location.href='/tissus/category?id={{ clothCategory.id }}';" class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</button>
+				<div class="col-lg-3 mt-1 w-25">
+					<a href='/tissus/category?id={{ clothCategory.id }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</a>
 				</div>
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
-				<div class="col-lg-4 mt-1 mx-auto">
-					<button type="button" href="tissus.html.twig" class="btn btn-lg w-100 m-1 bg-primary categories">{{ machineCategory.name }}</button>
+				<div class="col-lg-3 mt-1 ">
+					<a href='/machines' class="btn btn-lg w-100 m-1 bg-primary categories">{{ machineCategory.name }}</a>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
-			<h2 class="d-flex justify-content-center text-dark mb-3">
+			 <h2 class="d-flex justify-content-center text-dark mb-3">
 				{% for clothCategory in clothCategories %}
 					{% if id == clothCategory.id %}
 						{{ clothCategory.name }}
@@ -40,7 +40,7 @@
 				{% if id is empty %}
 					Tissus
 				{% endif %}
-			</h2>
+			</h2> 
 			<div class="row">
 				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2 mx-auto">

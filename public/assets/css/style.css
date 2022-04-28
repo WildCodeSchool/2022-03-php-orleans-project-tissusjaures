@@ -20,7 +20,11 @@
     --header-font-size: 96px;
     --title-font-size: 36px;
     --font-size-nav: 28px;
-    --font-size_footer: 24px;
+
+    --font-size-footer: 20px;
+    --font-size-table:22px;
+
+
     --spacing:8px;
     --spacing2:calc(--spacing * 2);
     --spacing3:calc(--spacing * 3);
@@ -29,8 +33,4 @@
     --shadow: 2px 1px 4px var(--shadow-color);
 
     line-height: 1.5;
-}
-
-body {
-    background-color: var(--bs-light);
 }
