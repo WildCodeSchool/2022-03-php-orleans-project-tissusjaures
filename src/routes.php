@@ -18,4 +18,6 @@ return [
     'admin/cloth/add' => ['AdminClothController', 'addCloth' ],
     'admin/cloth/edit' => ['AdminClothController', 'editCloth', ['id']],
     'admin/cloth/delete' => ['AdminClothController', 'deleteCloth', ],
+    'admin/machine' => ['AdminMachineController', 'index',],
+    'admin/machine/add' => ['AdminMachineController', 'addMachine',],
 ];
