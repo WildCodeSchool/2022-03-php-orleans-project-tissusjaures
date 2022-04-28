@@ -101,6 +101,23 @@ INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sal
 (4, "Machine Singer", "Une magnifique machine Singer", 10000, 'public/assets/images/mchn1', 0, 1);
 
 -- -----------------------------------------------------
+-- Table `tissus_jaures`.`tips_and_tricks_categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips_and_tricks_categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Content `tissus_jaures`.`tips_and_tricks_categories`
+-- -----------------------------------------------------
+INSERT INTO `tips_and_tricks_categories` (`id`, `name`) VALUES
+(1, "Astuces"),
+(2, "Tutoriels"),
+(3, "Lexique");
+
+-- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
@@ -108,7 +125,14 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
   `content` TEXT NOT NULL,
-  PRIMARY KEY (`id`))
+  `tips_and_tricks_categories_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `tips_and_tricks_categories_id`),
+  INDEX `fk_tutorials_tips_and_tricks_categories_idx` (`tips_and_tricks_categories_id` ASC) VISIBLE,
+  CONSTRAINT `fk_tutorials_tips_and_tricks_categories`
+    FOREIGN KEY (`tips_and_tricks_categories_id`)
+    REFERENCES `tissus_jaures`.`tips_and_tricks_categories` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
   
 -- -----------------------------------------------------
@@ -118,7 +142,14 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
-  PRIMARY KEY (`id`))
+  `tips_and_tricks_categories_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `tips_and_tricks_categories_id`),
+  INDEX `fk_lexicon_tips_and_tricks_categories_idx` (`tips_and_tricks_categories_id` ASC) VISIBLE,
+  CONSTRAINT `fk_lexicon_tips_and_tricks_categories`
+    FOREIGN KEY (`tips_and_tricks_categories_id`)
+    REFERENCES `tissus_jaures`.`tips_and_tricks_categories` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -128,7 +159,14 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `content` TEXT NOT NULL,
-  PRIMARY KEY (`id`))
+    `tips_and_tricks_categories_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `tips_and_tricks_categories_id`),
+  INDEX `fk_tips_tips_and_tricks_categories_idx` (`tips_and_tricks_categories_id` ASC) VISIBLE,
+  CONSTRAINT `fk_tips_tips_and_tricks_categories`
+    FOREIGN KEY (`tips_and_tricks_categories_id`)
+    REFERENCES `tissus_jaures`.`tips_and_tricks_categories` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;

@@ -17,7 +17,7 @@
 							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="{{ cloth.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark mb-4">{{ clothCategory.name }}</h5>
-								<a href="/tissus"class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
+								<a href="/tissus/category?id={{ clothCategory.id }}"class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 						</figure>
 					</div>
 				{% endfor %}
@@ -27,7 +27,7 @@
 							<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark">{{ machineCategory.name }}</h5>
-								<a href="/tissus"class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
+								<a href="/machines"class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 						</figure>
 					</div>
 				{% endfor %}
