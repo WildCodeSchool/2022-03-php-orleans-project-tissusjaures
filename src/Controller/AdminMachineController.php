@@ -35,7 +35,7 @@ class AdminMachineController extends AbstractController
             $machineManager = new AdminMachineManager();
             $machineManager->delete((int)$id);
 
-            header('Location:/admin/machine/');
+            header('Location:/admin/machines/');
         }
     }
 
