@@ -13,7 +13,8 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'admin/cloth/add' => ['AdminClothController', 'addCloth'],
     'admin/cloth' => ['AdminClothController', 'index',],
-    'admin/machine/add' => ['AdminMachineController', 'addMachine',],
+    'admin/cloth/add' => ['AdminClothController', 'addCloth' ],
+    'admin/cloth/edit' => ['AdminClothController', 'editCloth', ['id']],
+    'admin/cloth/delete' => ['AdminClothController', 'deleteCloth', ],
 ];
