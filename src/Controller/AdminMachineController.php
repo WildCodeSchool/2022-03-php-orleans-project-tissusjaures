@@ -28,6 +28,17 @@ class AdminMachineController extends AbstractController
         return $this->twig->render('Admin/Machine/add.html.twig');
     }
 
+    public function deleteMachine(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $clothManager = new AdminMachineManager();
+            $clothManager->delete((int)$id);
+
+            header('Location:/admin/machine/');
+        }
+    }
+
     private function machineValidate(array $machine): array
     {
         $errors = [];
