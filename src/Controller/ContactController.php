@@ -6,6 +6,7 @@ class ContactController extends AbstractController
 {
     protected const NAME_LENGTH = 255;
     protected const PHONE_LENGTH = 50;
+
     public function index(): string
     {
         $errorsEmpty = null;
@@ -38,7 +39,7 @@ class ContactController extends AbstractController
         }
 
         if (empty($contact["email"])) {
-            $errorsEmpty[] = "Le email est obligatoire";
+            $errorsEmpty[] = "L'email est obligatoire";
         }
 
         if (empty($contact["message"])) {

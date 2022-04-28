@@ -1,49 +1,21 @@
 * {
     font-family: var(--text-font);
-    font-size: var(--font-size);
 }
 
 h1 {
-    margin-top: var(--spacing);
     font-family: var(--title-font);
-    font-size: var(--title-font-size);
-    color:var(--bs-dark);
-}
-
-label, #objet {
-    margin-top: var(--spacing);
-    color: var(--bs-dark);  
-}
-
-.form-control {
-    border: none;
 }
 
 input, #object, textarea {
-    border: none;
     box-shadow: var(--shadow);
 }
 
-#object {
-    margin-bottom:var(--spacing);
-}
-
 .btn {
-    color:var(--bs-primary);
-    background-color: var(--bs-secondary);
-    border-color: var(--bs-secondary);
     opacity: 90%;
-    padding: 15px 25px;
-    font-size: 20px;
 }
 
 .btn:hover {
     opacity: 100%;
-    color:var(--bs-primary);
-    background-color: var(--bs-secondary);
-    border-color: var(--bs-secondary);
 }
 
-textarea {
-    padding-left: var(--spacing);
-}
+
