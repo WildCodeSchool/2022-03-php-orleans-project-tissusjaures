@@ -6,6 +6,13 @@ use App\Model\AdminMachineManager;
 
 class AdminMachineController extends AbstractController
 {
+    public function index(): string
+    {
+        $machineManager = new AdminMachineManager();
+        $machines = $machineManager->selectAll();
+        return $this->twig->render('Admin/Machine/show.html.twig', ['machines' => $machines]);
+    }
+
     public function addMachine()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
