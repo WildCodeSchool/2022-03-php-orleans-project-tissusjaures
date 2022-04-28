@@ -19,5 +19,5 @@ return [
     'admin/cloth/delete' => ['AdminClothController', 'deleteCloth', ],
     'admin/machine' => ['AdminMachineController', 'index',],
     'admin/machine/add' => ['AdminMachineController', 'addMachine',],
-    'admin/machine/delete' => ['AdminMachineController', 'deleteMachine',],
+    'admin/machine/supprimer' => ['AdminMachineController', 'deleteMachine',],
 ];
