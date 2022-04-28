@@ -7,13 +7,14 @@
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
 		<h1 class="text-light">Bienvenue chez Tissus Jaurès</h1>
 	</div>
-	<div class="container boutique">
+	<div class="container">
+	<div class="ms-4 me-5 boutique">
 		<section id="boutique" class="boutique">
 			<h2 class="text-center text-dark mt-3">Notre boutique
 			</h2>
 			<div class="boutique-description d-flex justify-content-center w-auto">
-				<img src="https://picsum.photos/id/239/350/200" class="boutique-img m-2" alt="boutique">
-				<p class="m-3 mt-5 boutique-text text-dark">
+				<img src="https://picsum.photos/id/239/350/200" class="boutique-img ms-4" alt="boutique">
+				<p class="ms-4 mt-5 boutique-text text-dark">
 					Vous trouverez dans notre très vaste magasin, des milliers de mètres de Tissus d'Ameublement, 
 															de Voilages, de Tissus Couture et Haute Couture, une très grande Mercerie et un large choix en Décoration, 
 															rideaux prêts à poser…
@@ -22,9 +23,9 @@
 			</div>
 		</section>
 	</div>
-	<div class="container cards-new-arrivals">
+	<div class="cards-new-arrivals">
 		<section id="new-arrivals">
-			<h2 class="text-center text-dark">Nos nouveautées
+			<h2 class="text-center text-dark">Nos nouveautés
 			</h2>
 			<div class="row">
 				{% for cloth in clothes %}
@@ -35,7 +36,7 @@
 								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
 								<p class="card-text text-dark mb-5">{{ cloth.description }}
 								</p> 
-								<a href="#" class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
+								<a href="/tissus'"class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 							</div>
 						</figure>
 					</div>
@@ -48,12 +49,13 @@
 								<h5 class="card-title text-dark">{{ machine.name }}</h5>
 								<p class="card-text text-dark mb-5">{{ machine.description }}
 								</p> 
-								<a href="#" class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
+								<a href='/machines' class="btn text-light bg-secondary position-absolute bottom-0 end-0 m-2">Découvrir</a>
 							</div>
 						</figure>
 					</div>
 				{% endfor %}
 			</div>
 		</section>
+	</div>
 	</div>
 {% endblock %}
