@@ -3,6 +3,19 @@
 	<link rel="stylesheet" href="/assets/css/tips.css">
 {% endblock %}
 {% block content %}
-
-
+	<div class="container-fluid d-flex justify-content-center align-items-center header">
+		<h1 class="text-light">Bienvenue chez Tissus Jaurès</h1>
+	</div>
+	<div class="monthlyTip">
+		<h2 class="title d-flex justify-content-center mt-4">Astuce du mois</h2>
+		{% for tip in tips %}
+		<div class="monthlyTip d-flex justify-content-center ms-4">
+			<img class="img me-4" src="{{ tip.image }}" alt="ourlet">
+			<div class="textTip">
+			<h3>{{ tip.name  }}</h3>
+			<p>{{ tip.content }}</p>
+			</div>
+			</div>
+		{% endfor %}
+	</div>
 {% endblock %}

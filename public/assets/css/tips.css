@@ -1,0 +1,25 @@
+.header {
+    background-image: url("../images/tipheader.jpg");
+    background-position: bottom;
+    height: 300px;
+}
+
+.header h1 {
+    font-family: var(--header-font);
+    font-size: var(--header-font-size);
+    text-shadow: 2px 2px var(--bs-dark);
+}
+
+.title {
+    font-family: var(--title-font);
+    font-size: var(--title-font-size);
+}
+
+.img{
+    height: 10%;
+    width: 10%;
+}
+
+.textTip {
+    width: 40%;
+}

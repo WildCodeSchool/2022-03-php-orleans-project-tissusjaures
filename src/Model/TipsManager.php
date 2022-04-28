@@ -6,7 +6,7 @@ class TipsManager extends AbstractManager
 {
     public const TABLE = 'tips';
 
-    public function selectByIsMonthlyTip(): array
+    public function selectByIsMonthlyTip(): array|false
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE is_monthly_tip = 1");

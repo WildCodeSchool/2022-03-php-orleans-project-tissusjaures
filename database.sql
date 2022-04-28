@@ -119,14 +119,14 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-INSERT INTO `tips` (`id`, `name`, `image`, `content`, `is_monthly_tips`) VALUES
-(1, "L'ourlet parfait", "public/assets/images/mchn1", "Plutôt que d’utiliser plusieurs fois votre mètre pour vérifier que votre ourlet est égal en tout point, utilisez plutôt cette astuce :
+INSERT INTO `tips` (`id`, `name`, `image`, `content`, `is_monthly_tip`) VALUES
+(1, "L'ourlet parfait", "/assets/images/imgtip.jpg", "Plutôt que d’utiliser plusieurs fois votre mètre pour vérifier que votre ourlet est égal en tout point, utilisez plutôt cette astuce :
 
 Faites un cran dans un rectangle de carton a la hauteur désirée et reportez votre ourlet grâce à un crayon en utilisant la marque du carton !", 1),
-(2, "Détacher un linge", "public/assets/images/mchn1", "Epongez la tâche avec un papier absorbant et un fer chaud. Frottez ensuite avec du savon de Marseille sec que vous laisserez agir quelques minutes. Rincez à l'eau chaude.", 0),
-(3, "Taches de bougie", "public/assets/images/mchn1", "Une tâche de bougie sur votre vêtement ou votre sol? Prenez un buvard et déposé le sur la tâche. Passez ensuite un fer à repasser bien chaud sur le buvard. La cire va se décoller se venir se déposer sur le buvard. ", 0),
-(4, "Taches de peintures", "public/assets/images/mchn1", "Trempez les vêtements tachés de peinture immédiatement dans du lait puis lavez normalement. Cette astuce est notamment utilisée dans les écoles maternelles.", 0),
-(5, "Coudre de la toile cirée", "public/assets/images/mchn1", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
+(2, "Détacher un linge", "/assets/images/mchn1", "Epongez la tâche avec un papier absorbant et un fer chaud. Frottez ensuite avec du savon de Marseille sec que vous laisserez agir quelques minutes. Rincez à l'eau chaude.", 0),
+(3, "Taches de bougie", "/assets/images/mchn1", "Une tâche de bougie sur votre vêtement ou votre sol? Prenez un buvard et déposé le sur la tâche. Passez ensuite un fer à repasser bien chaud sur le buvard. La cire va se décoller se venir se déposer sur le buvard. ", 0),
+(4, "Taches de peintures", "/assets/images/mchn1", "Trempez les vêtements tachés de peinture immédiatement dans du lait puis lavez normalement. Cette astuce est notamment utilisée dans les écoles maternelles.", 0),
+(5, "Coudre de la toile cirée", "/assets/images/mchn1", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
 
 Les toiles enduites ou cirées collent au pied. Voilà pourquoi lorsque vous les piquez avec un pied de biche normal, vous obtenez des plis non désirés et autres bonnes surprises!
 
