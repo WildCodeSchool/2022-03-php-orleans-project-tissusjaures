@@ -11,12 +11,29 @@
 }
 
 .title {
-    font-family: var(--title-font);
+    font-family: var(--header-font);
     font-size: var(--title-font-size);
 }
 
 .img{
-    height: 50%;
-    width: 50%;
+    height: 85%;
+    width: 85%;
+}
+
+.monthlyTip {
+    box-shadow: var(--shadow);
+}
+
+.textTip {
+    font-family: var(--title-font); 
+}
+
+.textMonthly {
+    font-family: var(--text-font);
+    letter-spacing: 1px;
+}
+
+.monthlyTitle {
+    font-size: var(--font-size-link);
 }
 
