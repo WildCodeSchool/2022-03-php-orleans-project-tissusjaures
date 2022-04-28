@@ -9,7 +9,7 @@ svg {
     font-family: var(--title-font);
 }
 
-p {
+p.footer {
     font-size: var(--font-size-footer);
     font-family: var(--text-font);
 }
