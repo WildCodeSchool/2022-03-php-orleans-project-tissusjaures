@@ -100,7 +100,6 @@ INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sal
 (3, "Machine Singer", "Une superbe machine Singer", 150.5, 'public/assets/images/mchn1', 1, 0),
 (4, "Machine Singer", "Une magnifique machine Singer", 10000, 'public/assets/images/mchn1', 0, 1);
 
-
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips_and_tricks_categories`
 -- -----------------------------------------------------
@@ -113,10 +112,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`tips_and_tricks_categories`
 -- -----------------------------------------------------
-INSERT INTO `tips_and_tricks_categories` (`id`, `name`, `image`) VALUES
-(1, "Astuces")
-(2, "Tutoriels")
-(2, "Lexique");
+INSERT INTO `tips_and_tricks_categories` (`id`, `name`) VALUES
+(1, "Astuces"),
+(2, "Tutoriels"),
+(3, "Lexique");
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
@@ -133,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
     FOREIGN KEY (`tips_and_tricks_categories_id`)
     REFERENCES `tissus_jaures`.`tips_and_tricks_categories` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION))
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
   
 -- -----------------------------------------------------
@@ -150,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
     FOREIGN KEY (`tips_and_tricks_categories_id`)
     REFERENCES `tissus_jaures`.`tips_and_tricks_categories` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION))
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -167,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
     FOREIGN KEY (`tips_and_tricks_categories_id`)
     REFERENCES `tissus_jaures`.`tips_and_tricks_categories` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION))
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
