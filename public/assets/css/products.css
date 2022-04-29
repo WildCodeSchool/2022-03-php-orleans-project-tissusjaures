@@ -23,6 +23,7 @@ h3 {
     box-shadow: var(--shadow);
     position: initial;
     font-family: var(--text-font);
+    font-size: var(--font-size);
 }
 
 .btn:hover {

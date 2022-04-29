@@ -1,0 +1,19 @@
+* {
+    font-family: var(--text-font);
+}
+
+h1 {
+    font-family: var(--title-font);
+}
+
+input, #object, textarea {
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    opacity: 90%;
+}
+
+.btn:hover {
+    opacity: 100%;
+}

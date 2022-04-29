@@ -18,4 +18,16 @@ class AdminMachineManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function update(array $machine): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `price` = :price, 
+        `description` = :description WHERE id=:id");
+        $statement->bindValue('id', $machine['id'], \PDO::PARAM_INT);
+        $statement->bindValue('name', $machine['name'], \PDO::PARAM_STR);
+        $statement->bindValue('price', $machine['price'], \PDO::PARAM_STR);
+        $statement->bindValue('description', $machine['description'], \PDO::PARAM_STR);
+
+        return $statement->execute();
+    }
 }
