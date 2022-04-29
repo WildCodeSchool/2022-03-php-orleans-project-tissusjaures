@@ -1,24 +1,57 @@
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
-    max-width:100%;
+svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--bs-secondary);
 }
 
-.row {
-    margin: 2rem;
+.title-footer {
+    height: 42px;
+    font-family: var(--title-font);
 }
 
-footer {
+p.footer {
     font-size: var(--font-size-footer);
+    font-family: var(--text-font);
 }
 
-small, .copy {
+.icon-facebook {
+    margin-left: 1rem;
+    fill: var(--bs-secondary);
+}
+
+.icon-facebook:hover {
+    fill: var(--admin-color);
+}
+
+tbody {
+    border-color: var(--bs-secondary);
+}
+
+th {
+    width: 50%;
+    font-size: var(--font-size-table);
+    font-family: var(--title-font);
+}
+
+td {
     font-size: var(--font-size);
+    font-family: var(--text-font);
 }
 
-.horaires {
-    font-size: var(--title-font-size);
-    height: 50px;
+th,
+td {
+    letter-spacing: 2px;
 }
 
-h3 {
-    padding-left: var(--spacing);
+.close {
+    color: var(--bs-secondary);
+}
+
+.map {
+    width: 100%;
+    height: 65%;
+}
+
+.map-md{
+    height:77%;
 }

@@ -1,0 +1,7 @@
+{% extends 'adminLayout.html.twig' %}
+{% block title %}
+  {{ parent() }} - Édition d'un Tissu
+{% endblock %}
+{% block content %}
+  {% include 'Admin/Cloth/_form.html.twig' with {'title_name' : 'Éditer un tissu','button_name' : 'Éditer'} %}
+{% endblock %}
