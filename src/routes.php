@@ -16,4 +16,5 @@ return [
     'admin/machines' => ['AdminMachineController', 'index',],
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
+    'astuces' => ['TipsController', 'showMonthlyTip'],
 ];
