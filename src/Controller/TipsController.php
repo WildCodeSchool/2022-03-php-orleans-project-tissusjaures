@@ -6,11 +6,11 @@ use App\Model\TipsManager;
 
 class TipsController extends AbstractController
 {
-    public function showMonthlyTip(): string
+    public function showTips(): string
     {
         $tipManager = new TipsManager();
         $monthlyTip = $tipManager->selectMonthlyTip();
-
-        return $this->twig->render('Tips/tips.html.twig', ['monthlyTip' => $monthlyTip]);
+        $tips = $tipManager->selectTips();
+        return $this->twig->render('Tips/tips.html.twig', ['monthlyTip' => $monthlyTip, 'tips' => $tips]);
     }
 }
