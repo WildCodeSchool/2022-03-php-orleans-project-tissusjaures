@@ -17,5 +17,5 @@ return [
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
     'contact' => ['ContactController', 'index',],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
-
+    'astuces' => ['TipsController', 'showMonthlyTip'],
 ];
