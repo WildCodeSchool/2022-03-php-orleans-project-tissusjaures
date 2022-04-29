@@ -3,13 +3,18 @@
 namespace App\Controller;
 
 use App\Model\TutorialManager;
+use App\Model\TipCategoryManager;
 
 class TutorialController extends AbstractController
 {
     public function index(): string
     {
         $tutorialManager = new TutorialManager();
+        $tipCategoryManager = new TipCategoryManager();
         $tutorials = $tutorialManager->selectAll();
-        return $this->twig->render('Tutorials/index.html.twig', ['tutorials' => $tutorials]);
+        $tipCategories = $tipCategoryManager->selectAll();
+        return $this->twig->render('/Tips/Tutorials/index.html.twig', ['tutorials' => $tutorials,
+        'tipCategories' => $tipCategories
+    ]);
     }
 }
