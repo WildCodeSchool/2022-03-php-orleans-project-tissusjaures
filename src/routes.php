@@ -9,12 +9,16 @@
 return [
     '' => ['HomeController', 'index',],
     'produits' => ['ProductController', 'index',],
+    'tissus' => ['ClothController', 'index',],
+    'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
     'admin/tissus' => ['AdminClothController', 'index',],
     'admin/tissus/ajouter' => ['AdminClothController', 'addCloth',],
     'admin/tissus/editer' => ['AdminClothController', 'editCloth', ['id']],
     'admin/tissus/supprimer' => ['AdminClothController', 'deleteCloth',],
     'admin/machines' => ['AdminMachineController', 'index',],
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
+    'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'astuces' => ['TipsController', 'showTips'],
+    'contact' => ['ContactController', 'index',],
 ];

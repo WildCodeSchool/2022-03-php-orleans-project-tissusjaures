@@ -28,6 +28,28 @@ class AdminMachineController extends AbstractController
         return $this->twig->render('Admin/Machine/add.html.twig');
     }
 
+    public function editMachine($id): string
+    {
+        $errors = $machine = [];
+        $machineManager = new AdminMachineManager();
+        $machine = $machineManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $machine = array_map('trim', $_POST);
+            $machine['id'] = $id;
+            $errors = $this->machineValidate($machine);
+
+            if (empty($errors)) {
+                $machineManager->update($machine);
+                header('Location: /admin/machines/');
+            }
+        }
+        return $this->twig->render('Admin/Machine/edit.html.twig', [
+            'machine' => $machine,
+            'errors' => $errors
+        ]);
+    }
+
     public function deleteMachine(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
