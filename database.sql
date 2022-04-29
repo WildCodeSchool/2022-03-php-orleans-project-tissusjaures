@@ -133,6 +133,14 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -- -----------------------------------------------------
+-- -- Content `tissus_jaures`.`lexicon`
+-- -- -----------------------------------------------------
+INSERT INTO `lexicon` (`id`, `name`, `description`, `image`) VALUES
+(1, "lexicon", "Base couture", "Pour bien débuter" , 'public/assets/images/mchn1', 0, 0),
+(2, "lexicon", "Lexique couture", "En savoir plus sur la couture" , 'public/assets/images/mchn1', 1, 1),
+(3, "lexicon", "Lexique Patchwork", "Vous vous y connaissez en patchwork ?" , 'public/assets/images/mchn1', 1, 0)
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
