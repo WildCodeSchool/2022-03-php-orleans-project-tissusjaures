@@ -56,7 +56,10 @@ label {
     transform: scale(1.03);
 }
 
-svg {
+.adminsvg {
+    width: 20px;
+    height: 20px;
+    fill: var(--bs-light);
     margin-right:var(--spacing)
 }
 
