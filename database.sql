@@ -28,12 +28,32 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 (5, "Voilage", 'public/assets/images/tss1'),
 (6, "Décoration", 'public/assets/images/tss1');
 
+-- -----------------------------------------------------
+-- Table `tissus_jaures`.`machine_categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machine_categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `tissus_jaures`.`machine_categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machine_categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`machine_categories`
 -- -----------------------------------------------------
 INSERT INTO `machine_categories` (`id`, `name`, `image`) VALUES
 (1, "Machines à coudre", 'public/assets/images/mchn1');
+
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
@@ -70,6 +90,7 @@ INSERT INTO `cloth` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`,
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
@@ -100,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
   `content` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
-
+  
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
@@ -108,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
-  `image` VARCHAR(100)NULL,
+  `image` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -125,4 +146,7 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
 
