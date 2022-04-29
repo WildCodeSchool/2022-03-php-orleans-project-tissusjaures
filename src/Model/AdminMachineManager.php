@@ -8,7 +8,8 @@ class AdminMachineManager extends AbstractManager
 
     public function selectOneById(int $id): array|false
     {
-        $statement = $this->pdo->prepare("SELECT m.name, m.price, m.description FROM " . static::TABLE . " AS m" . " WHERE m.id=:id");
+        $statement = $this->pdo->prepare("SELECT m.name, m.price, m.description FROM " . static::TABLE . " AS m"
+        . " WHERE m.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
@@ -35,7 +36,7 @@ class AdminMachineManager extends AbstractManager
         $statement->bindValue('id', $machine['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $machine['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $machine['price'], \PDO::PARAM_STR);
-        $statement->bindValue('description', $machine['description'], \PDO::PARAM_INT);
+        $statement->bindValue('description', $machine['description'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }
