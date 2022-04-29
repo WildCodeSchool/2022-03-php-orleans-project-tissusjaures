@@ -1,1 +1,27 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/tutorials.css">
+{% endblock %}
+{% block content %}
+<div class="container-fluid d-flex justify-content-center align-items-center header">
+	<h1 class="text-light">Tutoriels</h1>
+</div>
+<div class="container cards-products mt-3">
+	<section id="products">
+		<h2 class="d-flex justify-content-center text-dark mb-3">Tutoriels
+		</h2>
+		<div class="row">
+			{% for tutorial in tutorials %}
+				<div class="col-lg-3 mb-2 mx-auto">
+					<figure class="card h-100">
+						<img src="{{tutorial.image}}" class="card-img-top" alt="{{ tutorial.name }}">
+						<div class="card-body bg-primary">
+							<h5 class="card-title text-dark">{{ tutorial.name }}</h5>
+						</div>
+					</figure>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+</div>
+{% endblock %}
