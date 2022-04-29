@@ -3,53 +3,35 @@
 	<link rel="stylesheet" href="/assets/css/products.css">
 {% endblock %}
 {% block content %}
-	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">Produits</h1>
-	</div>
-	<div class="container justify-content-center categories mt-3">
-		<div class="row">
-			{% for clothCategory in clothCategories %}
-				<div class="col-lg-4 mt-1 mx-auto">
-					<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ clothCategory.name }}</a>
-				</div>
-			{% endfor %}
-			{% for machineCategory in machineCategories %}
-				<div class="col-lg-4 mt-1 mx-auto">
-					<a href='/machines' class="btn btn-lg w-100 m-1 bg-primary categories">{{ machineCategory.name }}</a>
-				</div>
-			{% endfor %}
-		</div>
+	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
+		<h1 class="text-light">Nos produits</h1>
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
-			<h2 class="d-flex justify-content-center text-dark mb-3">Nos produits
+			<h2 class="d-flex justify-content-center text-dark mb-4">Catégories
 			</h2>
-			<div class="row">
-				{% for cloth in clothes %}
-					<div class="col-lg-3 mb-2 mx-auto">
+			<div class="row justify-content-center mb-4">
+				{% for clothCategory in clothCategories %}
+					<div class="col-lg-3 mb-2">
 						<figure class="card h-100">
 							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="{{ cloth.name }}">
 							<div class="card-body bg-primary">
-								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
-								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
-									{{ cloth.price }} €
+								<h5 class="card-title text-dark mb-5">{{ clothCategory.name }}</h5>
+								<a href="/tissus/categorie?id={{ clothCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+							</figure>
+						</div>
+					{% endfor %}
+					{% for machineCategory in machineCategories %}
+						<div class="col-lg-3 mb-2">
+							<figure class="card h-100">
+								<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
+								<div class="card-body bg-primary">
+									<h5 class="card-title text-dark mb-5">{{ machineCategory.name }}</h5>
+									<a href="/machines" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+								</figure>
 							</div>
-						</figure>
+						{% endfor %}
 					</div>
-				{% endfor %}
-				{% for machine in machines %}
-					<div class="col-lg-3 mb-2 mx-auto">
-						<figure class="card h-100">
-							<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
-							<div class="card-body bg-primary">
-								<h5 class="card-title text-dark">{{ machine.name }}</h5>
-								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
-									{{ machine.price }} €</a>
-							</div>
-						</figure>
-					</div>
-				{% endfor %}
+				</section>
 			</div>
-		</section>
-	</div>
-{% endblock %}
+		{% endblock %}
