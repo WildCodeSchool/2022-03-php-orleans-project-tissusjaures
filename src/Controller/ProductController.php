@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\ClothManager;
+use App\Model\MachineManager;
 use App\Model\ClothCategoryManager;
 use App\Model\MachineCategoryManager;
 

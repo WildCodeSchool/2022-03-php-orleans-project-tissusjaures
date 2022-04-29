@@ -17,21 +17,21 @@
 							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="{{ cloth.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark mb-5">{{ clothCategory.name }}</h5>
-								<a href="/tissus/category?id={{ clothCategory.id }}"class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
-						</figure>
+								<a href="/tissus/category?id={{ clothCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+							</figure>
+						</div>
+					{% endfor %}
+					{% for machineCategory in machineCategories %}
+						<div class="col-lg-3 mb-2">
+							<figure class="card h-100">
+								<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
+								<div class="card-body bg-primary">
+									<h5 class="card-title text-dark mb-5">{{ machineCategory.name }}</h5>
+									<a href="/machines" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+								</figure>
+							</div>
+						{% endfor %}
 					</div>
-				{% endfor %}
-				{% for machineCategory in machineCategories %}
-					<div class="col-lg-3 mb-2">
-						<figure class="card h-100">
-							<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
-							<div class="card-body bg-primary">
-								<h5 class="card-title text-dark mb-5">{{ machineCategory.name }}</h5>
-								<a href="/machines"class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
-						</figure>
-					</div>
-				{% endfor %}
+				</section>
 			</div>
-		</section>
-	</div>
-{% endblock %}
+		{% endblock %}
