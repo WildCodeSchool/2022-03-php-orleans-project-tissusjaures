@@ -24,13 +24,17 @@
     --font-size-footer: 20px;
     --font-size-table:22px;
 
-
     --spacing:8px;
     --spacing2:calc(--spacing * 2);
     --spacing3:calc(--spacing * 3);
     --spacing4:calc(--spacing * 4);
     --spacing5:calc(--spacing * 5);
+
     --shadow: 2px 1px 4px var(--shadow-color);
 
-    line-height: 1.5;
+    --line-height: 1.5;
 }
+body {
+    background-color: var(--bs-light);
+}
+
