@@ -24,6 +24,7 @@ class ClothController extends AbstractController
             'machineCategories' => $machineCategories
         ]);
     }
+
     public function showClothByCategory(int $id): string
     {
         $clothCategoryManager = new ClothCategoryManager();
