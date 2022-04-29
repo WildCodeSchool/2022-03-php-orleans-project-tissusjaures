@@ -122,24 +122,35 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
   
+  
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
-  `definition` TEXT NOT NULL,
-  `image` VARCHAR(100) NULL,
+  `description` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 -- -- -----------------------------------------------------
 -- -- Content `tissus_jaures`.`lexicon`
 -- -- -----------------------------------------------------
-INSERT INTO `lexicon` (`id`, `name`, `description`, `image`) VALUES
-(1, "lexicon", "Base couture", "Pour bien débuter" , 'public/assets/images/lexiques/Base_couture_rouge.webp'),
-(2, "lexicon", "Lexique couture", "En savoir plus sur la couture" , 'public/assets/images/lexiques/Lexique_couture_rouge.jpg'),
-(3, "lexicon", "Lexique Patchwork", "Vous vous y connaissez en patchwork ?" , 'public/assets/images/lexiques/Lexique_patchwork.jpg');
+INSERT INTO `lexicon` (`id`, `name`, `description`) VALUES
+(1, "Appliqué : ", " Technique. Coudre à point invisibles (rentré de 5mm) un motif sur un tissu de fond."),
+(2, "Biais :", " Bande de tissus étroite et en diagonale (45°du droit fil) utilisé pour border."),
+(3, "Boutis :", " Technique « provençale ». Matelassage de plusieurs tissus à la main. Les deux cotés pouvant être exposés."),
+(4, "Charm quilt :", " Ouvrage réalisé avec un gabarit unique et une multitude de tissus tous différents."),
+(5, "Cording :", " Technique. Introduction d’un cordon entre deux lignes de matelassage pour donner du relief à un ouvrage."),
+(6, "Crazy quilt :", " Ouvrage réalisé avec des pièces de formes irrégulières assemblées et dont les coutures sont brodées à la main."),
+(7, "Log cabin :", " Ouvrage réalisé par assemblage d’un carré central avec des bandes de tissus de longueurs croissantes et alternant deux bandes claires et deux foncées."),
+(8, "Molleton :", " Rembourrage en coton, laine ou matière synthétiques. Il existe différentes épaisseurs et qualités."),
+(9, "Muslin :", " Tissu de coton léger écru ou blanc."),
+(10, "Quilt :", " Traduction américaine de patchwork."),
+(11, "Toile à beurre :", " Toile de coton très fine à maille lâche"),
+(12, "Stippling :", " Quilting serré."),
+(13, "Viseline :", "non-tissé thermocollant utilisé en appliqué.");
+
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
