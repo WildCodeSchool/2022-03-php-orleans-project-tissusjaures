@@ -4,17 +4,17 @@
 {% endblock %}
 
 {% block content %}
-	<div class="container-fluid d-flex justify-content-center align-items-center header">
+	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
 		<h1 class="text-light">Bienvenue chez Tissus Jaurès</h1>
 	</div>
 	<div class="container">
-	<div class="ms-4 me-5 boutique">
+	<div class="ms-2 mb-4 boutique">
 		<section id="boutique" class="boutique">
 			<h2 class="text-center text-dark mt-3">Notre boutique
 			</h2>
 			<div class="boutique-description d-flex justify-content-center w-auto">
-				<img src="https://picsum.photos/id/239/350/200" class="boutique-img ms-4" alt="boutique">
-				<p class="ms-4 mt-5 boutique-text text-dark">
+				<img src="https://picsum.photos/id/239/350/200" class="boutique-img" alt="boutique">
+				<p class="ms-3 mt-5 boutique-text text-dark">
 					Vous trouverez dans notre très vaste magasin, des milliers de mètres de Tissus d'Ameublement, 
 															de Voilages, de Tissus Couture et Haute Couture, une très grande Mercerie et un large choix en Décoration, 
 															rideaux prêts à poser…
@@ -25,9 +25,9 @@
 	</div>
 	<div class="cards-new-arrivals">
 		<section id="new-arrivals">
-			<h2 class="text-center text-dark">Nos nouveautés
+			<h2 class="text-center text-dark mb-4">Nos nouveautés
 			</h2>
-			<div class="row">
+			<div class="row mb-4">
 				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2">
 						<figure class="card h-100">

@@ -4,7 +4,7 @@ namespace App\Model;
 
 class AdminMachineManager extends AbstractManager
 {
-    public const TABLE = 'machine';
+    public const TABLE = 'machines';
 
     public function insert(array $machine): int
     {
