@@ -10,10 +10,12 @@ return [
     '' => ['HomeController', 'index',],
     'produits' => ['ProductController', 'index',],
     'admin/tissus' => ['AdminClothController', 'index',],
-    'admin/tissus/ajouter' => ['AdminClothController', 'addCloth'],
+    'admin/tissus/ajouter' => ['AdminClothController', 'addCloth',],
     'admin/tissus/editer' => ['AdminClothController', 'editCloth', ['id']],
     'admin/tissus/supprimer' => ['AdminClothController', 'deleteCloth',],
     'admin/machines' => ['AdminMachineController', 'index',],
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
     'contact' => ['ContactController', 'index',],
+    'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
+
 ];
