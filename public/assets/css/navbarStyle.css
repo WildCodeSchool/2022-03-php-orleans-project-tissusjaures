@@ -1,6 +1,7 @@
 .navbar{
     font-family: var(--text-font);
     font-size: var(--font-size-link);
+    outline: 1.5px dashed var(--bs-light);
 }
 
 .navbar-dark .navbar-brand{
