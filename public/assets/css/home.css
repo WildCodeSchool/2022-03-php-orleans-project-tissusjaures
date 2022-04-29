@@ -15,9 +15,20 @@ h2 {
     font-size: var(--title-font-size);
 }
 
-h3 {
+div.title {
+    background-color: var(--bs-secondary);
+    width: fit-content;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}
+
+h3.slogan {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) - 4px);
+}
+
+h5.card-title {
+    font-size: calc(var(--font-size) + 8px);
 }
 
 div .boutique-description {
