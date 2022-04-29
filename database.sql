@@ -106,16 +106,17 @@ INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sal
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips_and_tricks_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
+  `link` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`tips_and_tricks_categories`
 -- -----------------------------------------------------
-INSERT INTO `tips_and_tricks_categories` (`id`, `name`) VALUES
-(1, "Astuces"),
-(2, "Tutoriels"),
-(3, "Lexique");
+INSERT INTO `tips_and_tricks_categories` (`id`, `name`, `link`) VALUES
+(1, "Astuces", "/astuces"),
+(2, "Tutoriels", "/tutoriels"),
+(3, "Lexique", "/lexique");
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`

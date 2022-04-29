@@ -3,9 +3,26 @@
 	<link rel="stylesheet" href="/assets/css/tips.css">
 {% endblock %}
 {% block content %}
-
-	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">Bienvenue chez Tissus Jaurès</h1>
+		<div class="container-fluid d-flex justify-content-center align-items-center header">
+		<h1 class="text-light">
+			{% for tipCategory in tipCategories %}
+				{% if id == tipCategory.id %}
+					{{ tipCategory.name }}
+				{% endif %}
+			{% endfor %}
+			{% if id is empty %}
+				Astuces
+			{% endif %}
+		</h1>
+	</div>
+	<div class="container categories mt-3">
+		<div class="row justify-content-center">
+			{% for tipCategory in tipCategories %}
+				<div class="col-lg-3 mt-1 w-25">
+					<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ tipCategory.name }}</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 	<section>
 		<div class="container">
