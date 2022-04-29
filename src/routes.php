@@ -15,7 +15,7 @@ return [
     'admin/tissus/supprimer' => ['AdminClothController', 'deleteCloth',],
     'admin/machines' => ['AdminMachineController', 'index',],
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
-    'contact' => ['ContactController', 'index',],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'astuces' => ['TipsController', 'showMonthlyTip'],
+    'contact' => ['ContactController', 'index',],
 ];
