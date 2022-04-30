@@ -7,9 +7,10 @@
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
 		<h1 class="d-flex justify-content-center mt-2 text-dark fs-header-font-size ff-header-font">Lexique</h1>
 	</div>
-
+	<div class="ms-5">
 		{% for lexique in lexiques %}
-			<p class="text-dark">{{lexique.name}}{{lexique.definition}}</p>
+			<p class="text-dark"><strong>{{lexique.name}}</strong>{{lexique.definition}}</p>
 		{% endfor %}
+	</div>	
 	</main>
 {% endblock %} 
