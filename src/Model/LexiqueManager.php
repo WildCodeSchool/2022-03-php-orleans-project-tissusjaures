@@ -4,5 +4,5 @@ namespace App\Model;
 
 class LexiqueManager extends AbstractManager
 {
-    public const TABLE = 'lexicon';
+    public const TABLE = 'lexicons';
 }

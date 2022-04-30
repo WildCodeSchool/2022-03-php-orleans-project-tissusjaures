@@ -3,5 +3,11 @@
 	<link rel="stylesheet" href="/assets/css/lexique.css">
 {% endblock %}
 {% block content %}
+	<main class="container-fluid">
+		<h1>Lexique</h1>
 
+		{% for lexique in lexiques %}
+			<p>{{lexique.name}}{{lexique.definition}}</p>
+		{% endfor %}
+	</main>
 {% endblock %} 
