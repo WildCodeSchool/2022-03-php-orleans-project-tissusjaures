@@ -9,7 +9,7 @@ svg {
     font-family: var(--title-font);
 }
 
-p {
+.footer-p {
     font-size: var(--font-size-footer);
     font-family: var(--text-font);
 }
@@ -19,6 +19,14 @@ p {
     border-radius:1rem;
     outline: 1.5px dashed var(--bs-light);
     outline-offset: -6px;
+    opacity: 100%;
+    width: 25%;
+    height: 95%;
+}
+
+.button-facebook:hover {
+    transform: scale(1.03);
+    opacity: 90%;
 }
 
 .icon-facebook {
@@ -27,8 +35,10 @@ p {
     height: 30%;
 }
 
-.icon-facebook:hover {
-    fill: var(--admin-color);
+.icon-top {
+    fill: var(--bs-light);
+    width: 40%;
+    height: 30%;
 }
 
 tbody {
@@ -37,7 +47,7 @@ tbody {
 
 th {
     width: 50%;
-    font-size: var(--font-size-table);
+    font-size: var(--font-size-link);
     font-family: var(--title-font);
 }
 

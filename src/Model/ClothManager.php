@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Model;
+
+class ClothManager extends AbstractManager
+{
+    public const TABLE = 'cloth';
+
+    public function selectAllById(int $id): array|false
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT cc.* FROM " . static::TABLE . " cc
+          INNER JOIN cloth_categories c ON cc.cloth_categories_id = c.id WHERE cc.id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+}
