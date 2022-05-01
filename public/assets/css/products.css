@@ -55,7 +55,7 @@ h3 {
 }
 
 .prix {
-    font-size: calc(var(--font-size) + 4px);
+    font-size: var(--font-size);
 }
 
 .prix.btn:hover {
@@ -63,7 +63,7 @@ h3 {
 }
 
 .prix.btn {
-    clip-path: polygon(9% 0, 91% 0, 97% 18%, 97% 81%, 91% 100%, 9% 100%, 3% 82%, 3% 18%);
+    clip-path: polygon(7% 0, 93% 0, 97% 20%, 97% 80%, 93% 100%, 7% 100%, 3% 80%, 3% 20%);
     outline: 1.5px dashed var(--bs-primary);
     outline-offset: -6px;
 }
