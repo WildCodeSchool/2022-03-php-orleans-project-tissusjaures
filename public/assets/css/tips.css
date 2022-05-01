@@ -10,14 +10,17 @@
     text-shadow: 2px 2px var(--bs-dark);
 }
 
-.title {
+.title-monthly {
     font-family: var(--header-font);
-    font-size: var(--title-font-size);
+    font-size: calc(var(--title-font-size) + 0.75rem);
+    background-color: var(--bs-secondary);
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -4px;
 }
 
 .img{
-    height: 60%;
-    width: 60%;
+    height: 65%;
+    width: 65%;
 }
 
 .monthlyTip {
@@ -30,10 +33,10 @@
 
 .textMonthly {
     font-family: var(--text-font);
-    letter-spacing: 1px;
+    font-size: calc(var(--font-size) + 0.5rem);
 }
 
 .monthlyTitle {
-    font-size: var(--font-size-link);
+    font-size: calc(var(--font-size-link) + 0.75rem);
 }
 
