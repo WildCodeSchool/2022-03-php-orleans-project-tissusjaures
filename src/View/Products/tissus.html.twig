@@ -35,10 +35,10 @@
 				{% for cloth in clothes %}
 					<div class="col-lg-3 mb-2 mx-auto">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="Tissus">
+							<img src="https://picsum.photos/id/535/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="Tissus">
 							<div class="card-body bg-primary">
-								<h5 class="card-title text-dark">{{ cloth.name }}</h5>
-								<div class="prix card-text position-absolute bottom-0 end-0 m-2">
+								<h5 class="card-title text-dark text-center mb-5">{{ cloth.name }}</h5>
+								<div class="prix card-text btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">
 									{{ cloth.price }} €</a>
 							</div>
 						</figure>
