@@ -8,13 +8,19 @@
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
-			<h2 class="d-flex justify-content-center text-dark mb-4">Catégories
-			</h2>
+			 <div class="row mb-4">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <div class="title py-2 px-3">
+                            <h2 class="text-center text-light mt-3">Catégories
+                            </h2>
+                        </div>
+                    </div>
+                </div>
 			<div class="row justify-content-center mb-4">
 				{% for clothCategory in clothCategories %}
 					<div class="col-lg-3 mb-2">
 						<figure class="card h-100">
-							<img src="https://picsum.photos/id/535/200/150" class="card-img-top" alt="{{ cloth.name }}">
+							<img src="https://picsum.photos/id/535/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="{{ cloth.name }}">
 							<div class="card-body bg-primary">
 								<h5 class="card-title text-dark mb-5">{{ clothCategory.name }}</h5>
 								<a href="/tissus/categorie?id={{ clothCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
@@ -24,7 +30,7 @@
 					{% for machineCategory in machineCategories %}
 						<div class="col-lg-3 mb-2">
 							<figure class="card h-100">
-								<img src="https://picsum.photos/id/885/200/150" class="card-img-top" alt="{{ machine.name }}">
+								<img src="https://picsum.photos/id/885/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="{{ machine.name }}">
 								<div class="card-body bg-primary">
 									<h5 class="card-title text-dark mb-5">{{ machineCategory.name }}</h5>
 									<a href="/machines" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>

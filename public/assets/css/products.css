@@ -14,6 +14,13 @@ h2 {
     font-size: var(--title-font-size);
 }
 
+div.title {
+    background-color: var(--bs-secondary);
+    width: fit-content;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}
+
 h3 {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) - 4px);
