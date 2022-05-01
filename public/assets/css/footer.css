@@ -14,9 +14,17 @@ p {
     font-family: var(--text-font);
 }
 
+.button-facebook {
+    border: none;
+    border-radius:1rem;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}
+
 .icon-facebook {
-    margin-left: 1rem;
-    fill: var(--bs-secondary);
+    fill: var(--bs-light);
+    width: 40%;
+    height: 30%;
 }
 
 .icon-facebook:hover {
