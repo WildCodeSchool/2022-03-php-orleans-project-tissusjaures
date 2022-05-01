@@ -34,7 +34,7 @@
 
     --line-height: 1.5;
 }
-body {
-    background-color: var(--bs-light);
-}
 
+main {
+    background-image: url("../images/textured-stripes.png");
+}
