@@ -6,6 +6,7 @@
     --bs-primary: #FFF4E2;
     --bs-secondary-rgb: 245, 86, 81;
     --bs-secondary:#f55651;
+    --bs-secondary-dark: #982a26;
     --bs-light-rgb:255, 251, 245;
     --bs-light:#fffbf5;
     --bs-dark-rgb: 77, 60, 60;
@@ -15,7 +16,7 @@
     --header-font: 'Kotta One', serif;
     --text-font: 'Lora', serif;
     --title-font: 'Merriweather', serif;
-    --font-size: 16px;
+    --font-size: 18px;
     --font-size-link:22px;
     --header-font-size: 96px;
     --title-font-size: 36px;
@@ -34,7 +35,7 @@
 
     --line-height: 1.5;
 }
-body {
-    background-color: var(--bs-light);
-}
 
+main {
+    background-image: url("../images/textured-stripes.png");
+}
