@@ -49,6 +49,12 @@ h3 {
     font-family: var(--header-font);
 }
 
+.card-title.fabric {
+    text-shadow: 1px 1px 1px var(--bs-light);
+    border-bottom: 1px solid var(--bs-secondary-dark);
+    width: 100%;
+}
+
 .card-text {
     font-size: var(--font-size);
     font-family: var(--text-font);
@@ -56,14 +62,19 @@ h3 {
 
 .prix {
     font-size: var(--font-size);
+    cursor: default;
+    box-shadow: none;
+    outline: 1px dashed var(--bs-light);
+    outline-offset: -2px;
+    opacity: 90%;
 }
 
 .prix.btn:hover {
     transform: none;
 }
 
-.prix.btn {
+/* .prix.btn {
     clip-path: polygon(15% 0, 85% 0, 95% 20%, 95% 80%, 85% 100%, 15% 100%, 5% 80%, 5% 20%);
     outline: 1.5px dashed var(--bs-primary);
     outline-offset: -6px;
-}
+} */
