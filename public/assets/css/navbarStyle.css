@@ -19,9 +19,9 @@
 
 .navbar-dark .navbar-nav .nav-link:hover{
     color: var(--bs-light);
-    filter: brightness(4);
+    filter: brightness(6);
     text-shadow: var(--shadow);
-    opacity: 110%;
+    opacity: 140%;
 }
 
 .navbar-dark .navbar-toggler{
