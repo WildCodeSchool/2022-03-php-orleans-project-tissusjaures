@@ -40,12 +40,15 @@ div .boutique-description {
     box-shadow: var(--shadow); 
 }
 
-.btn {
+.card-btn {
     opacity: 90%;
+    font-size: var(--font-size);
 }
 
-.btn:hover {
+.card-btn:hover {
     opacity: 100%;
+    color: var(--bs-secondary);
+    transform: scale(1.03);
 }
 
 .card {
@@ -64,8 +67,4 @@ div .boutique-description {
 .card-text {
     font-size: var(--font-size);
     font-family: var(--text-font);
-}
-
-.card-btn {
-    font-size: var(--font-size)
 }
