@@ -10,6 +10,33 @@
     text-shadow: 2px 2px var(--bs-dark);
 }
 
+.header h1 {
+    font-family: var(--header-font);
+    font-size: var(--header-font-size);
+    text-shadow: 2px 2px var(--bs-dark);
+}
+
+h2 {
+    font-family: var(--header-font);
+    font-size: var(--title-font-size);
+}
+
+h3 {
+    font-family: var(--header-font);
+    font-size: calc(var(--title-font-size) - 4px);
+}
+
+.btn {
+    box-shadow: var(--shadow);
+    position: initial;
+    font-family: var(--text-font);
+}
+
+.btn:hover {
+    color: var(--bs-secondary);
+    transform: scale(1.03);
+}
+
 .title {
     font-family: var(--header-font);
     font-size: var(--title-font-size);
