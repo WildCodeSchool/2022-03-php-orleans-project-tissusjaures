@@ -50,7 +50,7 @@ div .boutique-description {
 
 .card {
     box-shadow: var(--shadow);
-    outline: 1.5px dashed var(--bs-dark);
+    outline: 2px dashed var(--bs-secondary);
     outline-offset: -6px;
 }
 
