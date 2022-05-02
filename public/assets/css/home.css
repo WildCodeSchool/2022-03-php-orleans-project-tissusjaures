@@ -50,16 +50,22 @@ div .boutique-description {
 
 .card {
     box-shadow: var(--shadow);
-    outline: 2px dashed var(--bs-secondary);
+    outline: 1.5px dashed var(--bs-dark);
     outline-offset: -6px;
 }
 
 .card-title {
     font-size: calc(var(--title-font-size) - 4px);
     font-family: var(--header-font);
+    text-shadow: 1px 1px 1px var(--bs-light);
+    border-bottom: 1px solid var(--bs-secondary);
 }
 
 .card-text {
     font-size: var(--font-size);
     font-family: var(--text-font);
+}
+
+.card-btn {
+    font-size: var(--font-size)
 }
