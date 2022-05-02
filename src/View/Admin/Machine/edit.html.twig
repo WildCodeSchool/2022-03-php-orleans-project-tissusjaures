@@ -1,0 +1,7 @@
+{% extends 'adminLayout.html.twig' %}
+{% block title %}
+  {{ parent() }} - Édition d'une Machine
+{% endblock %}
+{% block content %}
+  {% include 'Admin/Machine/_form.html.twig' with {'title_name' : 'Éditer une machine','button_name' : 'Éditer'} %}
+{% endblock %}
