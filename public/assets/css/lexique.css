@@ -39,4 +39,5 @@ div.container-fluid {
 
 .lexique-content {
     box-shadow: var(--shadow);
+    border-radius: 0.3rem;
 }
