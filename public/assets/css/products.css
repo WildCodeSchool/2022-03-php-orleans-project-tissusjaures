@@ -63,14 +63,7 @@ h3 {
 .prix {
     font-size: var(--font-size);
     cursor: default;
-    box-shadow: none;
-    outline: 1px dashed var(--bs-light);
-    outline-offset: -2px;
-    opacity: 90%;
-}
-
-.prix.btn:hover {
-    transform: none;
+    box-shadow: var(--shadow);
 }
 
 /* .prix.btn {
