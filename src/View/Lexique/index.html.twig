@@ -4,13 +4,28 @@
 {% endblock %}
 {% block content %}
 	<main>
-	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="d-flex justify-content-center mt-2 text-dark fs-header-font-size ff-header-font">Lexique</h1>
-	</div>
-	<div class="ms-5">
-		{% for lexique in lexiques %}
-			<p class="text-dark d-flex flex-column"><strong>{{lexique.name}}</strong>{{lexique.definition}}</p>
-		{% endfor %}
-	</div>	
+		<div class="container-fluid">
+			<div class="container-fluid d-flex justify-content-center align-items-center header">
+				<h1 class="d-flex justify-content-center text-light fs-header-font-size ff-header-font">Lexique</h1>
+			</div>
+			<div class="container categories mt-3">
+				<div class="row justify-content-center">
+					{% for tipCategory in tipCategories %}
+						<div class="col-lg-3 mt-1 w-25">
+							<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ tipCategory.name }}</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="row mt-3 d-flex flex-column align-items-center justify-content-center">
+				<div class="lexique-content p-3  bg-primary w-75">
+					{% for lexique in lexiques %}
+						<p class="text-dark d-flex flex-column">
+							<strong>{{lexique.name}}</strong>
+							{{lexique.definition}}</p>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 	</main>
-{% endblock %} 
+{% endblock %}
