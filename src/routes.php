@@ -21,4 +21,5 @@ return [
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'astuces' => ['TipsController', 'showTips'],
     'contact' => ['ContactController', 'index',],
+    'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
 ];
