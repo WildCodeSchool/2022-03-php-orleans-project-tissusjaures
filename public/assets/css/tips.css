@@ -10,7 +10,23 @@
     text-shadow: 2px 2px var(--bs-dark);
 }
 
-.title-monthly {
+h3 {
+    font-family: var(--header-font);
+    font-size: calc(var(--title-font-size) - 4px);
+}
+
+.btn {
+    box-shadow: var(--shadow);
+    position: initial;
+    font-family: var(--text-font);
+}
+
+.btn:hover {
+    color: var(--bs-secondary);
+    transform: scale(1.03);
+}
+
+.title-tip {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) + 0.75rem);
     background-color: var(--bs-secondary);
@@ -18,9 +34,9 @@
     outline-offset: -4px;
 }
 
-.img{
-    height: 65%;
-    width: 65%;
+.img-tip{
+    height: 72%;
+    width: 72%;
 }
 
 .monthlyTip {
