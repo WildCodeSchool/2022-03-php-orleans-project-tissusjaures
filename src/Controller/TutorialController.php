@@ -22,7 +22,10 @@ class TutorialController extends AbstractController
     {
         $tutorialManager = new TutorialManager();
         $tutorial = $tutorialManager->selectOneById($id);
+        $tipCategoryManager = new TipCategoryManager();
+        $tipCategories = $tipCategoryManager->selectAll();
         return $this->twig->render('/Tutorials/show.html.twig', ['tutorial' => $tutorial,
+        'tipCategories' => $tipCategories
         ]);
     }
 }
