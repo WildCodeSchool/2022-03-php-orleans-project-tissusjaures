@@ -52,12 +52,11 @@ label {
     padding: var(--spacing)
 }
 
-.list-group-item:hover {
-    transform: scale(1.03);
-}
-
-svg {
-    margin-right:var(--spacing)
+.adminSvg {
+    margin-right:var(--spacing);
+    width: 20px;
+    height: 20px;
+    fill: var(--bs-light);
 }
 
 a {
