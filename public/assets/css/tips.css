@@ -56,3 +56,31 @@ h3 {
     font-size: calc(var(--font-size-link) + 0.75rem);
 }
 
+.btn {
+    box-shadow: var(--shadow);
+    position: initial;
+    font-family: var(--text-font);
+    font-size: var(--font-size);
+}
+
+.btn:hover {
+    color: var(--bs-secondary);
+    transform: scale(1.03);
+}
+
+.card {
+    box-shadow: var(--shadow);
+    outline: 1.5px dashed var(--bs-dark);
+    outline-offset: -6px;
+}
+
+.card-title {
+    font-size: calc(var(--title-font-size) - 4px);
+    font-family: var(--header-font);
+}
+
+.card-text {
+    font-size: var(--font-size);
+    font-family: var(--text-font);
+}
+

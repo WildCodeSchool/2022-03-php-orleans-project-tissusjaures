@@ -14,10 +14,10 @@ class TipsController extends AbstractController
 
         $tipManager = new TipsManager();
         $monthlyTip = $tipManager->selectMonthlyTip();
-
+        $tips = $tipManager->selectTips();
         return $this->twig->render(
             'Tips/tips.html.twig',
-            ['tipCategories' => $tipCategories, 'monthlyTip' => $monthlyTip]
+            ['tipCategories' => $tipCategories, 'monthlyTip' => $monthlyTip, 'tips' => $tips]
         );
     }
 }
