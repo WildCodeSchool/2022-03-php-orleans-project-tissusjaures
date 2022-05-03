@@ -24,6 +24,8 @@
     --title-font-size: 36px;
 
     --spacing: 8px;
+
+    --shadow: 2px 1px 4px var(--shadow-color);
 }
 
 * {
@@ -50,6 +52,10 @@ label {
     font-size: var(--title-font-size);
     font-family: var(--title-font);
     padding: var(--spacing)
+}
+
+.list-group-item:hover {
+    filter: drop-shadow(var(--shadow));
 }
 
 .adminSvg {

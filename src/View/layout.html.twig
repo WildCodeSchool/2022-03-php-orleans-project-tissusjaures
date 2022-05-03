@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 		  {% block stylesheet %}{% endblock %}
 		</head>
-		<body class="bg-light">
+		<body class="bg-light" id="top">
 			<header>
 				{% block navbar %}
 					{% include 'Component/_navbar.html.twig' %}
@@ -22,7 +22,9 @@
 			</header>
 			<main>
 				{% block content %}{% endblock %}
+				{% block slogan %}
 				{% include 'Component/_slogan.html.twig' %}
+				{% endblock %}
 			</main>
 			<footer>
 				{% block footer %}
