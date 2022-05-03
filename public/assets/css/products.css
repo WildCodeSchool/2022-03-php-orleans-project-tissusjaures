@@ -15,7 +15,6 @@ h2 {
 }
 
 div.title {
-    background-color: var(--bs-secondary);
     width: fit-content;
     outline: 1.5px dashed var(--bs-light);
     outline-offset: -6px;
@@ -62,6 +61,5 @@ h3 {
 
 .price {
     font-size: var(--font-size);
-    cursor: default;
     box-shadow: var(--shadow);
 }
