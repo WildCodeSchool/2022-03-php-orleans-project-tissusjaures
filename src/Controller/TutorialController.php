@@ -13,8 +13,16 @@ class TutorialController extends AbstractController
         $tipCategoryManager = new TipCategoryManager();
         $tutorials = $tutorialManager->selectAll();
         $tipCategories = $tipCategoryManager->selectAll();
-        return $this->twig->render('/Tips/Tutorials/index.html.twig', ['tutorials' => $tutorials,
+        return $this->twig->render('/Tutorials/index.html.twig', ['tutorials' => $tutorials,
         'tipCategories' => $tipCategories
     ]);
+    }
+
+    public function show($id): string
+    {
+        $tutorialManager = new TutorialManager();
+        $tutorial = $tutorialManager->selectOneById($id);
+        return $this->twig->render('/Tutorials/show.html.twig', ['tutorial' => $tutorial,
+     'id' => $id]);
     }
 }
