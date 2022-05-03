@@ -60,7 +60,7 @@ h3 {
     font-family: var(--text-font);
 }
 
-.prix {
+.price {
     font-size: var(--font-size);
     cursor: default;
     box-shadow: var(--shadow);
