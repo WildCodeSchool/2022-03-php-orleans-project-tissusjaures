@@ -1,18 +1,17 @@
 * {
     font-family: var(--text-font);
-    
 }
 div.container-fluid {
     padding-right: 0;
     padding-left: 0;
 }
+
 .header {
     background-image: url("../images/lexiques/Base_couture_rouge.webp");
     background-position: bottom;
     height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 .header h1 {

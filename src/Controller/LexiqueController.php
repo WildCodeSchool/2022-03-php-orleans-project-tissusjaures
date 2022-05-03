@@ -11,7 +11,6 @@ class LexiqueController extends AbstractController
     {
         $tipCategoryManager = new TipCategoryManager();
         $tipCategories = $tipCategoryManager->selectAll();
-
         $lexiqueManager = new LexiqueManager();
         $lexiques = $lexiqueManager->selectAll();
 
