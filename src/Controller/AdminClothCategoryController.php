@@ -10,6 +10,7 @@ class AdminClothCategoryController extends AbstractController
     {
         $clothCategoryList = new ClothCategoryManager();
         $clothCategories = $clothCategoryList->selectAll();
-        return $this->twig->render('Admin/ClothCategory/show.html.twig', ['clothCategories' => $clothCategories]);
+
+        return $this->twig->render('Admin/ClothCategory/index.html.twig', ['clothCategories' => $clothCategories]);
     }
 }
