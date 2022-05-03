@@ -65,9 +65,3 @@ h3 {
     cursor: default;
     box-shadow: var(--shadow);
 }
-
-/* .prix.btn {
-    clip-path: polygon(15% 0, 85% 0, 95% 20%, 95% 80%, 85% 100%, 15% 100%, 5% 80%, 5% 20%);
-    outline: 1.5px dashed var(--bs-primary);
-    outline-offset: -6px;
-} */
