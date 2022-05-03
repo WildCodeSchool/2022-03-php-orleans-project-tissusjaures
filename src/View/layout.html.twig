@@ -22,7 +22,9 @@
 			</header>
 			<main>
 				{% block content %}{% endblock %}
+				{% block slogan %}
 				{% include 'Component/_slogan.html.twig' %}
+				{% endblock %}
 			</main>
 			<footer>
 				{% block footer %}
