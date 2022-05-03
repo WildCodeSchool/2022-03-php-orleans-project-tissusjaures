@@ -19,6 +19,5 @@ class TipsController extends AbstractController
             'Tips/tips.html.twig',
             ['tipCategories' => $tipCategories, 'monthlyTip' => $monthlyTip, 'tips' => $tips]
         );
-
     }
 }
