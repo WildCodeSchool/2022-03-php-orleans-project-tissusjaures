@@ -6,6 +6,13 @@ use App\Model\AdminMachineManager;
 
 class AdminMachineController extends AbstractController
 {
+    public function index(): string
+    {
+        $machineManager = new AdminMachineManager();
+        $machines = $machineManager->selectAll();
+        return $this->twig->render('Admin/Machine/show.html.twig', ['machines' => $machines]);
+    }
+
     public function addMachine()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,10 +22,43 @@ class AdminMachineController extends AbstractController
             if (empty($errors)) {
                 $machineManager = new AdminMachineManager();
                 $machineManager->insert($machine);
-                header('Location: /admin/machine/');
+                header('Location: /admin/machines/');
             }
         }
         return $this->twig->render('Admin/Machine/add.html.twig');
+    }
+
+    public function editMachine($id): string
+    {
+        $errors = $machine = [];
+        $machineManager = new AdminMachineManager();
+        $machine = $machineManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $machine = array_map('trim', $_POST);
+            $machine['id'] = $id;
+            $errors = $this->machineValidate($machine);
+
+            if (empty($errors)) {
+                $machineManager->update($machine);
+                header('Location: /admin/machines/');
+            }
+        }
+        return $this->twig->render('Admin/Machine/edit.html.twig', [
+            'machine' => $machine,
+            'errors' => $errors
+        ]);
+    }
+
+    public function deleteMachine(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $machineManager = new AdminMachineManager();
+            $machineManager->delete((int)$id);
+
+            header('Location:/admin/machines/');
+        }
     }
 
     private function machineValidate(array $machine): array

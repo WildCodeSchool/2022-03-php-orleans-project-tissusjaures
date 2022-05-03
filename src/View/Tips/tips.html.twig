@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/tips.css">
+{% endblock %}
+{% block content %}
+		<div class="container-fluid d-flex justify-content-center align-items-center header">
+		<h1 class="text-light">
+			{% for tipCategory in tipCategories %}
+				{% if id == tipCategory.id %}
+					{{ tipCategory.name }}
+				{% endif %}
+			{% endfor %}
+			{% if id is empty %}
+				Astuces
+			{% endif %}
+		</h1>
+	</div>
+	<div class="container categories mt-3">
+		<div class="row justify-content-center">
+			{% for tipCategory in tipCategories %}
+				<div class="col-lg-3 mt-1 w-25">
+					<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ tipCategory.name }}</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<section>
+		<div class="container">
+			<div class="row mt-3 d-flex flex-column align-items-center justify-content-center">
+				<div class="monthlyTip p-0  bg-primary w-75">
+					<h2 class="title my-4 d-flex justify-content-center">Astuce du mois</h2>
+					<div class="monthlyText d-flex justify-content-center ms-4">
+						<img class="img me-4 p-2" src="{{ monthlyTip.image }}" alt="ourlet">
+						<div class="textTip d-flex flex-column align-items-start p-2">
+							<h3 class="monthlyTitle p-0">{{ monthlyTip.name }}</h3>
+							<p class="textMonthly">{{ monthlyTip.content }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -6,6 +6,7 @@
     --bs-primary: #FFF4E2;
     --bs-secondary-rgb: 245, 86, 81;
     --bs-secondary:#f55651;
+    --bs-secondary-dark: #982a26;
     --bs-light-rgb:255, 251, 245;
     --bs-light:#fffbf5;
     --bs-dark-rgb: 77, 60, 60;
@@ -15,22 +16,26 @@
     --header-font: 'Kotta One', serif;
     --text-font: 'Lora', serif;
     --title-font: 'Merriweather', serif;
-    --font-size: 16px;
+    --font-size: 18px;
     --font-size-link:22px;
     --header-font-size: 96px;
     --title-font-size: 36px;
     --font-size-nav: 28px;
-    --font-size_footer: 24px;
+
+    --font-size-footer: 20px;
+    
+
     --spacing:8px;
     --spacing2:calc(--spacing * 2);
     --spacing3:calc(--spacing * 3);
     --spacing4:calc(--spacing * 4);
     --spacing5:calc(--spacing * 5);
+
     --shadow: 2px 1px 4px var(--shadow-color);
 
-    line-height: 1.5;
+    --line-height: 1.5;
 }
 
-body {
-    background-color: var(--bs-light);
+main {
+    background-image: url("../images/textured-stripes.png");
 }

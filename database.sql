@@ -196,10 +196,21 @@ Faites un cran dans un rectangle de carton a la hauteur désirée et reportez vo
 (3, "Taches de bougie", "/assets/images/mchn1", "Une tâche de bougie sur votre vêtement ou votre sol? Prenez un buvard et déposé le sur la tâche. Passez ensuite un fer à repasser bien chaud sur le buvard. La cire va se décoller se venir se déposer sur le buvard. ", 0, 1),
 (4, "Taches de peintures", "/assets/images/mchn1", "Trempez les vêtements tachés de peinture immédiatement dans du lait puis lavez normalement. Cette astuce est notamment utilisée dans les écoles maternelles.", 0, 1),
 (5, "Coudre de la toile cirée", "/assets/images/mchn1", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
+
 Les toiles enduites ou cirées collent au pied. Voilà pourquoi lorsque vous les piquez avec un pied de biche normal, vous obtenez des plis non désirés et autres bonnes surprises!
+
 Ce pied étant assez cher pour des travaux occasionnels, nous avons une astuces à vous confier...
+
 Celle-ci consiste à coller sous un pied presseur normal, du ruban adhésif de peintre (ruban de masquage). Vous devrez ensuite couper le surplus de ruban adhésif afin qu’il ne dépasse pas du pied…
+
 ….vous avez un pied pour coudre de la toile enduite.", 0, 1);
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
 
 
 
