@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/tutorials.css">
+{% endblock %}
+{% block content %}
+<div class="container-fluid d-flex justify-content-center align-items-center header">
+	<h1 class="text-light">Tutoriels</h1>
+</div>
+<div class="container cards-products mt-3">
+	<section id="products">
+		<h2 class="d-flex justify-content-center text-dark mb-3">{{tutorial.name}}
+		</h2>
+		<div class="row">
+		</div>
+	</section>
+</div>
+{% endblock %}
