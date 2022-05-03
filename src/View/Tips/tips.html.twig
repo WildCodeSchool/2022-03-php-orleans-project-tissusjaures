@@ -42,4 +42,17 @@
 			</div>
 		</div>
 	</section>
-{% endblock %}
+	<section>
+		<div class="row mb-4">
+			{% for tip in tips %}
+				<div class="col-md-3 d-flex justify-content-around mt-4">
+					<figure class="card h-75 w-75">
+						<img src="{{ tip.image }}" class="card-img-top img-fluid h-50  px-1 pt-1 bg-primary" alt="{{ tip.name }}">
+						<div class="card-body bg-primary">
+							<h3 class="card-title text-dark my-4 d-flex justify-content-center">{{ tip.name }}</h3>
+							<a href="/astuces/?id={{ tip.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+						</figure>
+					</div>
+				{% endfor %}
+			</section>
+		{% endblock %}
