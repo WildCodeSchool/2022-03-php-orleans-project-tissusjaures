@@ -24,22 +24,14 @@
 						<option {% if clothItems.CatId == category.id %} selected="{{ clothItems.CatId }}" {% endif %} value="{{ category.id }}">{{ category.name }}</option>
 					{% endfor %}
 				</select>
-				<div class="d-flex justify-content-around align-items-center mb-3">
-					<div class="d-flex flex-column">
+				<div class="d-flex justify-content-center align-items-center mb-3">
+					<div class="d-flex flex-column me-5">
 						<label for="sale">En solde</label>
-						<input type="radio" id="sale" name="sale" value="1">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="notSale">Sans solde</label>
-						<input type="radio" id="notSale" name="sale" value="0">
+						<input type="checkbox" id="sale" name="is_on_sale" value="1">
 					</div>
 					<div class="d-flex flex-column">
 						<label for="new">Nouveau</label>
-						<input type="radio" id="new" name="new" value="1">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="ancient">Ancien</label>
-						<input type="radio" id="ancient" name="new" value="0">
+						<input type="checkbox" id="new" name="is_new" value="1">
 					</div>
 				</div>
 				<button type="submit" class="d-flex justify-content-around align-items-center btn btn-md">
