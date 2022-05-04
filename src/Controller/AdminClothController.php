@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Model\AdminClothManager;
+use App\Model\ClothManager;
 use App\Model\ClothCategoryManager;
 
 class AdminClothController extends AbstractController
 {
     public function index(): string
     {
-        $clothList = new AdminClothManager();
+        $clothList = new ClothManager();
         $clothItems = $clothList->selectAll();
         return $this->twig->render('Admin/Cloth/show.html.twig', ['clothItems' => $clothItems]);
     }
@@ -25,7 +25,7 @@ class AdminClothController extends AbstractController
             $errors = $this->clothValidate($clothItems, $categories);
 
             if (empty($errors)) {
-                $clothManager = new AdminClothManager();
+                $clothManager = new ClothManager();
                 $clothManager->insert($clothItems);
                 header('Location: /admin/tissus/');
             }
@@ -41,7 +41,7 @@ class AdminClothController extends AbstractController
         $errors = $clothItems = [];
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
-        $clothList = new AdminClothManager();
+        $clothList = new ClothManager();
         $clothItems = $clothList->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -64,7 +64,7 @@ class AdminClothController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $clothManager = new AdminClothManager();
+            $clothManager = new ClothManager();
             $clothManager->delete((int)$id);
 
             header('Location:/admin/tissus/');
