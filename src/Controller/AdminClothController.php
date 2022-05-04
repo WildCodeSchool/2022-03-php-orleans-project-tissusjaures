@@ -79,7 +79,7 @@ class AdminClothController extends AbstractController
         }
     }
 
-    private function clothValidate(array $clothItems, array $categories): array
+    public function clothValidate(array $clothItems, array $categories): array
     {
         $formErrors = [];
         if (empty($clothItems['name'])) {
@@ -113,7 +113,7 @@ class AdminClothController extends AbstractController
         return $formErrors;
     }
 
-    private function checkboxValidate(array $clothItems): array
+    public function checkboxValidate(array $clothItems): array
     {
         $checkboxErrors = [];
         if (!empty($clothItems['is_on_sale']) && (intval($clothItems['is_on_sale']) !== 1)) {

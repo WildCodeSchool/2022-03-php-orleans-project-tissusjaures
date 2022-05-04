@@ -21,7 +21,7 @@
 				<label for="cloth_categories_id">Catégorie</label>
 				<select name="cloth_categories_id" id="cloth_categories_id" class="form-control">
 					{% for category in categories %}
-						<option {% if clothItems.CatId == category.id %} selected="{{ clothItems.CatId }}" {% endif %} value="{{ category.id }}">{{ category.name }}</option>
+						<option {% if clothItems.CatId same as category.id %} selected="{{ clothItems.CatId }}" {% endif %} value="{{ category.id }}">{{ category.name }}</option>
 					{% endfor %}
 				</select>
 				<div class="d-flex justify-content-center align-items-center mb-3">
