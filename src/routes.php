@@ -20,7 +20,10 @@ return [
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'admin/astuces' => ['AdminTipController', 'index',],
+    'admin/lexicon/ajouter' => ['AdminLexiconController', 'addLexicon'],
     'astuces' => ['TipsController', 'showTips'],
+    'astuces/truc-et-astuce' => ['TipsController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index',],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
+    'admin/categories-tissus/ajouter' => ['AdminClothCategoryController', 'addClothCategory',],
 ];
