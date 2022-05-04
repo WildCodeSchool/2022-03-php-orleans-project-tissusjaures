@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 namespace App\Controller;
 
-class LoginController extends AbstractController 
+class LoginController extends AbstractController
 {
     public function login(): string
     {
