@@ -25,7 +25,7 @@ class AdminClothCategoryController extends AbstractController
     //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //         $clothCategories = array_map('trim', $_POST);
     //         $clothCategories['id'] = $id;
-            
+
     //         $categoryErrors = $this->clothCategoryValidate($clothCategoryList);
 
     //         $imageFile = $_FILES['image'];

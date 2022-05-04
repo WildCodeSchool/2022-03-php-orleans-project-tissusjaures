@@ -8,7 +8,7 @@ class ClothCategoryManager extends AbstractManager
 
     // public function update(array $clothCategory): bool
     // {
-    //     $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `price` = :price, 
+    //     $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `price` = :price,
     //     `cloth_categories_id` = :cloth_categories_id WHERE id=:id");
     //     $statement->bindValue('id', $clothCategory['id'], \PDO::PARAM_INT);
     //     $statement->bindValue('name', $clothCategory['name'], \PDO::PARAM_STR);
