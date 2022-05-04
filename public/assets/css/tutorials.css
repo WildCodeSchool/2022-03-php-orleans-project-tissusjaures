@@ -30,6 +30,12 @@ h3 {
     transform: scale(1.03);
 }
 
+.containerTutorial {
+    box-shadow: var(--shadow);
+    outline: 1.5px dashed var(--bs-dark);
+    outline-offset: -12px;
+}
+
 .card {
     box-shadow: var(--shadow);
     outline: 1.5px dashed var(--bs-dark);
@@ -65,4 +71,8 @@ h3 {
 
 .w-fit-content {
     width: fit-content;
+}
+
+.w-60 {
+    width: 60vw;
 }
