@@ -20,4 +20,12 @@ class TipsController extends AbstractController
             ['tipCategories' => $tipCategories, 'monthlyTip' => $monthlyTip, 'tips' => $tips]
         );
     }
+
+    public function showTipById($id): string
+    {
+        $tipManager = new TipsManager();
+        $tip = $tipManager->selectOneById($id);
+        return $this->twig->render(
+            'Tips/show.html.twig', ['tip' => $tip]);
+    }
 }

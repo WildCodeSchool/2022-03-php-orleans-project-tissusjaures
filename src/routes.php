@@ -20,5 +20,6 @@ return [
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'astuces' => ['TipsController', 'showTips'],
+    'astuces/trucEtAstuce' => ['TipsController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index',],
 ];
