@@ -2,11 +2,6 @@
     font-family: var(--text-font);
 }
 
-div.container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-}
-
 .header {
     background-image: url("../images/lexiques/Base_couture_rouge.webp");
     background-position: bottom;
@@ -37,7 +32,7 @@ div.container-fluid {
     font-size: var(--title-font-size);
 }
 
-.lexique-content {
+.lexiconContent{
     box-shadow: var(--shadow);
     border-radius: 0.3rem;
 }
