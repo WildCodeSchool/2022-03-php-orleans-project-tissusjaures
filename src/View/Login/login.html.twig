@@ -3,18 +3,29 @@
 	<link rel="stylesheet" href="/assets/css/login.css">
 {% endblock %}
 {% block content %}
-    <main class="container">
-        <h1>Connexion</h1>
-        <form method="post" action="">
-            <div class="mb-3">
-                <label class="form-label"for="email">Email</label>
-                <input class="form-control" type="text" id="email" name="email">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Mot de passe</label>
-                <input class="form-control" type="password" id="password" name="password">
-            </div>
-            <button class="btn btn-primary">S'identifier</button>
-        </form>
-    </main>
+	<main class="container">
+		<h1>Connexion</h1>
+		{% if errors is not empty %}
+			<div class="alert alert-danger">
+				{% for error in errors %}
+					<p>{{ error }}</p>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ "Succès de connexion !" }}
+		{% endif %}
+
+
+		<form method="post" action="">
+			<div class="mb-3">
+				<label class="form-label" for="email">Email</label>
+				<input class="form-control" type="text" id="email" name="email">
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="password">Mot de passe</label>
+				<input class="form-control" type="password" id="password" name="password">
+			</div>
+			<button class="btn btn-primary">S'identifier</button>
+		</form>
+	</main>
 {% endblock %}
