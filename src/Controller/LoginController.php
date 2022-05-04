@@ -6,6 +6,7 @@ class LoginController extends AbstractController
 {
     public function login(): string
     {
+
         $errors = [];
         $connexion = [];
 
