@@ -12,8 +12,12 @@ input, #object, textarea {
 
 .btn {
     opacity: 90%;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
 }
 
 .btn:hover {
     opacity: 100%;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
 }

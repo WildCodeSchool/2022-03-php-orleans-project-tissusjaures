@@ -7,20 +7,31 @@ class ContactController extends AbstractController
     protected const NAME_LENGTH = 100;
     protected const PHONE_LENGTH = 50;
 
-    public function index(): string
+    public function index(string $sent = ''): string
     {
+        $messageSent = false;
+        if (trim($sent) === 'success') {
+            $messageSent = true;
+        }
+
+        $contact = [];
         $errorsEmpty = [];
         $errorsFormat = [];
         $errors = [];
-
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $contact = array_map("trim", $_POST);
             $errorsEmpty = $this->validate($contact);
             $errorsFormat = $this->validateFormat($contact);
             $errors = [...$errorsEmpty, ...$errorsFormat];
+            /** @phpstan-ignore-next-line */
+            if (empty($errors)) {
+                header('Location: /contact?send=success');
+            }
         }
-        return $this->twig->render('contact.html.twig', [
+        return $this->twig->render('Contact/contact.html.twig', [
             'errors' => $errors,
+            'contact' => $contact,
+            'messageSent' => $messageSent,
         ]);
     }
 
