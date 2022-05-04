@@ -13,6 +13,12 @@ CREATE TABLE IF NOT EXISTS  `tissus_jaures`.`user` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Content `tissus_jaures`.`user`
+-- -----------------------------------------------------
+INSERT INTO `user` (`id`, `emmail`, `password`) VALUES
+(1, "tissus_jaures@jadmin.com", "tissusjauresadmin17" )
+
+-- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
