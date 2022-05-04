@@ -19,6 +19,7 @@ return [
     'contact' => ['ContactController', 'index',],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
     'admin/categories-tissus/ajouter' => ['AdminClothCategoryController', 'addClothCategory',],
+    'admin/categories-tissus/editer' => ['AdminClothCategoryController', 'editClothCategory', ['id']],
     'admin/tissus' => ['AdminClothController', 'index',],
     'admin/tissus/ajouter' => ['AdminClothController', 'addCloth',],
     'admin/tissus/editer' => ['AdminClothController', 'editCloth', ['id']],
