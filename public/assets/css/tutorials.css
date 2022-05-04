@@ -45,3 +45,24 @@ h3 {
     font-size: var(--font-size);
     font-family: var(--text-font);
 }
+
+.tutorialTitle {
+    width: fit-content;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}
+
+.tutorialContent {
+    font-family: var(--text-font);
+    font-size: var(--font-size);
+}
+
+.tutorialImg {
+    height: 20vh;
+    width: fit-content;
+    object-fit: cover;
+}
+
+.w-fit-content {
+    width: fit-content;
+}
