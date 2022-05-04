@@ -10,17 +10,6 @@
     text-shadow: 2px 2px var(--bs-dark);
 }
 
-.header h1 {
-    font-family: var(--header-font);
-    font-size: var(--header-font-size);
-    text-shadow: 2px 2px var(--bs-dark);
-}
-
-h2 {
-    font-family: var(--header-font);
-    font-size: var(--title-font-size);
-}
-
 h3 {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) - 4px);
@@ -37,14 +26,17 @@ h3 {
     transform: scale(1.03);
 }
 
-.title {
+.title-tip {
     font-family: var(--header-font);
-    font-size: var(--title-font-size);
+    font-size: calc(var(--title-font-size) + 0.75rem);
+    background-color: var(--bs-secondary);
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -4px;
 }
 
-.img{
-    height: 60%;
-    width: 60%;
+.img-tip{
+    height: 38vh;
+    width: 38vw;
 }
 
 .monthlyTip {
@@ -57,10 +49,38 @@ h3 {
 
 .textMonthly {
     font-family: var(--text-font);
-    letter-spacing: 1px;
+    font-size: calc(var(--font-size) + 0.5rem);
 }
 
 .monthlyTitle {
-    font-size: var(--font-size-link);
+    font-size: calc(var(--font-size-link) + 0.75rem);
+}
+
+.btn {
+    box-shadow: var(--shadow);
+    position: initial;
+    font-family: var(--text-font);
+    font-size: var(--font-size);
+}
+
+.btn:hover {
+    color: var(--bs-secondary);
+    transform: scale(1.03);
+}
+
+.card {
+    box-shadow: var(--shadow);
+    outline: 1.5px dashed var(--bs-dark);
+    outline-offset: -6px;
+}
+
+.card-title {
+    font-size: calc(var(--title-font-size) - 4px);
+    font-family: var(--header-font);
+}
+
+.card-text {
+    font-size: var(--font-size);
+    font-family: var(--text-font);
 }
 

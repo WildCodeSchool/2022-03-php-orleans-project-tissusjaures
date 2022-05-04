@@ -24,6 +24,8 @@
     --title-font-size: 36px;
 
     --spacing: 8px;
+
+    --shadow: 2px 1px 4px var(--shadow-color);
 }
 
 * {
@@ -53,11 +55,14 @@ label {
 }
 
 .list-group-item:hover {
-    transform: scale(1.03);
+    filter: drop-shadow(var(--shadow));
 }
 
-svg {
-    margin-right:var(--spacing)
+.adminSvg {
+    margin-right:var(--spacing);
+    width: 20px;
+    height: 20px;
+    fill: var(--bs-light);
 }
 
 a {
