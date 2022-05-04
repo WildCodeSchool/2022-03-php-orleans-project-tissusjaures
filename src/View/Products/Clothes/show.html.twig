@@ -15,16 +15,16 @@
 			{% endif %}
 		</h1>
 	</div>
-	<div class="container categories mt-3">
+	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for clothCategory in clothCategories %}
 				<div class="col-lg-3 mt-1 w-25">
-					<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1 categories">{{ clothCategory.name }}</a>
+					<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1">{{ clothCategory.name }}</a>
 				</div>
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
 				<div class="col-lg-3 mt-1 ">
-					<a href='/machines' class="btn btn-lg w-100 bg-primary m-1 categories">{{ machineCategory.name }}</a>
+					<a href='/machines' class="btn btn-lg w-100 bg-primary m-1">{{ machineCategory.name }}</a>
 				</div>
 			{% endfor %}
 		</div>
