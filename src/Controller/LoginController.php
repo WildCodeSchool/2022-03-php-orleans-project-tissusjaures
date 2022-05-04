@@ -7,6 +7,7 @@ class LoginController extends AbstractController
     public function login(): string
     {
         $errors = [];
+        $connexion = [];
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $connexion = array_map('trim', $_POST);
