@@ -130,7 +130,21 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-  
+
+-- -- -----------------------------------------------------
+-- -- Content `tissus_jaures`.`tutorials`
+-- -- -----------------------------------------------------
+
+INSERT INTO `tutorials` (`id`, `name`, `image`, `content`, `tips_and_tricks_categories_id`) VALUES
+(1, "Confectionner des rideaux", "/assets/images/tss1.jpg", "La hauteur du rideau = Haut de la barre au sol + 3cm.
+La hauteur du tissu = Hauteur du rideaux + 20cm pour les ourlets.", 2),
+(2, "Fixer ses tringles", "/assets/images/tss1.jpg", "La barre est généralement placée 15cm environ au dessus du haut de la fenêtre.
+Pour plus d’esthétique, la barre dépasse d’environ 20cm de chaque coté de la fenêtre. Le respect de ces distances permet également une ouverture facile des fenêtres.
+Bien mesurer avant de percer ! Les supports se placent à environ 10cm du bout de la tringle.", 2),
+(3, "Conseil déco", "/assets/images/tss1.jpg", "Votre pièce doit être harmonieuse...
+Pourquoi ne pas poser un voilage léger porté par une tringlerie fine, des doubles rideaux sur des tringles de grand diamètre et des embouts de barre pour s'accorder au style de votre intérieur...", 2);
+
+
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
