@@ -20,7 +20,7 @@ return [
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'astuces' => ['TipsController', 'showTips'],
-    'astuces/trucEtAstuce' => ['TipsController', 'showTipById', ['id']],
+    'astuces/truc-et-astuce' => ['TipsController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index',],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
 ];
