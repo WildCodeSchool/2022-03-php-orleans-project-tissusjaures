@@ -19,6 +19,7 @@ return [
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
+    'admin/lexicon/ajouter' => ['AdminLexiconController', 'addLexicon'],
     'astuces' => ['TipsController', 'showTips'],
     'contact' => ['ContactController', 'index',],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
