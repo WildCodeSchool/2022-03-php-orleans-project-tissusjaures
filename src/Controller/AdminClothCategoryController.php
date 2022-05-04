@@ -8,6 +8,7 @@ class AdminClothCategoryController extends AbstractController
 {
     public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     public const MAX_FILE_SIZE = 1000000;
+    public const MAX_NAME_LENGTH = 100;
 
     public function index(): string
     {
@@ -19,8 +20,7 @@ class AdminClothCategoryController extends AbstractController
 
     public function addClothCategory(): ?string
     {
-        $categoryErrors = [];
-        $imageErrors = [];
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothCategoryList = array_map('trim', $_POST);
@@ -29,7 +29,10 @@ class AdminClothCategoryController extends AbstractController
             $imageFile = $_FILES['image'];
             $imageErrors = $this->validateImage($imageFile);
 
-            if (empty($categoryErrors) && empty($imageErrors)) {
+            $errors = [...$categoryErrors, ...$imageErrors];
+
+            /** @phpstan-ignore-next-line */
+            if (empty($errors)) {
                 $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
                 $imageName = uniqid('', true) . '.' . $extension;
 
@@ -42,8 +45,7 @@ class AdminClothCategoryController extends AbstractController
             }
         }
         return $this->twig->render('Admin/ClothCategory/add.html.twig', [
-            'categoryErrors' => $categoryErrors,
-            'imageErrors' => $imageErrors,
+            'errors' => $errors
         ]);
     }
 
@@ -54,9 +56,8 @@ class AdminClothCategoryController extends AbstractController
             $errors[] = 'Le champ nom est obligatoire';
         }
 
-        $nameMaxLength = 100;
-        if (strlen($clothCategories['name']) > $nameMaxLength) {
-            $errors[] = 'Le nom ne doit pas dépasser les 100 caractères';
+        if (strlen($clothCategories['name']) > self::MAX_NAME_LENGTH) {
+            $errors[] = 'Le nom ne doit pas dépasser les ' . self::MAX_NAME_LENGTH . ' caractères';
         }
 
         return $errors;
