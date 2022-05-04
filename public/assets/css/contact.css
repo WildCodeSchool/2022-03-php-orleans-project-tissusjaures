@@ -1,0 +1,23 @@
+* {
+    font-family: var(--text-font);
+}
+
+h1 {
+    font-family: var(--title-font);
+}
+
+input, #object, textarea {
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    opacity: 90%;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}
+
+.btn:hover {
+    opacity: 100%;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}

@@ -15,9 +15,20 @@ h2 {
     font-size: var(--title-font-size);
 }
 
-h3 {
+div.title {
+    background-color: var(--bs-secondary);
+    width: fit-content;
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+}
+
+h3.slogan {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) - 4px);
+}
+
+h5.card-title {
+    font-size: calc(var(--font-size) + 8px);
 }
 
 div .boutique-description {
@@ -29,12 +40,15 @@ div .boutique-description {
     box-shadow: var(--shadow); 
 }
 
-.btn {
+.card-btn {
     opacity: 90%;
+    font-size: var(--font-size);
 }
 
-.btn:hover {
+.card-btn:hover {
     opacity: 100%;
+    color: var(--bs-secondary);
+    transform: scale(1.03);
 }
 
 .card {
@@ -46,6 +60,8 @@ div .boutique-description {
 .card-title {
     font-size: calc(var(--title-font-size) - 4px);
     font-family: var(--header-font);
+    text-shadow: 1px 1px 1px var(--bs-light);
+    border-bottom: 1px solid var(--bs-secondary-dark);
 }
 
 .card-text {

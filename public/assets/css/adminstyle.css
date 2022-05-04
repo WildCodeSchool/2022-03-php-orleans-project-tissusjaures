@@ -13,6 +13,7 @@
     --secondary-color: #F55651;
     --light-color: #FFFBF5;
     --dark-color: #4D3C3C;
+    --bs-admin-rgb: 111, 68, 148;
     --admin-color: #6F4494;
 
     --header-font: 'Kotta One', serif;
@@ -24,6 +25,8 @@
     --title-font-size: 36px;
 
     --spacing: 8px;
+
+    --shadow: 2px 1px 4px var(--shadow-color);
 }
 
 * {
@@ -53,11 +56,14 @@ label {
 }
 
 .list-group-item:hover {
-    transform: scale(1.03);
+    filter: drop-shadow(var(--shadow));
 }
 
-svg {
-    margin-right:var(--spacing)
+.adminSvg {
+    margin-right:var(--spacing);
+    width: 20px;
+    height: 20px;
+    fill: var(--bs-light);
 }
 
 a {
@@ -67,4 +73,8 @@ a {
 .btn:focus {
     outline: none;
     box-shadow: none;
+}
+
+.navbar, .navbar-expand-lg {
+    background-color: var(--admin-color);
 }
