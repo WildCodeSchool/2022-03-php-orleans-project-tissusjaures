@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class LexiqueManager extends AbstractManager
+class LexiconManager extends AbstractManager
 {
     public const TABLE = 'lexicon';
 }

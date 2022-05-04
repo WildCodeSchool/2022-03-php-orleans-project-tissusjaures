@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use App\Model\LexiqueManager;
+use App\Model\LexiconManager;
 use App\Model\TipCategoryManager;
 
-class LexiqueController extends AbstractController
+class LexiconController extends AbstractController
 {
     public function index(): string
     {
         $tipCategoryManager = new TipCategoryManager();
         $tipCategories = $tipCategoryManager->selectAll();
-        $lexiconManager = new LexiqueManager();
+        $lexiconManager = new LexiconManager();
         $lexicons = $lexiconManager->selectAll();
 
-        return $this->twig->render('Lexique/index.html.twig', [
+        return $this->twig->render('Lexicon/index.html.twig', [
             'lexicons' => $lexicons,
             'tipCategories' => $tipCategories,
         ]);

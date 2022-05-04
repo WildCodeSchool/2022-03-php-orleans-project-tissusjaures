@@ -134,7 +134,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicons` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
@@ -151,7 +151,7 @@ ENGINE = InnoDB;
 -- -- -----------------------------------------------------
 -- -- Content `tissus_jaures`.`lexicon`
 -- -- -----------------------------------------------------
-INSERT INTO `lexicons` (`id`, `name`, `definition`, `tips_and_tricks_categories_id`) VALUES
+INSERT INTO `lexicon` (`id`, `name`, `definition`, `tips_and_tricks_categories_id`) VALUES
 (1, "Appliqué : ", " Technique. Coudre à point invisibles (rentré de 5mm) un motif sur un tissu de fond.", 3),
 (2, "Biais :", " Bande de tissus étroite et en diagonale (45°du droit fil) utilisé pour border.", 3),
 (3, "Boutis :", " Technique « provençale ». Matelassage de plusieurs tissus à la main. Les deux cotés pouvant être exposés.", 3),
