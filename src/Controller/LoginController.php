@@ -6,6 +6,8 @@ class LoginController extends AbstractController
 {
     public function login(): string
     {
+        $errors = [];
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $connexion = array_map('trim', $_POST);
             $errors = $this->validate($connexion);
@@ -17,6 +19,7 @@ class LoginController extends AbstractController
 
     private function validate(array $connexion): array
     {
+        $errors = [];
         if (empty($connexion['email'])) {
             $errors[] = 'Le champ email ne doit pas être vide';
         }
