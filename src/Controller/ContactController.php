@@ -7,11 +7,11 @@ class ContactController extends AbstractController
     protected const NAME_LENGTH = 100;
     protected const PHONE_LENGTH = 50;
 
-    public function index(string $send = ''): string
+    public function index(string $sent = ''): string
     {
-        $messageSend = false;
-        if (trim($send) === 'success') {
-            $messageSend = true;
+        $messageSent = false;
+        if (trim($sent) === 'success') {
+            $messageSent = true;
         }
 
         $contact = [];
@@ -31,7 +31,7 @@ class ContactController extends AbstractController
         return $this->twig->render('Contact/contact.html.twig', [
             'errors' => $errors,
             'contact' => $contact,
-            'messageSend' => $messageSend,
+            'messageSent' => $messageSent,
         ]);
     }
 
