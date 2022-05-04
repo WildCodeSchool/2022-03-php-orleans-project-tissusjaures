@@ -20,6 +20,6 @@ return [
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'astuces' => ['TipsController', 'showTips'],
-    'lexique' => ['LexiqueController', 'index',],
+    'lexique' => ['LexiconController', 'index',],
     'contact' => ['ContactController', 'index',],
 ];

@@ -11,11 +11,11 @@ class LexiqueController extends AbstractController
     {
         $tipCategoryManager = new TipCategoryManager();
         $tipCategories = $tipCategoryManager->selectAll();
-        $lexiqueManager = new LexiqueManager();
-        $lexiques = $lexiqueManager->selectAll();
+        $lexiconManager = new LexiqueManager();
+        $lexicons = $lexiconManager->selectAll();
 
         return $this->twig->render('Lexique/index.html.twig', [
-            'lexiques' => $lexiques,
+            'lexicons' => $lexicons,
             'tipCategories' => $tipCategories,
         ]);
     }
