@@ -18,7 +18,7 @@ class MachineController extends AbstractController
         $machineManager = new MachineManager();
         $machines = $machineManager->selectAll();
 
-        return $this->twig->render('Products/machine.html.twig', [
+        return $this->twig->render('Products/Machines/index.html.twig', [
             'machines' => $machines,
             'clothCategories' => $clothCategories,
             'machineCategories' => $machineCategories
@@ -35,7 +35,7 @@ class MachineController extends AbstractController
         $machineManager = new MachineManager();
         $machines = $machineManager->selectAllById($id);
 
-        return $this->twig->render('Products/machine.html.twig', [
+        return $this->twig->render('Products/Machines/show.html.twig', [
             'machines' => $machines,
             'id' => $id,
             'clothCategories' => $clothCategories,

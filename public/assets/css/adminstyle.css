@@ -13,6 +13,7 @@
     --secondary-color: #F55651;
     --light-color: #FFFBF5;
     --dark-color: #4D3C3C;
+    --bs-admin-rgb: 111, 68, 148;
     --admin-color: #6F4494;
 
     --header-font: 'Kotta One', serif;
@@ -72,4 +73,8 @@ a {
 .btn:focus {
     outline: none;
     box-shadow: none;
+}
+
+.navbar, .navbar-expand-lg {
+    background-color: var(--admin-color);
 }
