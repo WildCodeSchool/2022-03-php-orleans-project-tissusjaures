@@ -26,6 +26,8 @@ class TipsController extends AbstractController
         $tipManager = new TipsManager();
         $tip = $tipManager->selectOneById($id);
         return $this->twig->render(
-            'Tips/show.html.twig', ['tip' => $tip]);
+            'Tips/show.html.twig',
+            ['tip' => $tip]
+        );
     }
 }
