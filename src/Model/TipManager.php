@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class TipsManager extends AbstractManager
+class TipManager extends AbstractManager
 {
     public const TABLE = 'tips';
 
