@@ -13,7 +13,7 @@ return [
     'tutoriels/tutoriel' => ['TutorialController', 'show', ['id']],
     'tissus' => ['ClothController', 'index',],
     'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
-    'astuces' => ['TipsController', 'showTips'],
+    'astuces' => ['TipController', 'showTips'],
     'lexique' => ['LexiconController', 'index',],
     'astuces/truc-et-astuce' => ['TipsController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index', ['sent']],

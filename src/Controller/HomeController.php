@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Model\HomeClothManager;
-use App\Model\HomeMachineManager;
+use App\Model\ClothManager;
+use App\Model\MachineManager;
 
 class HomeController extends AbstractController
 {
@@ -12,9 +12,9 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        $homeClothManager = new HomeClothManager();
+        $homeClothManager = new ClothManager();
         $newClothes = $homeClothManager->selectByIsNew();
-        $homeMachineManager = new HomeMachineManager();
+        $homeMachineManager = new MachineManager();
         $newMachines = $homeMachineManager->selectByIsNew();
 
         return $this->twig->render('Home/index.html.twig', ['clothes' => $newClothes, 'machines' => $newMachines]);
