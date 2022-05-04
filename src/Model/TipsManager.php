@@ -13,4 +13,12 @@ class TipsManager extends AbstractManager
 
         return $statement->fetch();
     }
+
+    public function selectTips(): array
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE is_monthly_tip = 0");
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
