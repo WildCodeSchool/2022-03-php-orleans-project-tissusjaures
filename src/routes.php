@@ -11,6 +11,7 @@ return [
     'produits' => ['ProductController', 'index',],
     'tissus' => ['ClothController', 'index',],
     'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
+    'connection' => ['LoginController', 'login'],
     'admin/tissus' => ['AdminClothController', 'index',],
     'admin/tissus/ajouter' => ['AdminClothController', 'addCloth',],
     'admin/tissus/editer' => ['AdminClothController', 'editCloth', ['id']],
