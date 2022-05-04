@@ -22,4 +22,5 @@ return [
     'astuces' => ['TipsController', 'showTips'],
     'contact' => ['ContactController', 'index',],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
+    'admin/categories-tissus/ajouter' => ['AdminClothCategoryController', 'addClothCategory',],
 ];

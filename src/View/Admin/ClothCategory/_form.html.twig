@@ -5,29 +5,19 @@
 		{% endfor %}
 	</div>
 {% endif %}
-<h2 class="addClothTitle col-8 col-md-6 mx-auto text-center">{{ title_name|default('Ajouter un tissu')}}</h2>
+<h2 class="addClothTitle col-8 col-md-6 mx-auto text-center">{{ title_name|default('Ajouter une catégorie de tissu')}}</h2>
 <div class="container">
 	<form method="POST" enctype="multipart/form-data">
 		<div class="form-row">
 			<div class="form-group col-8 col-md-6 mx-auto">
 				<label for="name">Nom</label>
-				<input type="text" class="form-control" value="{{ clothItems.name }}" id="name" name="name" placeholder="Tissu rose">
+				<input type="text" class="form-control" value="{{ clothCategory.name }}" id="name" name="name" placeholder="Tissu d'ameublement">
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
-				<label for="price">Prix (en €)</label>
-				<input type="number" step="0.1" class="form-control" value="{{ clothItems.price }}" id="price" name="price" placeholder="30">
+				<label for="image">Image</label>
+				<input type="file" class="form-control" id="image" name="image">
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
-				<label for="cloth_categories_id">Catégorie</label>
-				<select name="cloth_categories_id" id="cloth_categories_id" class="form-control">
-				{% for category in categories %}
-				<option 
-				{% if clothItems.CatId == category.id %}
-				selected="{{ clothItems.CatId }}"
-				{% endif %}
-				value="{{ category.id }}">{{ category.name }}</option>
-				{% endfor %}
-				</select>
 				<button type="submit" class="d-flex justify-content-around align-items-center btn btn-md">
 				<svg class="adminSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
   					<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>

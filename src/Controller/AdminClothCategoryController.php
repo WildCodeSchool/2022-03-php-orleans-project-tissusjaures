@@ -35,6 +35,7 @@ class AdminClothCategoryController extends AbstractController
                 move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
 
                 $clothCategoryManager = new ClothCategoryManager();
+                $clothCategoryList['image'] = $imageName;
                 $clothCategoryManager->insert($clothCategoryList);
                 header('Location: /admin/categories-tissus/');
             }
