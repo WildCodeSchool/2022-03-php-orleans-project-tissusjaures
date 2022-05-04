@@ -30,4 +30,13 @@ class MachineManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function selectByIsNew(): array
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE is_new");
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
