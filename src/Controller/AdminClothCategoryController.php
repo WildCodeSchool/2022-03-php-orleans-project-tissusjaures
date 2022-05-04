@@ -19,7 +19,8 @@ class AdminClothCategoryController extends AbstractController
 
     public function addClothCategory(): ?string
     {
-        $errors = [];
+        $categoryErrors = [];
+        $imageErrors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothCategoryList = array_map('trim', $_POST);
@@ -41,7 +42,8 @@ class AdminClothCategoryController extends AbstractController
             }
         }
         return $this->twig->render('Admin/ClothCategory/add.html.twig', [
-            'errors' => $errors
+            'categoryErrors' => $categoryErrors,
+            'imageErrors' => $imageErrors,
         ]);
     }
 
