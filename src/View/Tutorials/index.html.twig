@@ -3,10 +3,10 @@
 	<link rel="stylesheet" href="/assets/css/tutorials.css">
 {% endblock %}
 {% block content %}
-<div class="container-fluid d-flex justify-content-center align-items-center header">
+<div class="d-flex justify-content-center align-items-center header">
 	<h1 class="text-light">Tutoriels</h1>
 </div>
-<div class="container categories mt-3">
+<div class="container mt-3">
 	<div class="row justify-content-center">
 		{% for tipCategory in tipCategories %}
 			<div class="col-lg-3 mt-1 w-25">
@@ -15,9 +15,8 @@
 		{% endfor %}
 	</div>
 </div>
-<div class="container cards-products mt-3">
-	<section id="products">
-		<div class="row">
+<div class="container mt-3">
+	<section class="row">
 			{% for tutorial in tutorials %}
 				<div class="col-lg-3 mb-2 mx-auto">
 					<figure class="card h-100">
