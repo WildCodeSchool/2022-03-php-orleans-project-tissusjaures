@@ -15,7 +15,7 @@ return [
     'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
     'astuces' => ['TipController', 'showTips'],
     'lexique' => ['LexiconController', 'index',],
-    'astuces/trucs-et-astuces' => ['TipsController', 'showTipById', ['id']],
+    'astuces/trucs-et-astuces' => ['TipController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index', ['sent']],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
     'admin/categories-tissus/ajouter' => ['AdminClothCategoryController', 'addClothCategory',],
