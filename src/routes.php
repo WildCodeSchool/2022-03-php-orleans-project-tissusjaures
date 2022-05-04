@@ -22,4 +22,5 @@ return [
     'astuces' => ['TipsController', 'showTips'],
     'astuces/trucEtAstuce' => ['TipsController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index',],
+    'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
 ];
