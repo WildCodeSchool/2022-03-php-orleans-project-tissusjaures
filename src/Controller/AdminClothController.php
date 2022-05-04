@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\AdminClothManager;
-use App\Model\CategoryManager;
+use App\Model\ClothCategoryManager;
 
 class AdminClothController extends AbstractController
 {
@@ -17,7 +17,7 @@ class AdminClothController extends AbstractController
     public function addCloth()
     {
         $clothItems = $errors = [];
-        $adminCategories = new CategoryManager();
+        $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -39,7 +39,7 @@ class AdminClothController extends AbstractController
     public function editCloth($id): string
     {
         $errors = $clothItems = [];
-        $adminCategories = new CategoryManager();
+        $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
         $clothList = new AdminClothManager();
         $clothItems = $clothList->selectOneById($id);
