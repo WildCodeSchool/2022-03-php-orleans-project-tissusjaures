@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
 @import url('navbarStyle.css');
 @import url('footer.css');
+@import url('slogan.css');
 :root {
     --bs-primary-rgb: 255, 244, 226;
     --bs-primary: #FFF4E2;

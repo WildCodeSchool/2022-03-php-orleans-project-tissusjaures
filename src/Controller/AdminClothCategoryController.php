@@ -84,6 +84,17 @@ class AdminClothCategoryController extends AbstractController
         ]);
     }
 
+    public function deleteClothCategory(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $clothCatManager = new ClothCategoryManager();
+            $clothCatManager->delete((int)$id);
+
+            header('Location: /admin/categories-tissus/');
+        }
+    }
+
     private function clothCategoryValidate(array $clothCategories): array
     {
         $errors = [];
