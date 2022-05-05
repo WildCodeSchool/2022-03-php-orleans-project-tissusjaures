@@ -30,5 +30,6 @@ return [
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'admin/astuces' => ['AdminTipController', 'index',],
+    'admin/astuces/ajouter' => ['AdminTipController', 'addTip',],
     'admin/lexicon/ajouter' => ['AdminLexiconController', 'addLexicon'],
 ];
