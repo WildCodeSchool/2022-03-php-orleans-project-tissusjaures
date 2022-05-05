@@ -65,7 +65,7 @@ class AdminTipController extends AbstractController
             $tipErrors[] = 'Le champ description est obligatoire';
         }
 
-        if (!empty($tip['is_monthly_tip']) && intval($tip['is_monthly_tip'] !== 1)) {
+        if (!empty($tip['is_monthly_tip']) && intval($tip['is_monthly_tip']) !== 1) {
             $tipErrors[] = 'Ceci n\'est pas une option valide';
         }
 
