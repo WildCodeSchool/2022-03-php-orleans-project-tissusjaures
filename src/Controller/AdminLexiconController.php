@@ -4,13 +4,13 @@ namespace App\Controller;
 
 use App\Model\LexiconManager;
 
-class LexiconController extends AbstractController
+class AdminLexiconController extends AbstractController
 {
     public function index(): string
     {
         $lexiconManager = new LexiconManager();
         $lexicons = $lexiconManager->selectAll();
-        return $this->twig->render('Admin/Lexicon/show.html.twig', ['lexicons' => $lexicons]);
+        return $this->twig->render('Admin/Lexicon/index.html.twig', ['lexicons' => $lexicons]);
     }
 
     public function addLexicon()

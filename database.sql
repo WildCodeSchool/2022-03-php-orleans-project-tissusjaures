@@ -90,9 +90,9 @@ ENGINE = InnoDB;
 -- -- Content `tissus_jaures`.`machines`
 -- -- -----------------------------------------------------
 INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`) VALUES
-(1, "Machine Singer", "Une machine Singer", 400, '/assets/images/mchn1', 0, 0),
-(2, "Machine Singer", "Une belle machine Singer", 300, '/assets/images/mchn1', 1, 1),
-(3, "Machine Singer", "Une superbe machine Singer", 150.5, '/assets/images/mchn1', 1, 0),
+(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/mchn1', 0, 0),
+(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/mchn1', 1, 1),
+(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/mchn1', 1, 0),
 (4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/mchn1', 0, 1);
 
 -- -----------------------------------------------------
@@ -166,19 +166,19 @@ ENGINE = InnoDB;
 -- -- Content `tissus_jaures`.`lexicon`
 -- -- -----------------------------------------------------
 INSERT INTO `lexicon` (`id`, `name`, `definition`, `tips_and_tricks_categories_id`) VALUES
-(1, "Appliqué : ", " Technique. Coudre à point invisibles (rentré de 5mm) un motif sur un tissu de fond.", 3),
-(2, "Biais :", " Bande de tissus étroite et en diagonale (45°du droit fil) utilisé pour border.", 3),
-(3, "Boutis :", " Technique « provençale ». Matelassage de plusieurs tissus à la main. Les deux cotés pouvant être exposés.", 3),
-(4, "Charm quilt :", " Ouvrage réalisé avec un gabarit unique et une multitude de tissus tous différents.", 3),
-(5, "Cording :", " Technique. Introduction d’un cordon entre deux lignes de matelassage pour donner du relief à un ouvrage.", 3),
-(6, "Crazy quilt :", " Ouvrage réalisé avec des pièces de formes irrégulières assemblées et dont les coutures sont brodées à la main.", 3),
-(7, "Log cabin :", " Ouvrage réalisé par assemblage d’un carré central avec des bandes de tissus de longueurs croissantes et alternant deux bandes claires et deux foncées.", 3),
-(8, "Molleton :", " Rembourrage en coton, laine ou matière synthétiques. Il existe différentes épaisseurs et qualités.", 3),
-(9, "Muslin :", " Tissu de coton léger écru ou blanc.", 3),
-(10, "Quilt :", " Traduction américaine de patchwork.", 3),
-(11, "Toile à beurre :", " Toile de coton très fine à maille lâche", 3),
-(12, "Stippling :", " Quilting serré.", 3),
-(13, "Viseline :", "non-tissé thermocollant utilisé en appliqué.", 3);
+(1, "Appliqué", " Technique. Coudre à point invisibles (rentré de 5mm) un motif sur un tissu de fond.", 3),
+(2, "Biais", " Bande de tissus étroite et en diagonale (45°du droit fil) utilisé pour border.", 3),
+(3, "Boutis", " Technique « provençale ». Matelassage de plusieurs tissus à la main. Les deux cotés pouvant être exposés.", 3),
+(4, "Charm quilt", " Ouvrage réalisé avec un gabarit unique et une multitude de tissus tous différents.", 3),
+(5, "Cording", " Technique. Introduction d’un cordon entre deux lignes de matelassage pour donner du relief à un ouvrage.", 3),
+(6, "Crazy quilt", " Ouvrage réalisé avec des pièces de formes irrégulières assemblées et dont les coutures sont brodées à la main.", 3),
+(7, "Log cabin", " Ouvrage réalisé par assemblage d’un carré central avec des bandes de tissus de longueurs croissantes et alternant deux bandes claires et deux foncées.", 3),
+(8, "Molleton", " Rembourrage en coton, laine ou matière synthétiques. Il existe différentes épaisseurs et qualités.", 3),
+(9, "Muslin", " Tissu de coton léger écru ou blanc.", 3),
+(10, "Quilt", " Traduction américaine de patchwork.", 3),
+(11, "Toile à beurre", " Toile de coton très fine à maille lâche", 3),
+(12, "Stippling", " Quilting serré.", 3),
+(13, "Viseline", "non-tissé thermocollant utilisé en appliqué.", 3);
 
 
 -- -----------------------------------------------------
