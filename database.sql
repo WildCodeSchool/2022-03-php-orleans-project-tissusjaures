@@ -5,7 +5,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS  `tissus_jaures`.`user` (
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
@@ -15,8 +15,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`user`
 -- -----------------------------------------------------
-INSERT INTO `user` (`id`, `emmail`, `password`) VALUES
-(1, "tissus_jaures@jadmin.com", "tissusjauresadmin17" )
+INSERT INTO `user` (`id`, `email`, `password`) VALUES
+(1, "tissus_jaures@admin.com", "tissusjauresadmin17");
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`

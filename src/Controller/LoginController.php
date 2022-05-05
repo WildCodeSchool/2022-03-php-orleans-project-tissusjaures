@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\UserManager;
+
 class LoginController extends AbstractController
 {
     public function login(): string
@@ -32,7 +34,18 @@ class LoginController extends AbstractController
             $errors[] = "format d'email invalide";
         }
         if (empty($errors)) {
-            //tentative de login
+            $userManager = new UserManager();
+            $user = $userManager->selectOneByEmail($connexion['email']);
+            if ($user) {
+                if ($user['password'] === $connexion['password']) {
+                    echo 'Les identifiants sont corrects';
+                }else {
+                    $errors[] = 'Mauvais identifiants';
+                }
+            }else {
+                $errors[] = 'Email inconnu' ;
+            }
+            $_SESSION['user'] = $user['id'];
         }
         return $errors;
     }
