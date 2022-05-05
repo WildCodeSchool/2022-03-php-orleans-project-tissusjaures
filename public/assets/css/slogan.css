@@ -1,0 +1,4 @@
+h3.slogan {
+    font-family: var(--header-font);
+    font-size: calc(var(--title-font-size) - 4px);
+}
