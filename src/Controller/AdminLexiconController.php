@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\AdminLexiconManager;
+use App\Model\LexiconManager;
 
 class AdminLexiconController extends AbstractController
 {
@@ -20,7 +20,7 @@ class AdminLexiconController extends AbstractController
             $errors = $this->lexiconValidate($lexicon);
 
             if (empty($errors)) {
-                $lexiconManager = new AdminLexiconManager();
+                $lexiconManager = new LexiconManager();
                 $lexiconManager->insert($lexicon);
                 header('Location: /admin/lexicons/');
             }

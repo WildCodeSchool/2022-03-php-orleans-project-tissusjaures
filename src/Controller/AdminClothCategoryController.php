@@ -49,6 +49,41 @@ class AdminClothCategoryController extends AbstractController
         ]);
     }
 
+    public function editClothCategory($id): string
+    {
+        $errors = [];
+
+        $clothCategoryList = new ClothCategoryManager();
+        $clothCategories = $clothCategoryList->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $clothCategories = array_map('trim', $_POST);
+            $clothCategories['id'] = $id;
+
+            $categoryErrors = $this->clothCategoryValidate($clothCategories);
+
+            $imageFile = $_FILES['image'];
+            $imageErrors = $this->validateImage($imageFile);
+
+            $errors = [...$categoryErrors, ...$imageErrors];
+
+            /** @phpstan-ignore-next-line */
+            if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $clothCategories['image'] = $imageName;
+                $clothCategoryList->update($clothCategories);
+                header('Location: /admin/categories-tissus/');
+            }
+        }
+        return $this->twig->render('Admin/ClothCategory/edit.html.twig', [
+            'errors' => $errors
+        ]);
+    }
+
     private function clothCategoryValidate(array $clothCategories): array
     {
         $errors = [];

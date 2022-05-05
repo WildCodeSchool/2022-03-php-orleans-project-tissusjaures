@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class TipsManager extends AbstractManager
+class TipManager extends AbstractManager
 {
     public const TABLE = 'tips';
 
@@ -18,6 +18,7 @@ class TipsManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE is_monthly_tip = 0");
         $statement->execute();
+
         return $statement->fetchAll();
     }
 }
