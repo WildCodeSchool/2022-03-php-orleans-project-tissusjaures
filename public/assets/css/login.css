@@ -1,0 +1,26 @@
+
+form h1 {
+    font-family:var(--header-font);
+    font-size: calc(var(--header-font-size) /1.5);
+    text-shadow: 2px 2px var(--bs-dark);
+}
+
+.mb-4 {
+    font-family: var(--text-font);
+}
+
+input {
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+    opacity: 90%;
+}
+
+.btn:hover {
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -6px;
+    opacity: 100%;
+}
