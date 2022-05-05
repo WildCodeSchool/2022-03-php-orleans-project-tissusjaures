@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="/assets/css/tips.css">
 {% endblock %}
 {% block content %}
-		<div class="container-fluid d-flex justify-content-center align-items-center header">
+	<div class="container-fluid d-flex justify-content-center align-items-center header">
 		<h1 class="text-light">
 			{% for tipCategory in tipCategories %}
 				{% if id == tipCategory.id %}
@@ -25,19 +25,14 @@
 		</div>
 	</div>
 	<section>
-		<div class="container">
-			<div class="row my-5 d-flex flex-column align-items-center justify-content-center">
-				<div class="monthlyTip p-0  bg-primary w-100">
-					<div class="d-flex justify-content-center">
-						<h2 class="title-tip mt-3 mb-4 w-50 d-flex justify-content-center text-light">Astuce du mois</h2>
-					</div>
-					<div class="d-flex justify-content-center ms-4">
-						<img class="img-tip me-4 p-2" src="{{ monthlyTip.image }}" alt="{{ monthlyTip.name }}">
-						<div class="textTip d-flex flex-column align-items-start justify-content-center p-2">
-							<h3 class="monthlyTitle p-0 mb-3">{{ monthlyTip.name }}</h3>
-							<p class="textMonthly">{{ monthlyTip.content }}</p>
-						</div>
-					</div>
+		<div class="card-tip w-50 h-100 mx-auto bg-primary mt-3 p-2">
+			<div class="d-flex justify-content-center">
+				<h2 class="title-tip text-center text-light bg-secondary px-4 py-2 mt-3 mb-2">Astuce du mois</h2>
+			</div>
+			<img class="img-tip d-none d-md-block w-100 px-4 mt-2" src="{{monthlyTip.image}}" alt="{{monthlyTip.name}}">
+			<div class="d-flex flex-column align-items-center mt-3">
+				<h3 class="monthlyTitle ">{{monthlyTip.name}}</h3>
+				<div class="textMonthly align-self-center py-4 px-4">{{monthlyTip.content}}
 				</div>
 			</div>
 		</div>
@@ -46,7 +41,7 @@
 		<div class="row mb-4">
 			{% for tip in tips %}
 				<div class="col-md-3 d-flex justify-content-around mt-4">
-					<figure class="card h-75 w-75">
+					<figure class="card h-100 w-75">
 						<img src="{{ tip.image }}" class="card-img-top img-fluid h-50  px-1 pt-1 bg-primary" alt="{{ tip.name }}">
 						<div class="card-body bg-primary">
 							<h3 class="card-title text-dark my-4 d-flex justify-content-center">{{ tip.name }}</h3>
