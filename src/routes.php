@@ -35,6 +35,7 @@ return [
     'admin/lexiques/supprimer' => ['AdminLexiconController', 'deleteLexicon'],
     'admin/astuces' => ['AdminTipController', 'index',],
     'admin/astuces/ajouter' => ['AdminTipController', 'addTip',],
+    'admin/astuces/editer' => ['AdminTipController', 'editTip', ['id']],
     'admin/astuces/supprimer' => ['AdminTipController', 'deleteTip', ],
     'admin/tutoriels' => ['AdminTutorialController', 'index',],
 ];

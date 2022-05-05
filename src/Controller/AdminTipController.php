@@ -49,6 +49,40 @@ class AdminTipController extends AbstractController
         ]);
     }
 
+    public function editTip($id): ?string
+    {
+        $tip = $errors = [];
+        $tipManager = new TipManager();
+        $tip = $tipManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tip = array_map('trim', $_POST);
+            $tip['id'] = $id;
+            $imageFile = $_FILES['image'];
+            $tipErrors = $this->tipValidate($tip);
+            $imageErrors = $this->validateImage($imageFile);
+
+            $errors = [...$tipErrors, ...$imageErrors];
+
+            /** @phpstan-ignore-next-line */
+            if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $tipManager = new TipManager();
+                $tip['image'] = $imageName;
+                $tipManager->update($tip);
+                header('Location: /admin/astuces/');
+            }
+        }
+        return $this->twig->render('Admin/Tips/edit.html.twig', [
+            'tip' => $tip,
+            'errors' => $errors
+        ]);
+    }
+
     private function tipValidate(array $tip): array
     {
         $tipErrors = [];
