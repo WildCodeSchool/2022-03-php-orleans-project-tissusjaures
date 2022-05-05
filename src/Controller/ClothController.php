@@ -18,7 +18,7 @@ class ClothController extends AbstractController
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectAll();
 
-        return $this->twig->render('Products/tissus.html.twig', [
+        return $this->twig->render('Products/Clothes/index.html.twig', [
             'clothes' => $clothes,
             'clothCategories' => $clothCategories,
             'machineCategories' => $machineCategories
@@ -35,7 +35,7 @@ class ClothController extends AbstractController
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectAllById($id);
 
-        return $this->twig->render('Products/tissus.html.twig', [
+        return $this->twig->render('Products/Clothes/show.html.twig', [
             'clothes' => $clothes,
             'id' => $id,
             'clothCategories' => $clothCategories,

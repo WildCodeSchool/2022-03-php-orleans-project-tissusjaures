@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/lexicon.css">
+{% endblock %}
+{% block content %}
+	<div class="container-fluid p-0">
+		<div class="d-flex justify-content-center align-items-center ms-0 header">
+			<h1 class="d-flex justify-content-center text-light ">Lexique</h1>
+		</div>
+		<div class="mt-3">
+			<div class="row justify-content-center">
+				{% for tipCategory in tipCategories %}
+					<div class="col-lg-3 mt-1 w-25">
+						<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary">{{ tipCategory.name }}</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row mt-3 d-flex flex-column align-items-center justify-content-center">
+			<div class="lexiconContent p-3  bg-primary w-75">
+				{% for lexicon in lexicons %}
+					<div class="text-dark d-flex flex-column">
+						<span class="fw-bold">{{ lexicon.name }}</span>
+						<p>{{ lexicon.definition }}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

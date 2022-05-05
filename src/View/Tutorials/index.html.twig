@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/tutorials.css">
+{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center header">
+	<h1 class="text-light">Tutoriels</h1>
+</div>
+<div class="mt-3">
+	<div class="row justify-content-center">
+		{% for tipCategory in tipCategories %}
+			<div class="col-lg-3 mt-1 w-25">
+				<a href='/{{ tipCategory.name|lower }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ tipCategory.name }}</a>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<div class="container mt-3">
+	<section class="row">
+			{% for tutorial in tutorials %}
+				<div class="col-lg-3 mb-2 mx-auto">
+					<figure class="card h-100">
+						<img src="{{tutorial.image}}" class="card-img-top px-1 pt-1 bg-primary" alt="{{ tutorial.name }}">
+						<div class="card-body bg-primary">
+							<h5 class="card-title text-dark mb-5">{{ tutorial.name }}</h5>
+							<a href="/tutoriels/tutoriel?id={{ tutorial.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+						</div>
+					</figure>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+</div>
+{% endblock %}
