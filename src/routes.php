@@ -32,4 +32,5 @@ return [
     'admin/lexiques' => ['AdminMachineController', 'index',],
     'admin/lexiques/ajouter' => ['AdminLexiconController', 'addLexicon'],
     'admin/astuces' => ['AdminTipController', 'index',],
+    'admin/astuces/supprimer' => ['AdminTipController', 'deleteTip', ],
 ];
