@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
   `content` TEXT NOT NULL,
-  `is_monthly_tip` TINYINT NULL DEFAULT 0,
+  `is_monthly_tip` TINYINT NULL,
   `tips_and_tricks_categories_id` INT NOT NULL,
   PRIMARY KEY (`id`, `tips_and_tricks_categories_id`),
   INDEX `fk_tips_tips_and_tricks_categories_idx` (`tips_and_tricks_categories_id` ASC) VISIBLE,
