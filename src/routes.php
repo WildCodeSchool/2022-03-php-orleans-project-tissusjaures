@@ -32,8 +32,10 @@ return [
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
     'admin/lexiques' => ['AdminMachineController', 'index',],
     'admin/lexiques/ajouter' => ['AdminLexiconController', 'addLexicon'],
-    'admin/astuces' => ['AdminTipController', 'index',],
     'admin/lexiques/editer' => ['AdminLexiconController', 'editLexicon', ['id']],
     'admin/lexiques/supprimer' => ['AdminLexiconController', 'deleteLexicon'],
+    'admin/astuces' => ['AdminTipController', 'index',],
+    'admin/astuces/ajouter' => ['AdminTipController', 'addTip',],
     'admin/astuces/supprimer' => ['AdminTipController', 'deleteTip', ],
+    'admin/tutoriels' => ['AdminTutorialController', 'index',],
 ];
