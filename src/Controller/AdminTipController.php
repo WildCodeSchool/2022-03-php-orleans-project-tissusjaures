@@ -56,8 +56,7 @@ class AdminTipController extends AbstractController
             $tipErrors[] = 'Le champ nom est obligatoire';
         }
 
-        $nameMaxLength = 100;
-        if (strlen($tip['name']) > $nameMaxLength) {
+        if (strlen($tip['name']) > self::MAX_NAME_LENGTH) {
             $tipErrors[] = 'Le nom ne doit pas dépasser les 100 caractères';
         }
 
