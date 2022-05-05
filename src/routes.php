@@ -30,7 +30,7 @@ return [
     'admin/machines/ajouter' => ['AdminMachineController', 'addMachine',],
     'admin/machines/editer' => ['AdminMachineController', 'editMachine', ['id']],
     'admin/machines/supprimer' => ['AdminMachineController', 'deleteMachine',],
-    'admin/lexiques' => ['AdminMachineController', 'index',],
+    'admin/lexiques' => ['AdminLexiconController', 'index',],
     'admin/lexiques/ajouter' => ['AdminLexiconController', 'addLexicon'],
     'admin/lexiques/editer' => ['AdminLexiconController', 'editLexicon', ['id']],
     'admin/lexiques/supprimer' => ['AdminLexiconController', 'deleteLexicon'],
