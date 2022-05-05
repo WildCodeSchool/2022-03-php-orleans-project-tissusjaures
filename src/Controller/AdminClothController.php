@@ -7,6 +7,10 @@ use App\Model\ClothCategoryManager;
 
 class AdminClothController extends AbstractController
 {
+    public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+    public const MAX_FILE_SIZE = 1000000;
+    public const MAX_NAME_LENGTH = 100;
+
     public function index(): string
     {
         $clothList = new ClothManager();
@@ -16,15 +20,26 @@ class AdminClothController extends AbstractController
 
     public function addCloth()
     {
-        $clothItems = $errors = [];
+        $clothItems = $formErrors = $checkboxErrors = $errors = [];
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
-            $errors = $this->clothValidate($clothItems, $categories);
+            $imageFile = $_FILES['image'];
+            $formErrors = $this->clothValidate($clothItems, $categories);
+            $checkboxErrors = $this->checkboxValidate($clothItems);
+            $imageErrors = $this->validateImage($imageFile);
+            $errors = [...$formErrors, ...$checkboxErrors, ...$imageErrors];
 
+            /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $clothItems['image'] = $imageName;
                 $clothManager = new ClothManager();
                 $clothManager->insert($clothItems);
                 header('Location: /admin/tissus/');
@@ -38,7 +53,8 @@ class AdminClothController extends AbstractController
 
     public function editCloth($id): string
     {
-        $errors = $clothItems = [];
+        $formErrors = $clothItems = $checkboxErrors = $errors = [];
+
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
         $clothList = new ClothManager();
@@ -47,8 +63,13 @@ class AdminClothController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
             $clothItems['id'] = $id;
-            $errors = $this->clothValidate($clothItems, $categories);
+            $imageFile = $_FILES['image'];
+            $formErrors = $this->clothValidate($clothItems, $categories);
+            $checkboxErrors = $this->checkboxValidate($clothItems);
+            $imageErrors = $this->validateImage($imageFile);
+            $errors = [...$formErrors, ...$checkboxErrors, ...$imageErrors];
 
+            /** @phpstan-ignore-next-line */
             if (empty($errors)) {
                 $clothList->update($clothItems);
                 header('Location: /admin/tissus/');
@@ -71,34 +92,69 @@ class AdminClothController extends AbstractController
         }
     }
 
-    private function clothValidate(array $clothItems, array $categories): array
+    public function clothValidate(array $clothItems, array $categories): array
     {
-        $errors = [];
+        $formErrors = [];
         if (empty($clothItems['name'])) {
-            $errors[] = 'Le champ nom est obligatoire';
+            $formErrors[] = 'Le champ nom est obligatoire';
         }
 
         $nameMaxLength = 100;
         if (strlen($clothItems['name']) > $nameMaxLength) {
-            $errors[] = 'Le nom ne doit pas dépasser les 100 caractères';
+            $formErrors[] = 'Le nom ne doit pas dépasser les 100 caractères';
         }
 
         if (empty($clothItems['price'])) {
-            $errors[] = 'Le champ prix est obligatoire';
+            $formErrors[] = 'Le champ prix est obligatoire';
         }
 
         if (!is_float(floatval($clothItems['price']))) {
-            $errors[] = 'Le prix doit être un nombre';
+            $formErrors[] = 'Le prix doit être un nombre';
         }
 
         if (empty($clothItems['cloth_categories_id'])) {
-            $errors[] = 'Le champ catégorie est obligatoire';
+            $formErrors[] = 'Le champ catégorie est obligatoire';
         }
-        if (!empty($clothItems['cloth_categories_id'])) {
-            if (!in_array($clothItems['cloth_categories_id'], array_column($categories, 'id'))) {
-                $errors[] = "Merci de choisir une catégorie valide";
+
+        if (
+            !empty($clothItems['cloth_categories_id']
+                && !in_array($clothItems['cloth_categories_id'], array_column($categories, 'id')))
+        ) {
+            $formErrors[] = "Merci de choisir une catégorie valide";
+        }
+
+        return $formErrors;
+    }
+
+    public function checkboxValidate(array $clothItems): array
+    {
+        $checkboxErrors = [];
+        if (!empty($clothItems['is_on_sale']) && (intval($clothItems['is_on_sale']) !== 1)) {
+            $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
+        }
+
+        if (!empty($clothItems['is_new']) && intval($clothItems['is_new']) !== 1) {
+            $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
+        }
+        return $checkboxErrors;
+    }
+
+    private function validateImage(array $files): array
+    {
+        $imageErrors = [];
+        if ($files['error'] === UPLOAD_ERR_NO_FILE) {
+            $imageErrors[] = 'Le fichier est obligatoire';
+        } elseif ($files['error'] !== UPLOAD_ERR_OK) {
+            $imageErrors[] = 'Problème de téléchargement du fichier';
+        } else {
+            if ($files['size'] > self::MAX_FILE_SIZE) {
+                $imageErrors[] = 'Le fichier doit faire moins de ' . self::MAX_FILE_SIZE / 1000000 . 'Mo';
+            }
+
+            if (!in_array(mime_content_type($files['tmp_name']), self::AUTHORIZED_MIMES)) {
+                $imageErrors[] = 'Le fichier doit être de type ' . implode(', ', self::AUTHORIZED_MIMES);
             }
         }
-        return $errors;
+        return $imageErrors;
     }
 }
