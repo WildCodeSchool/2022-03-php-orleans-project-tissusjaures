@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mime\Email;
+
 class ContactController extends AbstractController
 {
     protected const NAME_LENGTH = 100;
@@ -23,8 +27,20 @@ class ContactController extends AbstractController
             $errorsEmpty = $this->validate($contact);
             $errorsFormat = $this->validateFormat($contact);
             $errors = [...$errorsEmpty, ...$errorsFormat];
+
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $transport = Transport::fromDsn(MAILER_DSN);
+                $mailer = new Mailer($transport);
+
+                $email = (new Email())
+                    ->from($contact['email'])
+                    ->to(ADMIN_MAIL)
+                    ->replyTo($contact['email'])
+                    ->subject('Message pour Tissus Jaures')
+                    ->html($this->twig->render('Contact/email.html.twig', ['contact', $contact]));
+
+                $mailer->send($email);
                 header('Location: /contact?send=success');
             }
         }
