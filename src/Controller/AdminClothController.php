@@ -42,6 +42,7 @@ class AdminClothController extends AbstractController
     public function editCloth($id): string
     {
         $formErrors = $clothItems = $checkboxErrors = $errors = [];
+
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
         $clothList = new ClothManager();
