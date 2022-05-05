@@ -2,10 +2,17 @@
 
 namespace App\Controller;
 
-use App\Model\AdminLexiconManager;
+use App\Model\LexiconManager;
 
-class AdminLexiconController extends AbstractController
+class LexiconController extends AbstractController
 {
+    public function index(): string
+    {
+        $lexiconManager = new LexiconManager();
+        $lexicons = $lexiconManager->selectAll();
+        return $this->twig->render('Admin/Lexicon/show.html.twig', ['lexicons' => $lexicons]);
+    }
+
     public function addLexicon()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -13,7 +20,7 @@ class AdminLexiconController extends AbstractController
             $errors = $this->lexiconValidate($lexicon);
 
             if (empty($errors)) {
-                $lexiconManager = new AdminLexiconManager();
+                $lexiconManager = new LexiconManager();
                 $lexiconManager->insert($lexicon);
                 header('Location: /admin/lexicons/');
             }
