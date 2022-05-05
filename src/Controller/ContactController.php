@@ -38,7 +38,7 @@ class ContactController extends AbstractController
                     ->to(ADMIN_MAIL)
                     ->replyTo($contact['email'])
                     ->subject('Message pour Tissus Jaures')
-                    ->html($this->twig->render('Contact/email.html.twig', ['contact', $contact]));
+                    ->html($this->twig->render('Contact/email.html.twig', ['contact' => $contact]));
 
                 $mailer->send($email);
                 header('Location: /contact?send=success');
