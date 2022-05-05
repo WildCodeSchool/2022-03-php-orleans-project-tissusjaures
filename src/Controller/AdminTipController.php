@@ -89,4 +89,15 @@ class AdminTipController extends AbstractController
         }
         return $imageErrors;
     }
+
+    public function deleteTip(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $tipManager = new TipManager();
+            $tipManager->delete((int)$id);
+
+            header('Location:/admin/astuces/');
+        }
+    }
 }
