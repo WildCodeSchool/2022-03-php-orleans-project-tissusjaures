@@ -32,7 +32,13 @@ class AdminTipController extends AbstractController
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
                 $tipManager = new TipManager();
+                $tip['image'] = $imageName;
                 $tipManager->insert($tip);
                 header('Location: /admin/astuces/');
             }
@@ -58,6 +64,11 @@ class AdminTipController extends AbstractController
         if (empty($tip['content'])) {
             $tipErrors[] = 'Le champ description est obligatoire';
         }
+
+        if (!empty($tip['is_monthly_tip']) && intval($tip['is_monthly_tip'] !== 1)) {
+            $tipErrors[] = 'Ceci n\'est pas une option valide';
+        }
+
         return $tipErrors;
     }
 
