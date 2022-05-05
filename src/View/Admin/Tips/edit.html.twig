@@ -1,0 +1,7 @@
+{% extends 'adminLayout.html.twig' %}
+{% block title %}
+  {{ parent() }} - Édition d'une astuce
+{% endblock %}
+{% block content %}
+  {% include 'Admin/Tips/_form.html.twig' with {'title_name' : 'Éditer une astuce','button_name' : 'Éditer'} %}
+{% endblock %}
