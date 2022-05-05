@@ -30,7 +30,7 @@ class TipManager extends AbstractManager
         $statement->bindValue('name', $tip['name'], \PDO::PARAM_STR);
         $statement->bindValue('image', $tip['image'], \PDO::PARAM_STR);
         $statement->bindValue('content', $tip['content'], \PDO::PARAM_STR);
-        $statement->bindValue('is_monthly_tip', $tip['is_monthly_tip'], \PDO::PARAM_INT);
+        $statement->bindValue('is_monthly_tip', $tip['is_monthly_tip'] ?? 0, \PDO::PARAM_INT);
         $statement->bindValue('tips_and_tricks_categories_id', 1, \PDO::PARAM_INT);
 
         $statement->execute();
