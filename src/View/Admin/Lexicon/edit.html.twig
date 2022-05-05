@@ -1,0 +1,7 @@
+{% extends 'adminLayout.html.twig' %}
+{% block title %}
+  {{ parent() }} - Édition d'une définition
+{% endblock %}
+{% block content %}
+  {% include 'Admin/Lexicon/_form.html.twig' with {'title_name' : 'Éditer une définition','button_name' : 'Éditer'} %}
+{% endblock %}

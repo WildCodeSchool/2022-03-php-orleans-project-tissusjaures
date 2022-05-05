@@ -78,3 +78,7 @@ a {
 .navbar, .navbar-expand-lg {
     background-color: var(--admin-color);
 }
+
+#is_monthly_tip {
+    accent-color: var(--admin-color);
+}

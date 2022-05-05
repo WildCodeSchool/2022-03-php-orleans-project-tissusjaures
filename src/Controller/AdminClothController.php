@@ -7,6 +7,10 @@ use App\Model\ClothCategoryManager;
 
 class AdminClothController extends AbstractController
 {
+    public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+    public const MAX_FILE_SIZE = 1000000;
+    public const MAX_NAME_LENGTH = 100;
+
     public function index(): string
     {
         $clothList = new ClothManager();
@@ -22,12 +26,20 @@ class AdminClothController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
+            $imageFile = $_FILES['image'];
             $formErrors = $this->clothValidate($clothItems, $categories);
             $checkboxErrors = $this->checkboxValidate($clothItems);
-            $errors = [...$formErrors, ...$checkboxErrors];
+            $imageErrors = $this->validateImage($imageFile);
+            $errors = [...$formErrors, ...$checkboxErrors, ...$imageErrors];
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $clothItems['image'] = $imageName;
                 $clothManager = new ClothManager();
                 $clothManager->insert($clothItems);
                 header('Location: /admin/tissus/');
@@ -51,9 +63,11 @@ class AdminClothController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
             $clothItems['id'] = $id;
+            $imageFile = $_FILES['image'];
             $formErrors = $this->clothValidate($clothItems, $categories);
             $checkboxErrors = $this->checkboxValidate($clothItems);
-            $errors = [...$formErrors, ...$checkboxErrors];
+            $imageErrors = $this->validateImage($imageFile);
+            $errors = [...$formErrors, ...$checkboxErrors, ...$imageErrors];
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
@@ -123,5 +137,24 @@ class AdminClothController extends AbstractController
             $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
         }
         return $checkboxErrors;
+    }
+
+    private function validateImage(array $files): array
+    {
+        $imageErrors = [];
+        if ($files['error'] === UPLOAD_ERR_NO_FILE) {
+            $imageErrors[] = 'Le fichier est obligatoire';
+        } elseif ($files['error'] !== UPLOAD_ERR_OK) {
+            $imageErrors[] = 'Problème de téléchargement du fichier';
+        } else {
+            if ($files['size'] > self::MAX_FILE_SIZE) {
+                $imageErrors[] = 'Le fichier doit faire moins de ' . self::MAX_FILE_SIZE / 1000000 . 'Mo';
+            }
+
+            if (!in_array(mime_content_type($files['tmp_name']), self::AUTHORIZED_MIMES)) {
+                $imageErrors[] = 'Le fichier doit être de type ' . implode(', ', self::AUTHORIZED_MIMES);
+            }
+        }
+        return $imageErrors;
     }
 }
