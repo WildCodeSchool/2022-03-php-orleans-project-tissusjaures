@@ -28,6 +28,17 @@ class LexiconController extends AbstractController
         return $this->twig->render('Admin/Lexicon/add.html.twig');
     }
 
+    public function deleteLexicon(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $lexiconManager = new LexiconManager();
+            $lexiconManager->delete((int)$id);
+
+            header('Location:/admin/lexiques/');
+        }
+    }
+
     private function lexiconValidate(array $lexicon): array
     {
         $errors = [];
