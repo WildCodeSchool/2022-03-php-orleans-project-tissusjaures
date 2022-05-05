@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use App\Model\ClothManager;
+use App\Model\MachineManager;
 use App\Model\ClothCategoryManager;
 use App\Model\MachineCategoryManager;
 
-class ClothController extends AbstractController
+class MachineController extends AbstractController
 {
     public function index(): string
     {
@@ -15,28 +15,28 @@ class ClothController extends AbstractController
         $machCategoryManager = new MachineCategoryManager();
         $machineCategories = $machCategoryManager->selectAll();
 
-        $clothManager = new ClothManager();
-        $clothes = $clothManager->selectAll();
+        $machineManager = new MachineManager();
+        $machines = $machineManager->selectAll();
 
-        return $this->twig->render('Products/Clothes/index.html.twig', [
-            'clothes' => $clothes,
+        return $this->twig->render('Products/Machines/index.html.twig', [
+            'machines' => $machines,
             'clothCategories' => $clothCategories,
             'machineCategories' => $machineCategories
         ]);
     }
 
-    public function showClothByCategory(int $id): string
+    public function showMachineByCategory(int $id): string
     {
         $clothCategoryManager = new ClothCategoryManager();
         $clothCategories = $clothCategoryManager->selectAll();
         $machCategoryManager = new MachineCategoryManager();
         $machineCategories = $machCategoryManager->selectAll();
 
-        $clothManager = new ClothManager();
-        $clothes = $clothManager->selectAllById($id);
+        $machineManager = new MachineManager();
+        $machines = $machineManager->selectAllById($id);
 
-        return $this->twig->render('Products/Clothes/show.html.twig', [
-            'clothes' => $clothes,
+        return $this->twig->render('Products/Machines/show.html.twig', [
+            'machines' => $machines,
             'id' => $id,
             'clothCategories' => $clothCategories,
             'machineCategories' => $machineCategories,

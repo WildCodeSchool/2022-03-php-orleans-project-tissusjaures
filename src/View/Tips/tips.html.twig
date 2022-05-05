@@ -26,14 +26,14 @@
 	</div>
 	<section>
 		<div class="container">
-			<div class="row mt-4 d-flex flex-column align-items-center justify-content-center">
+			<div class="row my-5 d-flex flex-column align-items-center justify-content-center">
 				<div class="monthlyTip p-0  bg-primary w-100">
 					<div class="d-flex justify-content-center">
 						<h2 class="title-tip mt-3 mb-4 w-50 d-flex justify-content-center text-light">Astuce du mois</h2>
 					</div>
-					<div class="monthlyText d-flex justify-content-center ms-4">
-						<img class="img-tip me-4 p-2" src="{{ monthlyTip.image }}" alt="ourlet">
-						<div class="textTip d-flex flex-column align-items-start p-2">
+					<div class="d-flex justify-content-center ms-4">
+						<img class="img-tip me-4 p-2" src="{{ monthlyTip.image }}" alt="{{ monthlyTip.name }}">
+						<div class="textTip d-flex flex-column align-items-start justify-content-center p-2">
 							<h3 class="monthlyTitle p-0 mb-3">{{ monthlyTip.name }}</h3>
 							<p class="textMonthly">{{ monthlyTip.content }}</p>
 						</div>
@@ -50,7 +50,7 @@
 						<img src="{{ tip.image }}" class="card-img-top img-fluid h-50  px-1 pt-1 bg-primary" alt="{{ tip.name }}">
 						<div class="card-body bg-primary">
 							<h3 class="card-title text-dark my-4 d-flex justify-content-center">{{ tip.name }}</h3>
-							<a href="/astuces/?id={{ tip.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+							<a href="/astuces/trucs-et-astuces/?id={{ tip.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
 						</figure>
 					</div>
 				{% endfor %}
