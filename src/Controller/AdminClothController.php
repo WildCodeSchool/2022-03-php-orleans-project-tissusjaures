@@ -16,14 +16,17 @@ class AdminClothController extends AbstractController
 
     public function addCloth()
     {
-        $clothItems = $errors = [];
+        $clothItems = $formErrors = $checkboxErrors = $errors = [];
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
-            $errors = $this->clothValidate($clothItems, $categories);
+            $formErrors = $this->clothValidate($clothItems, $categories);
+            $checkboxErrors = $this->checkboxValidate($clothItems);
+            $errors = [...$formErrors, ...$checkboxErrors];
 
+            /** @phpstan-ignore-next-line */
             if (empty($errors)) {
                 $clothManager = new ClothManager();
                 $clothManager->insert($clothItems);
@@ -38,7 +41,8 @@ class AdminClothController extends AbstractController
 
     public function editCloth($id): string
     {
-        $errors = $clothItems = [];
+        $formErrors = $clothItems = $checkboxErrors = $errors = [];
+
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
         $clothList = new ClothManager();
@@ -47,8 +51,11 @@ class AdminClothController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothItems = array_map('trim', $_POST);
             $clothItems['id'] = $id;
-            $errors = $this->clothValidate($clothItems, $categories);
+            $formErrors = $this->clothValidate($clothItems, $categories);
+            $checkboxErrors = $this->checkboxValidate($clothItems);
+            $errors = [...$formErrors, ...$checkboxErrors];
 
+            /** @phpstan-ignore-next-line */
             if (empty($errors)) {
                 $clothList->update($clothItems);
                 header('Location: /admin/tissus/');
@@ -71,34 +78,50 @@ class AdminClothController extends AbstractController
         }
     }
 
-    private function clothValidate(array $clothItems, array $categories): array
+    public function clothValidate(array $clothItems, array $categories): array
     {
-        $errors = [];
+        $formErrors = [];
         if (empty($clothItems['name'])) {
-            $errors[] = 'Le champ nom est obligatoire';
+            $formErrors[] = 'Le champ nom est obligatoire';
         }
 
         $nameMaxLength = 100;
         if (strlen($clothItems['name']) > $nameMaxLength) {
-            $errors[] = 'Le nom ne doit pas dépasser les 100 caractères';
+            $formErrors[] = 'Le nom ne doit pas dépasser les 100 caractères';
         }
 
         if (empty($clothItems['price'])) {
-            $errors[] = 'Le champ prix est obligatoire';
+            $formErrors[] = 'Le champ prix est obligatoire';
         }
 
         if (!is_float(floatval($clothItems['price']))) {
-            $errors[] = 'Le prix doit être un nombre';
+            $formErrors[] = 'Le prix doit être un nombre';
         }
 
         if (empty($clothItems['cloth_categories_id'])) {
-            $errors[] = 'Le champ catégorie est obligatoire';
+            $formErrors[] = 'Le champ catégorie est obligatoire';
         }
-        if (!empty($clothItems['cloth_categories_id'])) {
-            if (!in_array($clothItems['cloth_categories_id'], array_column($categories, 'id'))) {
-                $errors[] = "Merci de choisir une catégorie valide";
-            }
+
+        if (
+            !empty($clothItems['cloth_categories_id']
+                && !in_array($clothItems['cloth_categories_id'], array_column($categories, 'id')))
+        ) {
+            $formErrors[] = "Merci de choisir une catégorie valide";
         }
-        return $errors;
+
+        return $formErrors;
+    }
+
+    public function checkboxValidate(array $clothItems): array
+    {
+        $checkboxErrors = [];
+        if (!empty($clothItems['is_on_sale']) && (intval($clothItems['is_on_sale']) !== 1)) {
+            $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
+        }
+
+        if (!empty($clothItems['is_new']) && intval($clothItems['is_new']) !== 1) {
+            $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
+        }
+        return $checkboxErrors;
     }
 }
