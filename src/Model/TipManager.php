@@ -36,4 +36,21 @@ class TipManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function update(array $tip): int
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `image` = :image
+        , `content` = :content, `is_monthly_tip` = :is_monthly_tip
+        , `tips_and_tricks_categories_id` = :tips_and_tricks_categories_id
+        WHERE `id` = :id");
+        $statement->bindValue('name', $tip['name'], \PDO::PARAM_STR);
+        $statement->bindValue('id', $tip['id'], \PDO::PARAM_INT);
+        $statement->bindValue('image', $tip['image'], \PDO::PARAM_STR);
+        $statement->bindValue('content', $tip['content'], \PDO::PARAM_STR);
+        $statement->bindValue('is_monthly_tip', $tip['is_monthly_tip'] ?? 0, \PDO::PARAM_INT);
+        $statement->bindValue('tips_and_tricks_categories_id', 1, \PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }

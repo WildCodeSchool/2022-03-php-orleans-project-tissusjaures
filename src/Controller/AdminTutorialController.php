@@ -84,4 +84,15 @@ class AdminTutorialController extends AbstractController
         }
         return $imageErrors;
     }
+
+    public function deleteTutorial(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $tipManager = new TutorialManager();
+            $tipManager->delete((int)$id);
+
+            header('Location:/admin/tutoriels/');
+        }
+    }
 }
