@@ -22,11 +22,6 @@ class TutorialManager extends AbstractManager
 
     public function update(array $tutorial): int
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, `image` = :image
-        , `content` = :content, `is_monthly_tip` = :is_monthly_tip
-        , `tips_and_tricks_categories_id` = :tips_and_tricks_categories_id
-        WHERE `id` = :id");
-
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name,
          `image` = :image, `content` = :content WHERE `id` = :id");
         $statement->bindValue('name', $tutorial['name'], \PDO::PARAM_STR);
