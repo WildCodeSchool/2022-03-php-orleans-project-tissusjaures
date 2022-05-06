@@ -12,4 +12,15 @@ class AdminTutorialController extends AbstractController
         $tutorials = $tutorialManager->selectAll();
         return $this->twig->render('Admin/Tutorials/index.html.twig', ['tutorials' => $tutorials]);
     }
+
+    public function deleteTutorial(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $tipManager = new TutorialManager();
+            $tipManager->delete((int)$id);
+
+            header('Location:/admin/tutoriels/');
+        }
+    }
 }

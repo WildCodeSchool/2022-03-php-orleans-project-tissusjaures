@@ -39,4 +39,5 @@ return [
     'admin/astuces/editer' => ['AdminTipController', 'editTip', ['id']],
     'admin/astuces/supprimer' => ['AdminTipController', 'deleteTip', ],
     'admin/tutoriels' => ['AdminTutorialController', 'index',],
+    'admin/tutoriels/supprimer' => ['AdminTutorialController', 'deleteTutorial', ],
 ];
