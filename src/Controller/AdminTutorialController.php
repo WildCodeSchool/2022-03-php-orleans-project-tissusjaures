@@ -42,7 +42,7 @@ class AdminTutorialController extends AbstractController
                 header('Location: /admin/tutoriels/');
             }
         }
-        return $this->twig->render('Admin/Tips/add.html.twig', [
+        return $this->twig->render('Admin/Tutorials/add.html.twig', [
             'tutorial' => $tutorial,
             'errors' => $errors
         ]);
