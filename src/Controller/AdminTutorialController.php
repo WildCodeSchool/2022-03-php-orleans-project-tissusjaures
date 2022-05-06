@@ -48,18 +48,52 @@ class AdminTutorialController extends AbstractController
         ]);
     }
 
-    private function tutorialValidate(array $tip): array
+    public function editTutorial($id): ?string
+    {
+        $tutorial = $errors = [];
+        $tutorialManager = new TutorialManager();
+        $tutorial = $tutorialManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tutorial = array_map('trim', $_POST);
+            $tutorial['id'] = $id;
+            $imageFile = $_FILES['image'];
+            $tutorialErrors = $this->tutorialValidate($tutorial);
+            $imageErrors = $this->validateImage($imageFile);
+
+            $errors = [...$tutorialErrors, ...$imageErrors];
+
+            /** @phpstan-ignore-next-line */
+            if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $tutorialManager = new TutorialManager();
+                $tutorial['image'] = $imageName;
+                $tutorialManager->update($tutorial);
+                header('Location: /admin/tutoriels/');
+            }
+        }
+        return $this->twig->render('Admin/Tutorials/edit.html.twig', [
+            'tutorial' => $tutorial,
+            'errors' => $errors
+        ]);
+    }
+
+    private function tutorialValidate(array $tutorial): array
     {
         $tutorialErrors = [];
-        if (empty($tip['name'])) {
+        if (empty($tutorial['name'])) {
             $tutorialErrors[] = 'Le champ nom est obligatoire';
         }
 
-        if (strlen($tip['name']) > self::MAX_NAME_LENGTH) {
+        if (strlen($tutorial['name']) > self::MAX_NAME_LENGTH) {
             $tutorialErrors[] = 'Le nom ne doit pas dépasser les ' . self::MAX_NAME_LENGTH . ' caractères';
         }
 
-        if (empty($tip['content'])) {
+        if (empty($tutorial['content'])) {
             $tutorialErrors[] = 'Le champ description est obligatoire';
         }
 
