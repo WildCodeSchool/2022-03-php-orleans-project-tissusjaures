@@ -39,11 +39,11 @@ class LoginController extends AbstractController
             if ($user) {
                 if ($user['password'] === $connexion['password']) {
                     echo 'Les identifiants sont corrects';
-                }else {
+                } else {
                     $errors[] = 'Mauvais identifiants';
                 }
-            }else {
-                $errors[] = 'Email inconnu' ;
+            } else {
+                $errors[] = 'Email inconnu';
             }
             $_SESSION['user'] = $user['id'];
         }

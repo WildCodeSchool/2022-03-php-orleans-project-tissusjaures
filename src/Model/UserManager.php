@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Model;
 
@@ -6,7 +6,7 @@ class UserManager extends AbstractManager
 {
     public const TABLE = "user";
 
-    public function selectOneByEmail(string  $email): array|false
+    public function selectOneByEmail(string $email): array|false
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE email=:email");
@@ -16,5 +16,4 @@ class UserManager extends AbstractManager
 
         return $statement->fetch();
     }
-
 }
