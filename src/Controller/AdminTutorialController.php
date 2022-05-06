@@ -56,7 +56,7 @@ class AdminTutorialController extends AbstractController
         }
 
         if (strlen($tip['name']) > self::MAX_NAME_LENGTH) {
-            $tutorialErrors[] = 'Le nom ne doit pas dépasser les 100 caractères';
+            $tutorialErrors[] = 'Le nom ne doit pas dépasser les ' . self::MAX_NAME_LENGTH . ' caractères';
         }
 
         if (empty($tip['content'])) {
