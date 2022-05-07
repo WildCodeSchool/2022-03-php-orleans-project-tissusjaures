@@ -8,12 +8,10 @@ class AdminMachineController extends AbstractController
 {
     public function index(): string
     {
-        $user = $this->getUser();
         $machineManager = new MachineManager();
         $machines = $machineManager->selectAll();
         return $this->twig->render('Admin/Machine/show.html.twig', [
             'machines' => $machines,
-            'user' => $user,
         ]);
     }
 

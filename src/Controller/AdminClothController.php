@@ -13,12 +13,10 @@ class AdminClothController extends AbstractController
 
     public function index(): string
     {
-        $user = $this->getUser();
         $clothList = new ClothManager();
         $clothItems = $clothList->selectAll();
         return $this->twig->render('Admin/Cloth/show.html.twig', [
             'clothItems' => $clothItems,
-            'user' => $user,
         ]);
     }
 

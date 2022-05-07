@@ -14,7 +14,6 @@ abstract class AbstractController
 {
     protected Environment $twig;
 
-
     public function __construct()
     {
         $loader = new FilesystemLoader(APP_VIEW_PATH);
@@ -25,6 +24,7 @@ abstract class AbstractController
                 'debug' => (ENV === 'dev'),
             ]
         );
+        $this->twig->addGlobal('user', $this->getUser());
         $this->twig->addExtension(new DebugExtension());
     }
 
