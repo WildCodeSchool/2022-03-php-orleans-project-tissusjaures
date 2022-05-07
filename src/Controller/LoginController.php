@@ -8,7 +8,6 @@ class LoginController extends AbstractController
 {
     public function login(): string
     {
-
         $errors = [];
         $connexion = [];
 
@@ -19,6 +18,15 @@ class LoginController extends AbstractController
         return $this->twig->render('Login/login.html.twig', [
             'errors' => $errors,
         ]);
+    }
+
+    public function logout()
+    {
+        if (!empty($_SESSION['user'])) {
+            unset($_SESSION['user']);
+        }
+
+        header('Location: /');
     }
 
     private function validate(array $connexion): array

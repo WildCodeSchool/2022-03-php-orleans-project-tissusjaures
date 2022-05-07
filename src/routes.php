@@ -14,6 +14,7 @@ return [
     'tissus' => ['ClothController', 'index',],
     'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
     'connexion' => ['LoginController', 'login'],
+    'déconnexion' => ['LoginController', 'logout'],
     'machines' => ['MachineController', 'index',],
     'astuces' => ['TipsController', 'showTips'],
     'lexique' => ['LexiconController', 'index',],
