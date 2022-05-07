@@ -37,7 +37,7 @@ class LoginController extends AbstractController
             $userManager = new UserManager();
             $user = $userManager->selectOneByEmail($connexion['email']);
             if ($user) {
-                if ($user['password'] === $connexion['password']) {
+                if (password_verify($connexion['password'], $user['password'] )) {
                     echo 'Les identifiants sont corrects';
                 } else {
                     $errors[] = 'Mauvais identifiants';
