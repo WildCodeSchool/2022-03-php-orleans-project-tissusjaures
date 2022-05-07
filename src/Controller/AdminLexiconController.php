@@ -8,9 +8,13 @@ class LexiconController extends AbstractController
 {
     public function index(): string
     {
+        $user = $this->getUser();
         $lexiconManager = new LexiconManager();
         $lexicons = $lexiconManager->selectAll();
-        return $this->twig->render('Admin/Lexicon/show.html.twig', ['lexicons' => $lexicons]);
+        return $this->twig->render('Admin/Lexicon/show.html.twig', [
+            'lexicons' => $lexicons,
+            'user' => $user,
+        ]);
     }
 
     public function addLexicon()

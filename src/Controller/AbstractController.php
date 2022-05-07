@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\UserManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -25,5 +26,14 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+    }
+
+    public function getUser(): ?array
+    {
+        if (!empty($_SESSION['user'])) {
+            $userManager = new UserManager();
+            return $userManager->selectOneById($_SESSION['user']);
+        }
+        return null;
     }
 }
