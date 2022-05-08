@@ -19,11 +19,12 @@ h3 {
     box-shadow: var(--shadow);
     position: initial;
     font-family: var(--text-font);
+    opacity: 90%;
 }
 
 .btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
+    opacity: 100%;
 }
 
 .title-tip {
@@ -54,18 +55,6 @@ h3 {
 
 .monthlyTitle {
     font-size: calc(var(--font-size-link) + 0.75rem);
-}
-
-.btn {
-    box-shadow: var(--shadow);
-    position: initial;
-    font-family: var(--text-font);
-    font-size: var(--font-size);
-}
-
-.btn:hover {
-    color: var(--bs-secondary);
-    transform: scale(1.03);
 }
 
 .card {

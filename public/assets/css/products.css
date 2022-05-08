@@ -30,11 +30,12 @@ h3 {
     position: initial;
     font-family: var(--text-font);
     font-size: var(--font-size);
+    opacity: 90%;
 }
 
 .btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
+    opacity: 100%;
 }
 
 .card {
