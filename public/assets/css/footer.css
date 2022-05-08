@@ -17,15 +17,12 @@
 .button-facebook {
     border: none;
     border-radius:1rem;
-    outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
     opacity: 100%;
     width: 5rem;
     height: 5rem;
 }
 
 .button-facebook:hover {
-    transform: scale(1.03);
     opacity: 90%;
 }
 
@@ -38,7 +35,6 @@
 }
 
 .button-top:hover {
-    transform: scale(1.03);
     opacity: 90%;
 }
 
