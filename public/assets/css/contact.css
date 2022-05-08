@@ -2,8 +2,11 @@
     font-family: var(--text-font);
 }
 
-h1 {
+.title-form {
     font-family: var(--title-font);
+    outline: 1.5px dashed var(--bs-light);
+    outline-offset: -4px;
+    width: 40%;
 }
 
 input, #object, textarea {
@@ -11,9 +14,9 @@ input, #object, textarea {
 }
 
 .btn {
-    opacity: 90%;
+    opacity: 100%;
 }
 
 .btn:hover {
-    opacity: 100%;
+    opacity: 90%;
 }

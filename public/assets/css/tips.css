@@ -32,6 +32,7 @@ h3 {
     background-color: var(--bs-secondary);
     outline: 1.5px dashed var(--bs-light);
     outline-offset: -4px;
+    width: 35%;
 }
 
 .img-tip{
