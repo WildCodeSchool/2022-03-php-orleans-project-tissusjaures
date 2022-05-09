@@ -63,3 +63,12 @@ div .boutique-description {
     font-size: var(--font-size);
     font-family: var(--text-font);
 }
+
+.card-img-top {
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: calc(var(--header-font-size) - 1.5rem);
+}
