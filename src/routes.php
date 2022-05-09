@@ -14,6 +14,7 @@ return [
     'tissus' => ['ClothController', 'index',],
     'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
     'machines' => ['MachineController', 'index',],
+    'produits/chercher' => ['ProductController', 'showProductBySearch', ['search']],
     'astuces' => ['TipController', 'showTips'],
     'lexique' => ['LexiconController', 'index',],
     'astuces/trucs-et-astuces' => ['TipController', 'showTipById', ['id']],
