@@ -2,8 +2,16 @@
     font-family: var(--text-font);
 }
 
-h1 {
-    font-family: var(--title-font);
+.header {
+    background-image: url("../images/contact.jpg");
+    height: 300px;
+    object-fit: cover;
+}
+
+.header h1 {
+    font-family: var(--header-font);
+    font-size: var(--header-font-size);
+    text-shadow: 2px 2px var(--bs-dark);
 }
 
 input, #object, textarea {
