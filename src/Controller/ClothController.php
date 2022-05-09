@@ -42,21 +42,4 @@ class ClothController extends AbstractController
             'machineCategories' => $machineCategories,
         ]);
     }
-
-    public function showClothBySearch(string $search)
-    {
-        $clothCategoryManager = new ClothCategoryManager();
-        $clothCategories = $clothCategoryManager->selectAll();
-        $machCategoryManager = new MachineCategoryManager();
-        $machineCategories = $machCategoryManager->selectAll();
-
-        $clothManager = new ClothManager();
-        $clothes = $clothManager->selectBySearch($search);
-
-        return $this->twig->render('Products/Clothes/search.html.twig', [
-            'clothes' => $clothes,
-            'clothCategories' => $clothCategories,
-            'machineCategories' => $machineCategories,
-        ]);
-    }
 }
