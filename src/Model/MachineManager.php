@@ -23,10 +23,10 @@ class MachineManager extends AbstractManager
         VALUES (:name, :price, :description)");
         $statement->bindValue('name', $machine['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $machine['price'], \PDO::PARAM_STR);
-        //$statement->bindValue('image', $machine['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', $machine['image'], \PDO::PARAM_STR);
         $statement->bindValue('description', $machine['description'], \PDO::PARAM_STR);
-        //$statement->bindValue('is_on_sale', $machine['is_on_sale'] ?? 0, \PDO::PARAM_INT);
-        //$statement->bindValue('is_new', $machine['is_new'] ?? 0, \PDO::PARAM_INT);
+        $statement->bindValue('is_on_sale', $machine['is_on_sale'] ?? 0, \PDO::PARAM_INT);
+        $statement->bindValue('is_new', $machine['is_new'] ?? 0, \PDO::PARAM_INT);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
