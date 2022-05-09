@@ -28,7 +28,6 @@ class ProductController extends AbstractController
         $machCategoryManager = new MachineCategoryManager();
         $machineCategories = $machCategoryManager->selectAll();
 
-        $search = '%' . $search . '%';
         $clothManager = new ClothManager();
         $clothes = $clothManager->selectBySearch($search);
         $machineManager = new MachineManager();

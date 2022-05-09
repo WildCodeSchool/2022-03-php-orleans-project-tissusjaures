@@ -69,7 +69,7 @@ class ClothManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("SELECT c.name, c.price, c.description
         FROM " . static::TABLE . " c WHERE c.name LIKE :search");
-        $statement->bindValue('search', $search);
+        $statement->bindValue('search', '%' . $search . '%');
         $statement->execute();
 
         return $statement->fetchAll();
