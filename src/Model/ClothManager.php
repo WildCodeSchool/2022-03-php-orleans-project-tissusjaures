@@ -19,7 +19,7 @@ class ClothManager extends AbstractManager
 
     public function selectOneById(int $id): array|false
     {
-        $statement = $this->pdo->prepare("SELECT c.name, c.price, c.is_new, c.is_on_sale, c.image, cc.name AS 
+        $statement = $this->pdo->prepare("SELECT c.name, c.price, /*c.is_new, c.is_on_sale, c.image,*/ cc.name AS 
         Cat, cc.id AS CatId FROM " . static::TABLE . " AS c INNER JOIN cloth_categories as cc"
         . " ON cc.id = c.cloth_categories_id" . " WHERE c.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
