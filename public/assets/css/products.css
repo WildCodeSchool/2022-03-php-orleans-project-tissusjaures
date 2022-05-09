@@ -71,3 +71,7 @@ h3 {
     font-size: var(--font-size);
     box-shadow: var(--shadow);
 }
+
+.search-items {
+    height: 24rem;
+}
