@@ -5,7 +5,7 @@
 
 {% block content %}
 	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">Bienvenue chez Tissus Jaurès</h1>
+		<h1 class="text-light text-center">Bienvenue chez Tissus Jaurès</h1>
 	</div>
 	<div class="container">
 		<div class="ms-2 mb-4 boutique">
@@ -18,8 +18,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="boutique-description d-flex justify-content-center w-auto">
-					<img src="https://picsum.photos/id/239/350/200" class="boutique-img" alt="boutique">
+				<div class="boutique-description d-flex justify-content-center flex-column flex-md-row w-auto">
+					<img src="assets/images/shop.jpeg" class="boutique-img img-fluid rounded" alt="boutique">
 					<p class="ms-3 mt-5 boutique-text text-dark">
 						Vous trouverez dans notre très vaste magasin, des milliers de mètres de Tissus d'Ameublement, 
 																					de Voilages, de Tissus Couture et Haute Couture, une très grande Mercerie et un large choix en Décoration, 
@@ -42,11 +42,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mb-4">
+				<div class="row justify-content-center mb-4">
 					{% for cloth in clothes %}
-						<div class="col-lg-3 mb-2">
+						<div class="col-lg-3 col-11 mb-2">
 							<figure class="card h-100">
-								<img src="https://picsum.photos/200/200" class="card-img-top px-1 pt-1 bg-primary" alt="Nouveau tissus : {{ cloth.name }}">
+								<img src="https://picsum.photos/200/200" class="card-img-top w-auto h-50 px-1 pt-1 bg-primary" alt="Nouveau tissus : {{ cloth.name }}">
 								<div class="card-body bg-primary">
 									<h5 class="card-title text-secondary">{{ cloth.name }}</h5>
 									<p class="card-text text-dark mb-5">{{ cloth.description }}
@@ -57,12 +57,12 @@
 						</div>
 					{% endfor %}
 					{% for machine in machines %}
-						<div class="col-lg-3 mb-2">
+						<div class="col-lg-3 col-11 mb-2">
 							<figure class="card h-100">
-								<img src="https://picsum.photos/id/55/200/200" class="card-img-top px-1 pt-1 bg-primary" alt="Nouvelle machine : {{ machine.name }}">
+								<img src="https://picsum.photos/id/55/200/200" class="card-img-top w-auto h-50 px-1 pt-1 bg-primary" alt="Nouvelle machine : {{ machine.name }}">
 								<div class="card-body bg-primary">
 									<h5 class="card-title text-secondary">{{ machine.name }}</h5>
-									<p class="card-text text-dark mb-5">{{ machine.description }}
+									<p class="card-text text-dark">{{ machine.description }}
 									</p>
 									<a href='/machines' class="btn card-btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
 								</div>

@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Model\TipManager;
+use App\Model\TutorialManager;
 
-class AdminTipController extends AbstractController
+class AdminTutorialController extends AbstractController
 {
     public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     public const MAX_FILE_SIZE = 1000000;
@@ -12,30 +12,22 @@ class AdminTipController extends AbstractController
 
     public function index(): string
     {
-        if ($this->getUser() === null) {
-            header('HTTP/1.0 403 Forbidden');
-            return "Vous n'êtes pas autorisé à visiter cette page.";
-        }
-
-        $tipManager = new TipManager();
-        $tips = $tipManager->selectAll();
-        return $this->twig->render('Admin/Tips/index.html.twig', [
-            'tips' => $tips,
-        ]);
+        $tutorialManager = new TutorialManager();
+        $tutorials = $tutorialManager->selectAll();
+        return $this->twig->render('Admin/Tutorials/index.html.twig', ['tutorials' => $tutorials]);
     }
 
-    public function addTip(): ?string
+    public function addTutorial(): ?string
     {
-        $tip = $errors = [];
+        $tutorial = $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tip = array_map('trim', $_POST);
-            $tipErrors = $this->tipValidate($tip);
-
+            $tutorial = array_map('trim', $_POST);
             $imageFile = $_FILES['image'];
+            $tutorialErrors = $this->tutorialValidate($tutorial);
             $imageErrors = $this->validateImage($imageFile);
 
-            $errors = [...$tipErrors, ...$imageErrors];
+            $errors = [...$tutorialErrors, ...$imageErrors];
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
@@ -44,32 +36,32 @@ class AdminTipController extends AbstractController
 
                 move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
 
-                $tipManager = new TipManager();
-                $tip['image'] = $imageName;
-                $tipManager->insert($tip);
-                header('Location: /admin/astuces/');
+                $tutorialManager = new TutorialManager();
+                $tutorial['image'] = $imageName;
+                $tutorialManager->insert($tutorial);
+                header('Location: /admin/tutoriels/');
             }
         }
-        return $this->twig->render('Admin/Tips/add.html.twig', [
-            'tip' => $tip,
+        return $this->twig->render('Admin/Tutorials/add.html.twig', [
+            'tutorial' => $tutorial,
             'errors' => $errors
         ]);
     }
 
-    public function editTip($id): ?string
+    public function editTutorial($id): ?string
     {
-        $tip = $errors = [];
-        $tipManager = new TipManager();
-        $tip = $tipManager->selectOneById($id);
+        $tutorial = $errors = [];
+        $tutorialManager = new TutorialManager();
+        $tutorial = $tutorialManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tip = array_map('trim', $_POST);
-            $tip['id'] = $id;
+            $tutorial = array_map('trim', $_POST);
+            $tutorial['id'] = $id;
             $imageFile = $_FILES['image'];
-            $tipErrors = $this->tipValidate($tip);
+            $tutorialErrors = $this->tutorialValidate($tutorial);
             $imageErrors = $this->validateImage($imageFile);
 
-            $errors = [...$tipErrors, ...$imageErrors];
+            $errors = [...$tutorialErrors, ...$imageErrors];
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
@@ -78,38 +70,34 @@ class AdminTipController extends AbstractController
 
                 move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
 
-                $tipManager = new TipManager();
-                $tip['image'] = $imageName;
-                $tipManager->update($tip);
-                header('Location: /admin/astuces/');
+                $tutorialManager = new TutorialManager();
+                $tutorial['image'] = $imageName;
+                $tutorialManager->update($tutorial);
+                header('Location: /admin/tutoriels/');
             }
         }
-        return $this->twig->render('Admin/Tips/edit.html.twig', [
-            'tip' => $tip,
+        return $this->twig->render('Admin/Tutorials/edit.html.twig', [
+            'tutorial' => $tutorial,
             'errors' => $errors
         ]);
     }
 
-    private function tipValidate(array $tip): array
+    private function tutorialValidate(array $tutorial): array
     {
-        $tipErrors = [];
-        if (empty($tip['name'])) {
-            $tipErrors[] = 'Le champ nom est obligatoire';
+        $tutorialErrors = [];
+        if (empty($tutorial['name'])) {
+            $tutorialErrors[] = 'Le champ nom est obligatoire';
         }
 
-        if (strlen($tip['name']) > self::MAX_NAME_LENGTH) {
-            $tipErrors[] = 'Le nom ne doit pas dépasser les 100 caractères';
+        if (strlen($tutorial['name']) > self::MAX_NAME_LENGTH) {
+            $tutorialErrors[] = 'Le nom ne doit pas dépasser les ' . self::MAX_NAME_LENGTH . ' caractères';
         }
 
-        if (empty($tip['content'])) {
-            $tipErrors[] = 'Le champ description est obligatoire';
+        if (empty($tutorial['content'])) {
+            $tutorialErrors[] = 'Le champ description est obligatoire';
         }
 
-        if (!empty($tip['is_monthly_tip']) && intval($tip['is_monthly_tip']) !== 1) {
-            $tipErrors[] = 'Ceci n\'est pas une option valide';
-        }
-
-        return $tipErrors;
+        return $tutorialErrors;
     }
 
     private function validateImage(array $files): array
@@ -131,14 +119,14 @@ class AdminTipController extends AbstractController
         return $imageErrors;
     }
 
-    public function deleteTip(): void
+    public function deleteTutorial(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $tipManager = new TipManager();
+            $tipManager = new TutorialManager();
             $tipManager->delete((int)$id);
 
-            header('Location:/admin/astuces/');
+            header('Location:/admin/tutoriels/');
         }
     }
 }

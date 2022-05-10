@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\LexiconManager;
 
-class LexiconController extends AbstractController
+class AdminLexiconController extends AbstractController
 {
     public function index(): string
     {
@@ -33,6 +33,28 @@ class LexiconController extends AbstractController
             }
         }
         return $this->twig->render('Admin/Lexicon/add.html.twig');
+    }
+
+    public function editLexicon($id): string
+    {
+        $errors = $lexicon = [];
+        $lexiconManager = new LexiconManager();
+        $lexicon = $lexiconManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $lexicon = array_map('trim', $_POST);
+            $lexicon['id'] = $id;
+            $errors = $this->lexiconValidate($lexicon);
+
+            if (empty($errors)) {
+                $lexiconManager->update($lexicon);
+                header('Location: /admin/lexiques/');
+            }
+        }
+        return $this->twig->render('Admin/Lexicon/edit.html.twig', [
+            'lexicon' => $lexicon,
+            'errors' => $errors
+        ]);
     }
 
     public function deleteLexicon(): void
