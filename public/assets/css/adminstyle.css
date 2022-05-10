@@ -82,3 +82,9 @@ a {
 #is_monthly_tip {
     accent-color: var(--admin-color);
 }
+.textHome {
+    color: var(--admin-color);
+    font-size: var(--title-font-size);
+    font-family: var(--title-font);
+    padding: var(--spacing)
+}
