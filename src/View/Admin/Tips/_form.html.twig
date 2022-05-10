@@ -18,7 +18,7 @@
 				<label for="image">Image</label>
 			{% if tip.image is not empty %}
 			<div class="col-8 col-md-6 mx-auto d-flex justify-content-center">
-			<img src="/uploads/{{tip.image}}" class="w-50 h-50 mb-2" alt="{{tip.name}}">
+			<img src="{{tip.image}}"  class="w-50 h-50 mb-2" alt="{{tip.name}}">
 			</div>
 			{% endif %}
 				<input type="file" class="form-control" value="{{ clothCategory.image }}" id="image" name="image">
