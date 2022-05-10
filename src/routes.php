@@ -20,7 +20,7 @@ return [
     'astuces/trucs-et-astuces' => ['TipController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index', ['sent']],
     'connexion' => ['LoginController', 'login'],
-    'déconnexion' => ['LoginController', 'logout'],
+    'deconnexion' => ['LoginController', 'logout'],
     'admin' => ['AdminController', 'index'],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
     'admin/categories-tissus/ajouter' => ['AdminClothCategoryController', 'addClothCategory',],
