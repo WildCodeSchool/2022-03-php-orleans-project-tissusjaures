@@ -58,7 +58,7 @@ class MachineManager extends AbstractManager
 
     public function selectBySearch(string $search): array|false
     {
-        $statement = $this->pdo->prepare("SELECT m.name, m.price, m.description
+        $statement = $this->pdo->prepare("SELECT m.name, m.price, m.description, m.image
         FROM " . static::TABLE . " m WHERE m.name LIKE :search");
         $statement->bindValue('search', '%' . $search . '%');
         $statement->execute();
