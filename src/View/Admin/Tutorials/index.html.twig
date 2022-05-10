@@ -6,8 +6,11 @@
 {% block content %}
 <div class="container d-flex flex-column align-items-end mx-auto">
   <div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
-	<h2 class="addClothTitle mb-0">Tutoriels</h2>
-		<a href="/admin/tutoriels/ajouter" class="mt-0 btn d-flex btn-lg justify-content-around align-items-center align-self-center">
+	<h2 class="addClothTitle mb-0 mt-3">Tutoriels</h2>
+		{% if user is not empty %}
+			<p class="alert alert-success">Welcome {{user.email}}</p>
+		{% endif %}
+		<a href="/admin/tutoriels/ajouter" class="mt-0 mb-3 btn add-btn text-light d-flex btn-lg justify-content-around align-items-center align-self-center">
 			<svg class="adminSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
   						<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   						<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -15,9 +18,9 @@
   </div>
 	<ul class="list-group col-8 mx-auto mt-1">	
 	{% for tutorial in tutorials %}		
-			<li class="list-group-item py-1 px-2 my-1 border-0 bg-primary text-dark shadow-sm d-flex justify-content-between align-items-center">{{ tutorial.name }}
+			<li class="list-group-item py-1 px-2 mb-3 my-1 border-0 bg-primary text-dark shadow-sm d-flex justify-content-between align-items-center">{{ tutorial.name }}
 				<div class="d-flex">
-					<a class="btn d-flex btn-md justify-content-end align-items-center my-1 mx-2" href="/admin/tutoriels/editer?id={{ tutorial.id }}">
+					<a class="btn d-flex text-light btn-md justify-content-end align-items-center my-1 mx-2" href="/admin/tutoriels/editer?id={{ tutorial.id }}">
 							<svg class="adminSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewbox="0 0 16 16">
 								<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
 								<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -25,7 +28,7 @@
 					</a>
 					<form action="/admin/tutoriels/supprimer" onsubmit="return confirm('Supprimer \&#34;{{tutorial.name}}\&#34; ?');" method="POST">
         			<input type="hidden" name="id" value="{{ tutorial.id }}">
-        				<button class="btn d-flex btn-md justify-content-around align-items-center align-self-center my-1">
+        				<button class="btn d-flex bg-secondary text-light btn-md justify-content-around align-items-center align-self-center my-1">
 							<svg class="adminSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
   								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   								<path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
