@@ -30,11 +30,25 @@ h3 {
     position: initial;
     font-family: var(--text-font);
     font-size: var(--font-size);
+    opacity: 90%;
 }
 
 .btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
+    opacity: 100%;
+}
+
+.btn-cat:hover {
+    background-color: var(--bs-secondary);
+    transform: initial;
+}
+
+.search {
+    box-shadow: var(--shadow);
+}
+
+.search-btn {
+    box-shadow: var(--shadow);
 }
 
 .card {
@@ -62,4 +76,20 @@ h3 {
 .price {
     font-size: var(--font-size);
     box-shadow: var(--shadow);
+}
+
+.search-items {
+    height: 24rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.h-60 {
+    height: 60%;
+}
+
+.product-cards {
+    height: 400px;
 }

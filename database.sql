@@ -3,6 +3,22 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
+-- Table `tissus_jaures`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Content `tissus_jaures`.`user`
+-- -----------------------------------------------------
+INSERT INTO `user` (`id`, `email`, `password`) VALUES
+(1, "tissus_jaures@admin.com", "$2y$10$IRb27co3TwTwMOrv2qDy5OcwdyExj92eYJV3jIMM1rS1.JoCpaeWW");
+
+-- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
@@ -64,12 +80,12 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
 INSERT INTO `cloth` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`, `cloth_categories_id`) VALUES
-(1, "Tissu bleu", "Un joli tissu bleu", 5, '/assets/images/tss1', 0, 0, 1),
-(2, "Tissu vert", "Un joli tissu vert", 4, '/assets/images/tss1', 0, 0, 3),
-(3, "Tissu jaune", "Un joli tissu jaune", 2.5, '/assets/images/tss1', 1, 0, 4),
-(4, "Tissu rouge", "Un joli tissu rouge", 150, '/assets/images/tss1', 0, 1, 2),
-(5, "Tissu violet", "Un joli tissu violet", 1, '/assets/images/tss1', 1, 1, 1),
-(6, "Tissu orange", "Un joli tissu orange", 4.5, '/assets/images/tss1', 1, 0, 4);
+(1, "Tissu bleu", "Un joli tissu bleu", 5, '/assets/images/bluefabric.jpeg', 0, 0, 1),
+(2, "Tissu vert", "Un joli tissu vert", 4, '/assets/images/greenfabric.jpeg', 0, 0, 3),
+(3, "Tissu jaune", "Un joli tissu jaune", 2.5, '/assets/images/yellowfabric.jpeg', 1, 0, 4),
+(4, "Tissu rouge", "Un joli tissu rouge", 150, '/assets/images/redfabric.jpeg', 0, 1, 2),
+(5, "Tissu violet", "Un joli tissu violet", 1, '/assets/images/purplefabric.jpeg', 1, 1, 1),
+(6, "Tissu orange", "Un joli tissu orange", 4.5, '/assets/images/orangefabric.jpeg', 1, 0, 4);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
@@ -90,10 +106,10 @@ ENGINE = InnoDB;
 -- -- Content `tissus_jaures`.`machines`
 -- -- -----------------------------------------------------
 INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`) VALUES
-(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/mchn1', 0, 0),
-(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/mchn1', 1, 1),
-(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/mchn1', 1, 0),
-(4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/mchn1', 0, 1);
+(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/machine1.jpeg', 0, 0),
+(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/machine2.jpeg', 1, 1),
+(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/machine3.jpeg', 1, 0),
+(4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/machine4.jpeg', 0, 1);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips_and_tricks_categories`
@@ -204,27 +220,17 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`tips`
 -- -----------------------------------------------------
 INSERT INTO `tips` (`id`, `name`, `image`, `content`, `is_monthly_tip`, `tips_and_tricks_categories_id`) VALUES
-(1, "L'ourlet parfait", "/assets/images/imgtip.jpg", "Plutôt que d’utiliser plusieurs fois votre mètre pour vérifier que votre ourlet est égal en tout point, utilisez plutôt cette astuce :
+(1, "L'ourlet parfait", "/assets/images/ourlet.jpg", "Plutôt que d’utiliser plusieurs fois votre mètre pour vérifier que votre ourlet est égal en tout point, utilisez plutôt cette astuce :
 Faites un cran dans un rectangle de carton a la hauteur désirée et reportez votre ourlet grâce à un crayon en utilisant la marque du carton !", 1, 1),
 (2, "Détacher un linge", "/assets/images/tache.jpg", "Epongez la tâche avec un papier absorbant et un fer chaud. Frottez ensuite avec du savon de Marseille sec que vous laisserez agir quelques minutes. Rincez à l'eau chaude.", 0, 1),
 (3, "Taches de bougie", "/assets/images/tachebougie.jpg", "Une tâche de bougie sur votre vêtement ou votre sol? Prenez un buvard et déposé le sur la tâche. Passez ensuite un fer à repasser bien chaud sur le buvard. La cire va se décoller se venir se déposer sur le buvard. ", 0, 1),
 (4, "Taches de peintures", "/assets/images/tachepeinture.jpg", "Trempez les vêtements tachés de peinture immédiatement dans du lait puis lavez normalement. Cette astuce est notamment utilisée dans les écoles maternelles.", 0 , 1),
-(5, "Coudre de la toile cirée", "/assets/images/toileciree.jpeg", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
+(5, "Coudre de la toile cirée", "/assets/images/toileciree.jpg", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
 
 Les toiles enduites ou cirées collent au pied. Voilà pourquoi lorsque vous les piquez avec un pied de biche normal, vous obtenez des plis non désirés et autres bonnes surprises!
-
 Ce pied étant assez cher pour des travaux occasionnels, nous avons une astuces à vous confier...
-
 Celle-ci consiste à coller sous un pied presseur normal, du ruban adhésif de peintre (ruban de masquage). Vous devrez ensuite couper le surplus de ruban adhésif afin qu’il ne dépasse pas du pied…
-
 ….vous avez un pied pour coudre de la toile enduite.", 0, 1);
-
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 
 
 

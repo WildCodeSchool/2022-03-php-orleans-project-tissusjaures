@@ -2,36 +2,46 @@
     background-image: url("../images/tipheader.jpg");
     background-position: bottom;
     height: 300px;
-}
-
-.header h1 {
+    }
+    
+    .header h1 {
     font-family: var(--header-font);
     font-size: var(--header-font-size);
     text-shadow: 2px 2px var(--bs-dark);
-}
-
-h3 {
+    }
+    
+    h2 {
+    font-family: var(--header-font);
+    font-size: var(--title-font-size);
+    }
+    
+    h3 {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) - 4px);
-}
-
-.btn {
+    }
+    
+    .btn {
     box-shadow: var(--shadow);
     position: initial;
     font-family: var(--text-font);
+    opacity: 90%;
 }
 
 .btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
+    opacity: 100%;
 }
-
-.title-tip {
-    font-family: var(--header-font);
-    font-size: calc(var(--title-font-size) + 0.75rem);
-    background-color: var(--bs-secondary);
+    
+    .card-tip {
+    outline: 1.5px dashed var(--bs-secondary);
+    outline-offset: -6px;
+    }
+    
+    .title-tip {
+    width: fit-content;
     outline: 1.5px dashed var(--bs-light);
     outline-offset: -4px;
+    width: 35%;
 }
 
 .img-tip{
@@ -41,46 +51,37 @@ h3 {
 
 .monthlyTip {
     box-shadow: var(--shadow);
-}
-
-.textTip {
+    }
+    
+    .textTip {
     font-family: var(--title-font); 
-}
-
-.textMonthly {
+    }
+    
+    .textMonthly {
     font-family: var(--text-font);
-    font-size: calc(var(--font-size) + 0.5rem);
+    font-size: var(--font-size);
 }
 
 .monthlyTitle {
     font-size: calc(var(--font-size-link) + 0.75rem);
 }
 
-.btn {
-    box-shadow: var(--shadow);
-    position: initial;
-    font-family: var(--text-font);
-    font-size: var(--font-size);
-}
-
-.btn:hover {
-    color: var(--bs-secondary);
-    transform: scale(1.03);
-}
-
 .card {
     box-shadow: var(--shadow);
     outline: 1.5px dashed var(--bs-dark);
     outline-offset: -6px;
-}
-
-.card-title {
-    font-size: calc(var(--title-font-size) - 4px);
+    }
+    
+    .card-img-top {
+    object-fit: cover;
+    }
+    
+    .card-title {
+    font-size: var(--font-size-nav);
     font-family: var(--header-font);
-}
-
-.card-text {
+    }
+    
+    .card-text {
     font-size: var(--font-size);
     font-family: var(--text-font);
-}
-
+    }

@@ -5,7 +5,7 @@
 		{% endfor %}
 	</div>
 {% endif %}
-<h2 class="addClothTitle col-8 col-md-6 mx-auto text-center">{{ title_name|default('Ajouter un tissu')}}</h2>
+<h2 class="addClothTitle col-8 col-md-6 mx-auto mt-5 mb-3 text-center">{{ title_name|default('Ajouter un tissu')}}</h2>
 <div class="container">
 	<form method="POST" enctype="multipart/form-data">
 		<div class="form-row">
@@ -22,6 +22,10 @@
 				<input type="number" step="0.1" class="form-control" value="{{ clothItems.price }}" id="price" name="price" placeholder="30">
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
+				<label for="description" class="form-label mb-0">Description</label>
+  				<textarea class="form-control mt-0" id="content" name="description" rows="5" placeholder="Je suis un beau tissu">{{clothItems.description}}</textarea>			
+			</div>
+			<div class="form-group col-8 col-md-6 mx-auto">
 				<label for="cloth_categories_id">Catégorie</label>
 				<select name="cloth_categories_id" id="cloth_categories_id" class="form-control">
 					{% for category in categories %}
@@ -31,11 +35,11 @@
 				<div class="d-flex justify-content-center align-items-center mb-3">
 					<div class="d-flex flex-column me-5">
 						<label for="sale">En solde</label>
-						<input type="checkbox" id="sale" name="is_on_sale" value="1">
+						<input type="checkbox" id="sale" name="is_on_sale" {% if clothItems.is_on_sale is same as 1 %} checked {% endif %} value="1">
 					</div>
 					<div class="d-flex flex-column">
 						<label for="new">Nouveau</label>
-						<input type="checkbox" id="new" name="is_new" value="1">
+						<input type="checkbox" id="new" name="is_new" {% if clothItems.is_new is same as 1 %} checked {% endif %} value="1">
 					</div>
 				</div>
 				<button type="submit" class="d-flex justify-content-around align-items-center btn btn-md">

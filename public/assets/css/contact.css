@@ -2,8 +2,17 @@
     font-family: var(--text-font);
 }
 
-h1 {
-    font-family: var(--title-font);
+.header {
+    background-image: url("../images/contact.jpg");
+    height: 300px;
+    object-fit: cover;
+}
+
+.header h1 {
+    font-family: var(--header-font);
+    --home-header-font-size: calc(var(--header-font-size) - 20px);
+    font-size: clamp(1.5rem, var(--home-header-font-size), 6rem);
+    text-shadow: 2px 2px var(--bs-dark);
 }
 
 input, #object, textarea {
@@ -11,13 +20,9 @@ input, #object, textarea {
 }
 
 .btn {
-    opacity: 90%;
-    outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
+    opacity: 100%;
 }
 
 .btn:hover {
-    opacity: 100%;
-    outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
+    opacity: 90%;
 }

@@ -15,6 +15,8 @@
     --dark-color: #4D3C3C;
     --bs-admin-rgb: 111, 68, 148;
     --admin-color: #6F4494;
+    --bs-admin-rgb: 64, 163, 108;
+    --admin-green: #40A36C;
 
     --header-font: 'Kotta One', serif;
     --text-font: 'Lora', serif;
@@ -38,11 +40,15 @@
     background-color: var(--admin-color);
     color: var(--light-color);
     margin-top: var(--spacing);
+    opacity: 90%;
+}
+
+.add-btn {
+    background-color: var(--admin-green);
 }
 
 .btn:hover {
-    color: var(--light-color);
-    background-color: var(--secondary-color);
+    opacity: 100%;
 }
 
 label {
@@ -81,4 +87,10 @@ a {
 
 #is_monthly_tip {
     accent-color: var(--admin-color);
+}
+.textHome {
+    color: var(--admin-color);
+    font-size: var(--title-font-size);
+    font-family: var(--title-font);
+    padding: var(--spacing)
 }
