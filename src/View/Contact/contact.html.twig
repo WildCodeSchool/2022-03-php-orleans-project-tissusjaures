@@ -1,54 +1,59 @@
 {% extends 'layout.html.twig' %}
+
 {% block stylesheet %}
 	<link rel="stylesheet" href="/assets/css/contact.css">
 {% endblock %}
 {% block content %}
-	<div class="container">
-		<form method="POST">
-			{% if errors is not empty %}
-				<div class="alert alert-danger">
-					{% for error in errors %}
-						<p>{{ error }}</p>
-					{% endfor %}
-				</div>
-			{% endif %}		
-			{% if messageSent %}
-				<p class="alert alert-success">Le message a bien été envoyé.</p>
-			{% endif %}
-			<h1 class="d-flex justify-content-center mt-2 text-dark fs-title-font ff-title-font">Formulaire de contact</h1>
-			<div class="row">
-				<div class="col-lg-6 col-md-12 mt-2 ">
-					<label for="firstname" class="form-label mt-2 text-dark">Prénom</label>
-					<input type="text" name="firstname" id="firstname" class="form-control border-0" placeholder="Jean" required>
-				</div>
-				<div class="col-lg-6 col-md-12 mt-2">
-					<label for="lastname" class="form-label mt-2 text-dark">Nom</label>
-					<input type="text" name="lastname" id="lastname" class="form-control border-0" placeholder="Dupond" required>
-				</div>
-				<div class="col-lg-6 col-md-12 mt-2">
-					<label for="phone" class="form-label mt-2 text-dark">Téléphone</label>
-					<input type="text" name="phone" id="phone" class="form-control border-0" placeholder="0610506080" required>
-				</div>
-				<div class="col-lg-6 col-md-12 mt-2">
-					<label for="email" class="form-label mt-2 text-dark">Mail</label>
-					<input type="text" name="email" id="email" class="form-control border-0" placeholder="adresse.mail@hotmail.fr" required>
-				</div>
-				<div class="sendMessage mt-2">
-					<label for="object" class="form-label mt-2 text-dark">Objet</label>
-					<select name="object" id="object" class="form-select mb-1 border-0" required>
-						<option>Information</option>
-						<option>Cours</option>
-						<option>Devis</option>
-						<option>Autre</option>
-					</select>
-				</div>
-				<div class="d-flex justify-content-center">
-					<textarea name="message" id="message" rows="8" cols="500" class="message p-2 border-0 w-100 mb-3" placeholder="Votre message..." required></textarea>
-				</div>
-				<div class="d-flex justify-content-center mt-3">
-					<button type="submit" id='submit' class="btn btn-primary bg-secondary border-0 p-3 fs-4">Envoyer</button>
-				</div>
+</div>
+<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header p-0">
+	<h1 class="text-light">Contactez-nous</h1>
+</div>
+<div class="container">
+	<form method="POST">
+		{% if errors is not empty %}
+			<div class="alert alert-danger">
+				{% for error in errors %}
+					<p>{{ error }}</p>
+				{% endfor %}
 			</div>
-		</form>
-	</div>
+		{% endif %}
+		{% if messageSent %}
+			<p class="alert alert-success">Le message a bien été envoyé.</p>
+		{% endif %}
+		<div class="row">
+			<div class="col-lg-6 col-md-12 mt-2 ">
+				<label for="firstname" class="form-label mt-2 text-dark">Prénom</label>
+				<input type="text" name="firstname" id="firstname" class="form-control border-0" placeholder="Jean">
+			</div>
+			<div class="col-lg-6 col-md-12 mt-2">
+				<label for="lastname" class="form-label mt-2 text-dark">Nom</label>
+				<input type="text" name="lastname" id="lastname" class="form-control border-0" placeholder="Dupond">
+			</div>
+			<div class="col-lg-6 col-md-12 mt-2">
+				<label for="phone" class="form-label mt-2 text-dark">Téléphone</label>
+				<input type="text" name="phone" id="phone" class="form-control border-0" placeholder="0610506080">
+			</div>
+			<div class="col-lg-6 col-md-12 mt-2">
+				<label for="email" class="form-label mt-2 text-dark">Mail</label>
+				<input type="text" name="email" id="email" class="form-control border-0" placeholder="adresse.mail@hotmail.fr">
+			</div>
+			<div class="sendMessage mt-2">
+				<label for="object" class="form-label mt-2 text-dark">Objet</label>
+				<select name="object" id="object" class="form-select mb-1 border-0">
+					<option>Information</option>
+					<option>Cours</option>
+					<option>Devis</option>
+					<option>Autre</option>
+				</select>
+			</div>
+			<div class="d-flex justify-content-center">
+				<textarea name="message" id="message" rows="8" cols="936" class="p-2 border-0" placeholder="Votre message..."></textarea>
+			</div>
+			<div class="d-flex justify-content-center mt-3">
+				<button type="submit" id='submit' class="btn btn-primary bg-secondary border-0 p-3 fs-4">Envoyer</button>
+			</div>
+		</div>
+	</form>
+</div>
 {% endblock %}
+
