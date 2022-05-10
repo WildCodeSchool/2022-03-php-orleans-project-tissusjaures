@@ -34,7 +34,6 @@ div .boutique-description {
 
 .boutique-img {
     box-shadow: var(--shadow); 
-    box-shadow: var(--shadow);
     outline: 1px dashed var(--bs-primary);
     outline-offset: -4px;
 }
