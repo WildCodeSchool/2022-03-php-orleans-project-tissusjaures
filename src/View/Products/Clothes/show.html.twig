@@ -15,16 +15,10 @@
 	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for clothCategory in clothCategories %}
-				{% if id == clothCategory.id %}
 					<div class="col-lg-3 mt-1 w-25">
 						<a href='/tissus/categorie?id={{ clothCategory.id }}' class="
-						btn btn-cat btn-lg bg-secondary text-primary w-100 m-1">{{ clothCategory.name }}</a>
+						btn btn-lg {% if id is same as clothCategory.id %} btn-cat bg-secondary text-primary {% else %} bg-primary {% endif %} w-100 m-1">{{ clothCategory.name }}</a>
 					</div>
-				{% else %}
-					<div class="col-lg-3 mt-1 w-25">
-						<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1">{{ clothCategory.name }}</a>
-					</div>
-				{% endif %}
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
 				<div class="col-lg-3 mt-1 ">
