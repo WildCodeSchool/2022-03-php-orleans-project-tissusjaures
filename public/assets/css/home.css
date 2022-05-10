@@ -43,7 +43,6 @@ div .boutique-description {
 .card-btn:hover {
     opacity: 100%;
     color: var(--bs-secondary);
-    transform: scale(1.03);
 }
 
 .card {
