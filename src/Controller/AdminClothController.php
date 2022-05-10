@@ -89,6 +89,12 @@ class AdminClothController extends AbstractController
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $clothItems['image'] = $imageName;
                 $clothList->update($clothItems);
                 header('Location: /admin/tissus/');
             }

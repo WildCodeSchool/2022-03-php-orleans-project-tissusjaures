@@ -15,6 +15,11 @@
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
 				<label for="image">Image</label>
+				{% if clothItems.image is not empty %}
+					<div class="col-8 col-md-6 d-flex justify-content-center">
+						<img src="/uploads/{{clothItems.image}}" class="w-50 h-50 mb-2" alt="{{clothItems.name}}">
+					</div>
+				{% endif %}
 				<input type="file" class="form-control" value="{{ clothCategory.image }}" id="image" name="image">
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
