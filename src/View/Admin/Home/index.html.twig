@@ -1,14 +1,14 @@
 {% extends 'adminLayout.html.twig' %}
 {% block title %}
 	{{ parent() }}
-	- Bienvenue dans l'admin
+	- Accueil admin
 {% endblock %}
 {% block content %}
 	<main class='conteneur-fluid'>
 		<h1 class="d-flex justify-content-center pt-5">Tissus Jaures</h1>
 		<h2 class="d-flex justify-content-center pt-5">
 			{% if user is not empty %}
-				Bienvenue administrateur
+				{{ user.email }}
 			{% else %}
 				Non connecté
 			{% endif %}
