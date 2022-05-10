@@ -38,6 +38,11 @@ h3 {
     opacity: 100%;
 }
 
+.btn-cat:hover {
+    background-color: var(--bs-secondary);
+    transform: initial;
+}
+
 .search {
     box-shadow: var(--shadow);
 }
