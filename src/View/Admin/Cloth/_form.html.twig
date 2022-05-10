@@ -22,6 +22,10 @@
 				<input type="number" step="0.1" class="form-control" value="{{ clothItems.price }}" id="price" name="price" placeholder="30">
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
+				<label for="description" class="form-label mb-0">Description</label>
+  				<textarea class="form-control mt-0" id="content" name="description" rows="5" placeholder="Je suis un beau tissu">{{clothItems.description}}</textarea>			
+			</div>
+			<div class="form-group col-8 col-md-6 mx-auto">
 				<label for="cloth_categories_id">Catégorie</label>
 				<select name="cloth_categories_id" id="cloth_categories_id" class="form-control">
 					{% for category in categories %}
