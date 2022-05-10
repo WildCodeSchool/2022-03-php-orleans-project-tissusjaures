@@ -1,4 +1,37 @@
 {% extends 'adminLayout.html.twig' %}
-{% block content %}
+{% block title %}
+	{{ parent() }}
+	- Bienvenue dans l'admin
 {% endblock %}
-
+{% block content %}
+	<main class='conteneur-fluid'>
+		<h1 class="d-flex justify-content-center pt-5">Tissus Jaures</h1>
+		<h2 class="d-flex justify-content-center pt-5">
+			{% if user is not empty %}
+				Bienvenue administrateur
+			{% else %}
+				Non connecté
+			{% endif %}
+		</h2>
+	</main>
+	<div class="container d-flex flex-column align-items-end mx-auto">
+		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
+			<a class="addClothTitle mb-0 text-admin" aria-current="page" href="/admin/categories-tissus">Catégories</a>
+		</div>
+		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
+			<a class="addClothTitle mb-0 text-admin" aria-current="page" href="/admintissus">Tissus</a>
+		</div>
+		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
+			<a class="addClothTitle mb-0 text-admin" aria-current="page" href="/admin/machines">Machines</a>
+		</div>
+		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
+			<a class="addClothTitle mb-0 text-admin" aria-current="page" href="/admin/astuces">Astuces</a>
+		</div>
+		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
+			<a class="addClothTitle mb-0 text-admin" aria-current="page" href="/admin/tutoriels">Tutos</a>
+		</div>
+		<div class="d-flex col-8 flex-column align-self-center mt-3 align-items-start">
+			<a class="addClothTitle mb-0 text-admin" aria-current="page" href="/admin/lexiques">Lexiques</a>
+		</div>
+	</div>
+{% endblock %}
