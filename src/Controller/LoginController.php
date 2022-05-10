@@ -13,6 +13,21 @@ class LoginController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $connection = array_map('trim', $_POST);
             $errors = $this->validate($connection);
+
+            if (empty($errors)) {
+                $userManager = new UserManager();
+                $user = $userManager->selectOneByEmail($connection['email']);
+                if ($user) {
+                    if (password_verify($connection['password'], $user['password'])) {
+                        $_SESSION['user'] = $user['id'];
+                        header('Location: /admin/categories-tissus');
+                    } else {
+                        $errors[] = 'Mauvais identifiants';
+                    }
+                } else {
+                    $errors[] = 'Email inconnu';
+                }
+            }
         }
         return $this->twig->render('Login/login.html.twig', [
             'errors' => $errors,
@@ -39,21 +54,6 @@ class LoginController extends AbstractController
         }
         if (!filter_var($connection['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = "format d'email invalide";
-        }
-        if (empty($errors)) {
-            $userManager = new UserManager();
-            $user = $userManager->selectOneByEmail($connection['email']);
-            if ($user) {
-                if (password_verify($connection['password'], $user['password'])) {
-                    $_SESSION['user'] = $user['id'];
-                    header('Location: /admin/categories-tissus');
-                } else {
-                    $errors[] = 'Mauvais identifiants';
-                }
-            } else {
-                $errors[] = 'Email inconnu';
-            }
-            $_SESSION['user'] = $user['id'];
         }
         return $errors;
     }
