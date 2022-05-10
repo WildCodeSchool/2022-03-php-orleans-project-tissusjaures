@@ -5,8 +5,9 @@
 }
 
 .header h1 {
+    --home-header-font-size: calc(var(--header-font-size) - 20px);
     font-family: var(--header-font);
-    font-size: var(--header-font-size);
+    font-size: clamp(1.5rem, var(--home-header-font-size), 6rem); 
     text-shadow: 2px 2px var(--bs-dark);
 }
 
@@ -61,4 +62,8 @@ div .boutique-description {
 .card-text {
     font-size: var(--font-size);
     font-family: var(--text-font);
+}
+
+.card-img-top {
+    object-fit: cover;
 }
