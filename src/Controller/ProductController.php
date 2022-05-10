@@ -21,7 +21,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function showProductBySearch(string $search)
+    public function showProductBySearch(string $search = '')
     {
         $clothCategoryManager = new ClothCategoryManager();
         $clothCategories = $clothCategoryManager->selectAll();
