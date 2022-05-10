@@ -10,8 +10,8 @@
 	<div class="w-100 mt-3 mx-auto p-0">
 		<div class="row justify-content-center">
 			{% for tipCategory in tipCategories %}
-				<div class="col-lg-4">
-					<a href='/{{ tipCategory.name|lower }}' class="btn btn-lg w-100 bg-primary mt-1">{{ tipCategory.name }}</a>
+				<div class="col-lg-4 mt-1 categories">
+					<a href='/{{ tipCategory.name|lower }}' class="btn btn-lg w-100 bg-primary m-1">{{ tipCategory.name }}</a>
 				</div>
 			{% endfor %}
 		</div>
