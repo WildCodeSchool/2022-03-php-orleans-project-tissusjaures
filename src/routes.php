@@ -18,6 +18,7 @@ return [
     'lexique' => ['LexiconController', 'index',],
     'astuces/trucs-et-astuces' => ['TipController', 'showTipById', ['id']],
     'contact' => ['ContactController', 'index', ['sent']],
+    'admin' => ['AdminController', 'index'],
     'admin/categories-tissus' => ['AdminClothCategoryController', 'index',],
     'admin/categories-tissus/ajouter' => ['AdminClothCategoryController', 'addClothCategory',],
     'admin/categories-tissus/supprimer' => ['AdminClothCategoryController', 'deleteClothCategory',],
