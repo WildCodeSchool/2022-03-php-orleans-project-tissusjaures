@@ -45,9 +45,11 @@
 }
 
 .img-tip{
-    height: 38vh;
-    width: 38vw;
-}
+    height: 20vh;
+    width: fit-content;
+    object-fit: cover;
+    object-position:bottom;
+    }
 
 .monthlyTip {
     box-shadow: var(--shadow);
@@ -63,8 +65,8 @@
 }
 
 .monthlyTitle {
-    font-size: calc(var(--font-size-link) + 0.75rem);
-}
+    font-size: var(--font-size-nav);
+    }
 
 .card {
     box-shadow: var(--shadow);
