@@ -11,9 +11,9 @@
 	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for clothCategory in clothCategories %}
-				<div class="col-lg-3 mt-1 w-25">
-					<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1">{{ clothCategory.name }}</a>
-				</div>
+					<div class="col-lg-3 mt-1 w-25">
+						<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1">{{ clothCategory.name }}</a>
+					</div>
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
 				<div class="col-lg-3 mt-1 ">

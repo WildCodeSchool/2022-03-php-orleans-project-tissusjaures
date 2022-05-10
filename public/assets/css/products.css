@@ -37,6 +37,11 @@ h3 {
     transform: scale(1.03);
 }
 
+.btn-cat:hover {
+    background-color: var(--bs-secondary);
+    transform: initial;
+}
+
 .search {
     box-shadow: var(--shadow);
 }
