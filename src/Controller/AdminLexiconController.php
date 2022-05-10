@@ -15,7 +15,7 @@ class AdminLexiconController extends AbstractController
 
         $lexiconManager = new LexiconManager();
         $lexicons = $lexiconManager->selectAll();
-        return $this->twig->render('Admin/Lexicon/show.html.twig', [
+        return $this->twig->render('Admin/Lexicon/index.html.twig', [
             'lexicons' => $lexicons,
         ]);
     }
