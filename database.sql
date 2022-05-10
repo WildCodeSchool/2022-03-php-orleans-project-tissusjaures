@@ -32,12 +32,12 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
 INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
-(1, "Tissus d'ameublement", '/assets/images/tss1'),
-(2, "Loisirs créatifs", '/assets/images/tss1'),
-(3, "Mercerie", '/assets/images/tss1'),
-(4, "Tissus couture", '/assets/images/tss1'),
-(5, "Voilage", '/assets/images/tss1'),
-(6, "Décoration", '/assets/images/tss1');
+(1, "Tissus d'ameublement", '/assets/images/furniturefabric.jpeg'),
+(2, "Loisirs créatifs", '/assets/images/creative.jpeg'),
+(3, "Mercerie", '/assets/images/mercerie.jpeg'),
+(4, "Tissus couture", '/assets/images/sewingfabric.jpeg'),
+(5, "Voilage", '/assets/images/voilage.jpeg'),
+(6, "Décoration", '/assets/images/decoration.jpeg');
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machine_categories`
@@ -53,7 +53,7 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`machine_categories`
 -- -----------------------------------------------------
 INSERT INTO `machine_categories` (`id`, `name`, `image`) VALUES
-(1, "Machines à coudre", '/assets/images/mchn1');
+(1, "Machines à coudre", '/assets/images/machinecat.jpeg');
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
