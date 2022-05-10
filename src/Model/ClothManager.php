@@ -19,8 +19,9 @@ class ClothManager extends AbstractManager
 
     public function selectOneById(int $id): array|false
     {
-        $statement = $this->pdo->prepare("SELECT c.name, c.price, c.is_new, c.is_on_sale, c.image, cc.name AS 
-        Cat, cc.id AS CatId FROM " . static::TABLE . " AS c INNER JOIN cloth_categories as cc"
+        $statement = $this->pdo->prepare("SELECT c.name, c.price, c.is_new, c.description, 
+        c.is_on_sale, c.image, cc.name AS Cat, cc.id AS CatId 
+        FROM " . static::TABLE . " AS c INNER JOIN cloth_categories as cc"
         . " ON cc.id = c.cloth_categories_id" . " WHERE c.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -31,11 +32,12 @@ class ClothManager extends AbstractManager
     public function insert(array $cloth): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `price`, `image`, 
-        `cloth_categories_id`, `is_on_sale`, `is_new`) 
-        VALUES (:name, :price, :image, :cloth_categories_id, :is_on_sale, :is_new)");
+        `description`, `cloth_categories_id`, `is_on_sale`, `is_new`) 
+        VALUES (:name, :price, :image, :description, :cloth_categories_id, :is_on_sale, :is_new)");
         $statement->bindValue('name', $cloth['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $cloth['price'], \PDO::PARAM_STR);
         $statement->bindValue('image', $cloth['image'], \PDO::PARAM_STR);
+        $statement->bindValue('description', $cloth['description'], \PDO::PARAM_STR);
         $statement->bindValue('cloth_categories_id', $cloth['cloth_categories_id'], \PDO::PARAM_INT);
         $statement->bindValue('is_on_sale', $cloth['is_on_sale'] ?? 0, \PDO::PARAM_INT);
         $statement->bindValue('is_new', $cloth['is_new'] ?? 0, \PDO::PARAM_INT);
