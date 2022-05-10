@@ -9,8 +9,8 @@ class AdminMachineController extends AbstractController
     public function index(): string
     {
         if ($this->getUser() === null) {
-            header('HTTP/1.0 403 Forbidden');
-            return "Vous n'êtes pas autorisé à visiter cette page.";
+            header('Location:/connexion');
+            return "";
         }
 
         $machineManager = new MachineManager();
@@ -22,6 +22,11 @@ class AdminMachineController extends AbstractController
 
     public function addMachine()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $machine = array_map('trim', $_POST);
             $errors = $this->machineValidate($machine);
@@ -37,6 +42,11 @@ class AdminMachineController extends AbstractController
 
     public function editMachine($id): string
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $errors = $machine = [];
         $machineManager = new MachineManager();
         $machine = $machineManager->selectOneById($id);
@@ -57,8 +67,13 @@ class AdminMachineController extends AbstractController
         ]);
     }
 
-    public function deleteMachine(): void
+    public function deleteMachine()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $machineManager = new MachineManager();
