@@ -13,8 +13,8 @@ class AdminClothCategoryController extends AbstractController
     public function index(): string
     {
         if ($this->getUser() === null) {
-            header('HTTP/1.0 403 Forbidden');
-            return "Vous n'êtes pas autorisé à visiter cette page.";
+            header('Location: /connexion');
+            return "";
         }
 
         $clothCategoryList = new ClothCategoryManager();
@@ -29,6 +29,10 @@ class AdminClothCategoryController extends AbstractController
     {
         $errors = [];
 
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clothCategoryList = array_map('trim', $_POST);
             $categoryErrors = $this->clothCategoryValidate($clothCategoryList);
@@ -59,6 +63,11 @@ class AdminClothCategoryController extends AbstractController
     public function editClothCategory($id): string
     {
         $errors = [];
+
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
 
         $clothCategoryList = new ClothCategoryManager();
         $clothCategories = $clothCategoryList->selectOneById($id);
@@ -91,8 +100,12 @@ class AdminClothCategoryController extends AbstractController
         ]);
     }
 
-    public function deleteClothCategory(): void
+    public function deleteClothCategory()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $clothCatManager = new ClothCategoryManager();
