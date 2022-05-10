@@ -8,9 +8,16 @@ class AdminMachineController extends AbstractController
 {
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            header('HTTP/1.0 403 Forbidden');
+            return "Vous n'êtes pas autorisé à visiter cette page.";
+        }
+
         $machineManager = new MachineManager();
         $machines = $machineManager->selectAll();
-        return $this->twig->render('Admin/Machine/show.html.twig', ['machines' => $machines]);
+        return $this->twig->render('Admin/Machine/show.html.twig', [
+            'machines' => $machines,
+        ]);
     }
 
     public function addMachine()

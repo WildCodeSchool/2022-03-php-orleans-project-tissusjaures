@@ -5,7 +5,7 @@
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
 		<h1 class="text-light">
-		{% for machineCategory in machineCategories %}
+			{% for machineCategory in machineCategories %}
 				{% if id == machineCategory.id %}
 					{{ machineCategory.name }}
 				{% endif %}
@@ -21,31 +21,43 @@
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
 				<div class="col-lg-3 mt-1 ">
-					<a href='/machines' class="btn btn-lg w-100 bg-primary m-1">{{ machineCategory.name }}</a>
+					<a href='/machines' class="btn btn-cat btn-lg w-100 bg-secondary m-1">{{ machineCategory.name }}</a>
 				</div>
 			{% endfor %}
 		</div>
-	<div class="cards-products mt-3 mb-4">
-		<section id="products">
-			<div class="row justify-content-center align-items-center">
-				{% for machine in machines %}
-					<div class="col-lg-3 mb-2">
-						<figure class="card h-100">
-							<img src="https://picsum.photos/id/535/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="Machines">
-							<div class="card-body d-flex flex-column bg-primary">
-								<h5 class="card-title fabric text-secondary mb-2">{{ machine.name }}</h5>
-								<div class="card-text text-dark ms-2 mb-2">
-									{{ machine.description }}
-								</div>
-								<div class="price card-text bg-secondary text-light text-center w-25 position-absolute top-0 end-0 m-2 rounded">
-									{{ machine.price }}
-									€
-								</div>
-							</figure>
-						</div>
-					{% endfor %}
-				</div>
-			</section>
+		<div class="row justify-content-end">
+			<div class="col-lg-4 mt-3 mb-2">
+				<form type="hidden" class="input-group w-100" method="GET" action="/produits/chercher">
+					<input type="search" name="search" class="form-control search rounded w-25 bg-light text-dark" placeholder="Rechercher" aria-label="Search" aria-describedby="search"/>
+					<button class="input-group-btn search-btn bg-primary btn-lg rounded border-0 ms-1" id="search">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewbox="0 0 16 16">
+							<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+						</svg>
+					</button>
+				</form>
+			</div>
 		</div>
+		<div class="cards-products mt-3 mb-4">
+			<section id="products">
+				<div class="row justify-content-center align-items-center">
+					{% for machine in machines %}
+						<div class="col-lg-3 mb-2">
+							<figure class="card h-100">
+								<img src="https://picsum.photos/id/535/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="Machines">
+								<div class="card-body d-flex flex-column bg-primary">
+									<h5 class="card-title fabric text-secondary mb-2">{{ machine.name }}</h5>
+									<div class="card-text text-dark ms-2 mb-2">
+										{{ machine.description }}
+									</div>
+									<div class="price card-text bg-secondary text-light text-center w-25 position-absolute top-0 end-0 m-2 rounded">
+										{{ machine.price }}
+										€
+									</div>
+								</figure>
+							</div>
+						{% endfor %}
+					</div>
+				</section>
+			</div>
 		</div>
 	{% endblock %}

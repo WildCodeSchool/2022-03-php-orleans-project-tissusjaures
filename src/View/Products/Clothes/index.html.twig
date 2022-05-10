@@ -11,15 +11,27 @@
 	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for clothCategory in clothCategories %}
-				<div class="col-lg-3 mt-1 w-25">
-					<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1">{{ clothCategory.name }}</a>
-				</div>
+					<div class="col-lg-3 mt-1 w-25">
+						<a href='/tissus/categorie?id={{ clothCategory.id }}' class="btn btn-lg bg-primary w-100 m-1">{{ clothCategory.name }}</a>
+					</div>
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
 				<div class="col-lg-3 mt-1 ">
 					<a href='/machines' class="btn btn-lg w-100 bg-primary m-1">{{ machineCategory.name }}</a>
 				</div>
 			{% endfor %}
+		</div>
+		<div class="row justify-content-end">
+			<div class="col-lg-4 mt-3 mb-2">
+				<form type="hidden" class="input-group w-100" method="GET" action="/produits/chercher">
+					<input type="search" name="search" class="form-control search rounded w-25 bg-light text-dark" placeholder="Rechercher" aria-label="Search" aria-describedby="search"/>
+					<button class="input-group-btn search-btn bg-primary btn-lg rounded border-0 ms-1" id="search">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewbox="0 0 16 16">
+							<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+						</svg>
+					</button>
+				</form>
+			</div>
 		</div>
 		<div class="cards-products mt-3 mb-4">
 			<section id="products">

@@ -3,6 +3,22 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
+-- Table `tissus_jaures`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tissus_jaures`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Content `tissus_jaures`.`user`
+-- -----------------------------------------------------
+INSERT INTO `user` (`id`, `email`, `password`) VALUES
+(1, "tissus_jaures@admin.com", "$2y$10$IRb27co3TwTwMOrv2qDy5OcwdyExj92eYJV3jIMM1rS1.JoCpaeWW");
+
+-- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
@@ -212,19 +228,9 @@ Faites un cran dans un rectangle de carton a la hauteur désirée et reportez vo
 (5, "Coudre de la toile cirée", "/assets/images/toileciree.jpg", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
 
 Les toiles enduites ou cirées collent au pied. Voilà pourquoi lorsque vous les piquez avec un pied de biche normal, vous obtenez des plis non désirés et autres bonnes surprises!
-
 Ce pied étant assez cher pour des travaux occasionnels, nous avons une astuces à vous confier...
-
 Celle-ci consiste à coller sous un pied presseur normal, du ruban adhésif de peintre (ruban de masquage). Vous devrez ensuite couper le surplus de ruban adhésif afin qu’il ne dépasse pas du pied…
-
 ….vous avez un pied pour coudre de la toile enduite.", 0, 1);
-
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
 
 
 

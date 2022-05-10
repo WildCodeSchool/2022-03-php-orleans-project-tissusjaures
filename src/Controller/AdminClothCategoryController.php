@@ -12,10 +12,17 @@ class AdminClothCategoryController extends AbstractController
 
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            header('HTTP/1.0 403 Forbidden');
+            return "Vous n'êtes pas autorisé à visiter cette page.";
+        }
+
         $clothCategoryList = new ClothCategoryManager();
         $clothCategories = $clothCategoryList->selectAll();
 
-        return $this->twig->render('Admin/ClothCategory/index.html.twig', ['clothCategories' => $clothCategories]);
+        return $this->twig->render('Admin/ClothCategory/index.html.twig', [
+            'clothCategories' => $clothCategories,
+        ]);
     }
 
     public function addClothCategory(): ?string

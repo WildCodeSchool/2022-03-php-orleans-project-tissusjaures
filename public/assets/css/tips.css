@@ -24,12 +24,13 @@
     box-shadow: var(--shadow);
     position: initial;
     font-family: var(--text-font);
-    }
-    
-    .btn:hover {
+    opacity: 90%;
+}
+
+.btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
-    }
+    opacity: 100%;
+}
     
     .card-tip {
     outline: 1.5px dashed var(--bs-secondary);
@@ -39,17 +40,16 @@
     .title-tip {
     width: fit-content;
     outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
-    }
-    
-    .img-tip{
-    height: 20vh;
-    width: fit-content;
-    object-fit: cover;
-    object-position:bottom;
-    }
-    
-    .monthlyTip {
+    outline-offset: -4px;
+    width: 35%;
+}
+
+.img-tip{
+    height: 38vh;
+    width: 38vw;
+}
+
+.monthlyTip {
     box-shadow: var(--shadow);
     }
     
@@ -60,25 +60,13 @@
     .textMonthly {
     font-family: var(--text-font);
     font-size: var(--font-size);
-    }
-    
-    .monthlyTitle {
-    font-size: var(--font-size-nav);
-    }
-    
-    .btn {
-    box-shadow: var(--shadow);
-    position: initial;
-    font-family: var(--text-font);
-    font-size: var(--font-size);
-    }
-    
-    .btn:hover {
-    color: var(--bs-secondary);
-    transform: scale(1.03);
-    }
-    
-    .card {
+}
+
+.monthlyTitle {
+    font-size: calc(var(--font-size-link) + 0.75rem);
+}
+
+.card {
     box-shadow: var(--shadow);
     outline: 1.5px dashed var(--bs-dark);
     outline-offset: -6px;
