@@ -8,12 +8,11 @@ class LoginController extends AbstractController
 {
     public function login(): string
     {
-        $errors = [];
-        $connexion = [];
+        $errors = $connection = [];
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $connexion = array_map('trim', $_POST);
-            $errors = $this->validate($connexion);
+            $connection = array_map('trim', $_POST);
+            $errors = $this->validate($connection);
         }
         return $this->twig->render('Login/login.html.twig', [
             'errors' => $errors,
@@ -29,23 +28,23 @@ class LoginController extends AbstractController
         header('Location: /');
     }
 
-    private function validate(array $connexion): array
+    private function validate(array $connection): array
     {
         $errors = [];
-        if (empty($connexion['email'])) {
+        if (empty($connection['email'])) {
             $errors[] = 'Le champ email ne doit pas être vide';
         }
-        if (empty($connexion['password'])) {
+        if (empty($connection['password'])) {
             $errors[] = 'Le mot de passe ne doit pas être vide';
         }
-        if (!filter_var($connexion['email'], FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($connection['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = "format d'email invalide";
         }
         if (empty($errors)) {
             $userManager = new UserManager();
-            $user = $userManager->selectOneByEmail($connexion['email']);
+            $user = $userManager->selectOneByEmail($connection['email']);
             if ($user) {
-                if (password_verify($connexion['password'], $user['password'])) {
+                if (password_verify($connection['password'], $user['password'])) {
                     $_SESSION['user'] = $user['id'];
                     header('Location: /admin/categories-tissus');
                 } else {
