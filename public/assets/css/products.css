@@ -81,3 +81,15 @@ h3 {
 .search-items {
     height: 24rem;
 }
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.h-60 {
+    height: 60%;
+}
+
+.product-cards {
+    height: 400px;
+}

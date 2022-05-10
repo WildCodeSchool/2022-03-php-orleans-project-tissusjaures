@@ -64,12 +64,12 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
 INSERT INTO `cloth` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`, `cloth_categories_id`) VALUES
-(1, "Tissu bleu", "Un joli tissu bleu", 5, '/assets/images/tss1', 0, 0, 1),
-(2, "Tissu vert", "Un joli tissu vert", 4, '/assets/images/tss1', 0, 0, 3),
-(3, "Tissu jaune", "Un joli tissu jaune", 2.5, '/assets/images/tss1', 1, 0, 4),
-(4, "Tissu rouge", "Un joli tissu rouge", 150, '/assets/images/tss1', 0, 1, 2),
-(5, "Tissu violet", "Un joli tissu violet", 1, '/assets/images/tss1', 1, 1, 1),
-(6, "Tissu orange", "Un joli tissu orange", 4.5, '/assets/images/tss1', 1, 0, 4);
+(1, "Tissu bleu", "Un joli tissu bleu", 5, '/assets/images/bluefabric.jpeg', 0, 0, 1),
+(2, "Tissu vert", "Un joli tissu vert", 4, '/assets/images/greenfabric.jpeg', 0, 0, 3),
+(3, "Tissu jaune", "Un joli tissu jaune", 2.5, '/assets/images/yellowfabric.jpeg', 1, 0, 4),
+(4, "Tissu rouge", "Un joli tissu rouge", 150, '/assets/images/redfabric.jpeg', 0, 1, 2),
+(5, "Tissu violet", "Un joli tissu violet", 1, '/assets/images/purplefabric.jpeg', 1, 1, 1),
+(6, "Tissu orange", "Un joli tissu orange", 4.5, '/assets/images/orangefabric.jpeg', 1, 0, 4);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
@@ -90,10 +90,10 @@ ENGINE = InnoDB;
 -- -- Content `tissus_jaures`.`machines`
 -- -- -----------------------------------------------------
 INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`) VALUES
-(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/mchn1', 0, 0),
-(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/mchn1', 1, 1),
-(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/mchn1', 1, 0),
-(4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/mchn1', 0, 1);
+(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/machine1.jpeg', 0, 0),
+(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/machine2.jpeg', 1, 1),
+(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/machine3.jpeg', 1, 0),
+(4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/machine4.jpeg', 0, 1);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips_and_tricks_categories`
