@@ -8,6 +8,11 @@ class LexiconController extends AbstractController
 {
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            header('HTTP/1.0 403 Forbidden');
+            return "Vous n'êtes pas autorisé à visiter cette page.";
+        }
+
         $lexiconManager = new LexiconManager();
         $lexicons = $lexiconManager->selectAll();
         return $this->twig->render('Admin/Lexicon/show.html.twig', [

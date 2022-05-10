@@ -13,6 +13,11 @@ class AdminClothController extends AbstractController
 
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            header('HTTP/1.0 403 Forbidden');
+            return "Vous n'êtes pas autorisé à visiter cette page.";
+        }
+
         $clothList = new ClothManager();
         $clothItems = $clothList->selectAll();
         return $this->twig->render('Admin/Cloth/show.html.twig', [
