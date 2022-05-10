@@ -37,6 +37,14 @@ h3 {
     transform: scale(1.03);
 }
 
+.search {
+    box-shadow: var(--shadow);
+}
+
+.search-btn {
+    box-shadow: var(--shadow);
+}
+
 .card {
     box-shadow: var(--shadow);
     outline: 1.5px dashed var(--bs-dark);

@@ -14,6 +14,7 @@ return [
     'tissus' => ['ClothController', 'index',],
     'tissus/categorie' => ['ClothController', 'showClothByCategory', ['id']],
     'machines' => ['MachineController', 'index',],
+    'produits/chercher' => ['ProductController', 'showProductBySearch', ['search']],
     'astuces' => ['TipController', 'showTips'],
     'lexique' => ['LexiconController', 'index',],
     'astuces/trucs-et-astuces' => ['TipController', 'showTipById', ['id']],
@@ -40,5 +41,6 @@ return [
     'admin/astuces/supprimer' => ['AdminTipController', 'deleteTip', ],
     'admin/tutoriels' => ['AdminTutorialController', 'index',],
     'admin/tutoriels/ajouter' => ['AdminTutorialController', 'addTutorial',],
+    'admin/tutoriels/editer' => ['AdminTutorialController', 'editTutorial', ['id']],
     'admin/tutoriels/supprimer' => ['AdminTutorialController', 'deleteTutorial', ],
 ];
