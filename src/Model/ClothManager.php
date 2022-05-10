@@ -69,7 +69,7 @@ class ClothManager extends AbstractManager
 
     public function selectBySearch(string $search): array|false
     {
-        $statement = $this->pdo->prepare("SELECT c.name, c.price, c.description
+        $statement = $this->pdo->prepare("SELECT c.name, c.price, c.description, c.image
         FROM " . self::TABLE . " c WHERE c.name LIKE :search");
         $statement->bindValue('search', '%' . $search . '%');
         $statement->execute();
