@@ -16,15 +16,20 @@
     text-shadow: 2px 2px var(--bs-dark);
 }
 
+.categories {
+    width: 19rem;
+}
+
 .btn {
     box-shadow: var(--shadow);
     position: initial;
     font-family: var(--text-font);
+    opacity: 90%;
 }
 
 .btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
+    opacity: 100%;
 }
 
 .title {
