@@ -40,17 +40,16 @@
     .title-tip {
     width: fit-content;
     outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
-    }
-    
-    .img-tip{
-    height: 20vh;
-    width: fit-content;
-    object-fit: cover;
-    object-position:bottom;
-    }
-    
-    .monthlyTip {
+    outline-offset: -4px;
+    width: 35%;
+}
+
+.img-tip{
+    height: 38vh;
+    width: 38vw;
+}
+
+.monthlyTip {
     box-shadow: var(--shadow);
     }
     

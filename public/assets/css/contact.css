@@ -19,13 +19,9 @@ input, #object, textarea {
 }
 
 .btn {
-    opacity: 90%;
-    outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
+    opacity: 100%;
 }
 
 .btn:hover {
-    opacity: 100%;
-    outline: 1.5px dashed var(--bs-light);
-    outline-offset: -6px;
+    opacity: 90%;
 }
