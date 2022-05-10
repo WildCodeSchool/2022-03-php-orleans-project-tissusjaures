@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `cloth` (
   CONSTRAINT `fk_cloth_cloth_categories`
     FOREIGN KEY (`cloth_categories_id`)
     REFERENCES `tissus_jaures`.`cloth_categories` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
