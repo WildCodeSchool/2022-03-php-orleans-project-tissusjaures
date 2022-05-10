@@ -22,8 +22,8 @@
 				<input type="number" step="0.1" class="form-control" value="{{ machine.price }}" id="price" name="price" placeholder="50">
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
-				<label for="description">Description</label>
-				<input type="text" class="form-control" value="{{machine.description}}" id="description" name="description" placeholder="Ceci est une machine à coudre">
+				<label for="description" class="form-label mb-0">Description</label>
+  				<textarea class="form-control mt-0" id="content" name="description" rows="5" placeholder="Ceci est une machine">{{machine.description}}</textarea>			
 			</div>
 			<div class="form-group col-8 col-md-6 mx-auto">
 				<div class="d-flex justify-content-center align-items-center mb-3">
