@@ -15,11 +15,11 @@
 			{% endif %}
 		</h1>
 	</div>
-	<div class="container categories mt-3">
+	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for tipCategory in tipCategories %}
-				<div class="col-lg-3 mt-1 w-25">
-					<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ tipCategory.name }}</a>
+				<div class="col-lg-4 mt-1 categories">
+					<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary">{{ tipCategory.name }}</a>
 				</div>
 			{% endfor %}
 		</div>
@@ -28,8 +28,10 @@
 		<div class="container">
 			<div class="row my-5 d-flex flex-column align-items-center justify-content-center">
 				<div class="monthlyTip p-0  bg-primary w-100">
-					<div class="d-flex justify-content-center">
-						<h2 class="title-tip text-center text-light bg-secondary px-4 py-2 mt-3 mb-2">Astuce du mois</h2>
+				<div class="col-12 d-flex justify-content-center ">
+					<div class="title-container w-50">
+						<h2 class="title-tip text-center text-light bg-secondary px-4 py-2 mt-3 mb-2 w-100">Astuce du mois</h2>
+					</div>
 					</div>
 					<div class="d-flex justify-content-center ms-4">
 						<img class="img-tip me-4 p-2" src="{{ monthlyTip.image }}" alt="{{ monthlyTip.name }}">
