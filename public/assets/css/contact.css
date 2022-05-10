@@ -2,11 +2,24 @@
     font-family: var(--text-font);
 }
 
+<<<<<<< HEAD
 .title-form {
     font-family: var(--title-font);
     outline: 1.5px dashed var(--bs-light);
     outline-offset: -4px;
     width: 40%;
+=======
+.header {
+    background-image: url("../images/contact.jpg");
+    height: 300px;
+    object-fit: cover;
+}
+
+.header h1 {
+    font-family: var(--header-font);
+    font-size: var(--header-font-size);
+    text-shadow: 2px 2px var(--bs-dark);
+>>>>>>> 01d13109f030a3060f3a46807c6a67c9329bf850
 }
 
 input, #object, textarea {
