@@ -9,7 +9,7 @@ class ClothManager extends AbstractManager
     public function selectAllById(int $id): array|false
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT cc.* FROM " . static::TABLE . " cc
+        $statement = $this->pdo->prepare("SELECT cc.* FROM " . self::TABLE . " cc
           INNER JOIN cloth_categories c ON cc.cloth_categories_id = c.id WHERE cc.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -21,7 +21,7 @@ class ClothManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("SELECT c.name, c.price, c.is_new, c.description, 
         c.is_on_sale, c.image, cc.name AS Cat, cc.id AS CatId 
-        FROM " . static::TABLE . " AS c INNER JOIN cloth_categories as cc"
+        FROM " . self::TABLE . " AS c INNER JOIN cloth_categories as cc"
         . " ON cc.id = c.cloth_categories_id" . " WHERE c.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -61,7 +61,7 @@ class ClothManager extends AbstractManager
     public function selectByIsNew(): array
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE is_new");
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE is_new");
         $statement->execute();
 
         return $statement->fetchAll();
@@ -70,7 +70,7 @@ class ClothManager extends AbstractManager
     public function selectBySearch(string $search): array|false
     {
         $statement = $this->pdo->prepare("SELECT c.name, c.price, c.description
-        FROM " . static::TABLE . " c WHERE c.name LIKE :search");
+        FROM " . self::TABLE . " c WHERE c.name LIKE :search");
         $statement->bindValue('search', '%' . $search . '%');
         $statement->execute();
 
