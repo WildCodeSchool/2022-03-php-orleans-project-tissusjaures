@@ -5,7 +5,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
@@ -21,7 +21,7 @@ INSERT INTO `user` (`id`, `email`, `password`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
+CREATE TABLE IF NOT EXISTS `cloth_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -42,7 +42,7 @@ INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machine_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machine_categories` (
+CREATE TABLE IF NOT EXISTS `machine_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -58,7 +58,7 @@ INSERT INTO `machine_categories` (`id`, `name`, `image`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
+CREATE TABLE IF NOT EXISTS `cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `description` TEXT NULL,
@@ -91,7 +91,7 @@ INSERT INTO `cloth` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`,
 -- Table `tissus_jaures`.`machines`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
+CREATE TABLE IF NOT EXISTS `machines` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `description` TEXT NULL,
@@ -114,7 +114,7 @@ INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sal
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips_and_tricks_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips_and_tricks_categories` (
+CREATE TABLE IF NOT EXISTS `tips_and_tricks_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `link` VARCHAR(100) NOT NULL,
@@ -132,7 +132,7 @@ INSERT INTO `tips_and_tricks_categories` (`id`, `name`, `link`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
+CREATE TABLE IF NOT EXISTS `tutorials` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -164,7 +164,7 @@ Pourquoi ne pas poser un voilage léger porté par une tringlerie fine, des doub
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
+CREATE TABLE IF NOT EXISTS `lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
@@ -200,7 +200,7 @@ INSERT INTO `lexicon` (`id`, `name`, `definition`, `tips_and_tricks_categories_i
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
+CREATE TABLE IF NOT EXISTS `tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
