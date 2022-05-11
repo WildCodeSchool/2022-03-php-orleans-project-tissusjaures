@@ -22,7 +22,7 @@ class LoginController extends AbstractController
                         $_SESSION['user'] = $user['id'];
                         header('Location: /admin/');
                     } else {
-                        $errors[] = 'Mauvais identifiants';
+                        $errors[] = 'Mot de passe inconnu';
                     }
                 } else {
                     $errors[] = 'Email inconnu';
