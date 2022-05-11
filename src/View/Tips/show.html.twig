@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">
+		<h1 class="text-light text-center">
 			{% for tipCategory in tipCategories %}
 				{% if id == tipCategory.id %}
 					{{ tipCategory.name }}
@@ -15,16 +15,16 @@
 			{% endif %}
 		</h1>
 	</div>
-	<div class="container categories mt-3">
+	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for tipCategory in tipCategories %}
-				<div class="col-lg-3 mt-1 w-25">
-					<a href='{{ tipCategory.link }}' class="btn btn-lg w-100 m-1 bg-primary categories">{{ tipCategory.name }}</a>
+				<div class="col-lg-4 mt-1 categories">
+					<a href='{{ tipCategory.link }}' class="btn btn-lg {% if tipCategory.name is same as 'Astuces' %} bg-secondary text-light {% else %} bg-primary {% endif %} w-100 m-1">{{ tipCategory.name }}</a>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
-	<div class="card-tip w-50 mx-auto bg-primary mt-3 p-2">
+	<div class="card-tip mx-auto bg-primary mt-3 p-2">
 		<div class="d-flex justify-content-center">
 			<h2 class="title-tip text-center text-light bg-secondary px-4 py-2 mt-3 mb-2">{{tip.name}}</h2>
 		</div>

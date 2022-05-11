@@ -18,12 +18,12 @@ class MachineManager extends AbstractManager
 
     public function insert(array $machine): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `price`, 
-        `description`) 
-        VALUES (:name, :price, :description)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `price`, `image`, 
+        `description`, `is_on_sale`, `is_new`) 
+        VALUES (:name, :price, :image, :description, :is_on_sale, :is_new)");
         $statement->bindValue('name', $machine['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $machine['price'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $machine['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $machine['image'], \PDO::PARAM_STR);
         $statement->bindValue('description', $machine['description'], \PDO::PARAM_STR);
         $statement->bindValue('is_on_sale', $machine['is_on_sale'] ?? 0, \PDO::PARAM_INT);
         $statement->bindValue('is_new', $machine['is_new'] ?? 0, \PDO::PARAM_INT);
@@ -38,7 +38,7 @@ class MachineManager extends AbstractManager
         `price` = :price, `description` = :description, `is_on_sale` = :is_on_sale, `is_new` = :is_new WHERE id=:id");
         $statement->bindValue('id', $machine['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $machine['name'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $machine['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $machine['image'], \PDO::PARAM_STR);
         $statement->bindValue('price', $machine['price'], \PDO::PARAM_STR);
         $statement->bindValue('description', $machine['description'], \PDO::PARAM_STR);
         $statement->bindValue('is_on_sale', $machine['is_on_sale'] ?? 0, \PDO::PARAM_INT);
@@ -58,7 +58,7 @@ class MachineManager extends AbstractManager
 
     public function selectBySearch(string $search): array|false
     {
-        $statement = $this->pdo->prepare("SELECT m.name, m.price, m.description
+        $statement = $this->pdo->prepare("SELECT m.name, m.price, m.description, m.image
         FROM " . static::TABLE . " m WHERE m.name LIKE :search");
         $statement->bindValue('search', '%' . $search . '%');
         $statement->execute();

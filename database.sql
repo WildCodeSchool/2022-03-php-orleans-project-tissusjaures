@@ -5,7 +5,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
@@ -21,7 +21,7 @@ INSERT INTO `user` (`id`, `email`, `password`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth_categories` (
+CREATE TABLE IF NOT EXISTS `cloth_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -32,17 +32,17 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`cloth_categories`
 -- -----------------------------------------------------
 INSERT INTO `cloth_categories` (`id`, `name`, `image`) VALUES
-(1, "Tissus d'ameublement", '/assets/images/tss1'),
-(2, "Loisirs créatifs", '/assets/images/tss1'),
-(3, "Mercerie", '/assets/images/tss1'),
-(4, "Tissus couture", '/assets/images/tss1'),
-(5, "Voilage", '/assets/images/tss1'),
-(6, "Décoration", '/assets/images/tss1');
+(1, "Tissus d'ameublement", '/assets/images/furniturefabric.jpeg'),
+(2, "Loisirs créatifs", '/assets/images/creative.jpeg'),
+(3, "Mercerie", '/assets/images/mercerie.jpeg'),
+(4, "Tissus couture", '/assets/images/sewingfabric.jpeg'),
+(5, "Voilage", '/assets/images/voilage.jpeg'),
+(6, "Décoration", '/assets/images/decoration.jpeg');
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machine_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machine_categories` (
+CREATE TABLE IF NOT EXISTS `machine_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -53,12 +53,12 @@ ENGINE = InnoDB;
 -- Content `tissus_jaures`.`machine_categories`
 -- -----------------------------------------------------
 INSERT INTO `machine_categories` (`id`, `name`, `image`) VALUES
-(1, "Machines à coudre", '/assets/images/mchn1');
+(1, "Machines à coudre", '/assets/images/machinecat.jpeg');
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
+CREATE TABLE IF NOT EXISTS `cloth` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `description` TEXT NULL,
@@ -72,26 +72,26 @@ CREATE TABLE IF NOT EXISTS `tissus_jaures`.`cloth` (
   CONSTRAINT `fk_cloth_cloth_categories`
     FOREIGN KEY (`cloth_categories_id`)
     REFERENCES `tissus_jaures`.`cloth_categories` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Content `tissus_jaures`.`cloth`
 -- -----------------------------------------------------
 INSERT INTO `cloth` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`, `cloth_categories_id`) VALUES
-(1, "Tissu bleu", "Un joli tissu bleu", 5, '/assets/images/tss1', 0, 0, 1),
-(2, "Tissu vert", "Un joli tissu vert", 4, '/assets/images/tss1', 0, 0, 3),
-(3, "Tissu jaune", "Un joli tissu jaune", 2.5, '/assets/images/tss1', 1, 0, 4),
-(4, "Tissu rouge", "Un joli tissu rouge", 150, '/assets/images/tss1', 0, 1, 2),
-(5, "Tissu violet", "Un joli tissu violet", 1, '/assets/images/tss1', 1, 1, 1),
-(6, "Tissu orange", "Un joli tissu orange", 4.5, '/assets/images/tss1', 1, 0, 4);
+(1, "Tissu bleu", "Un joli tissu bleu", 5, '/assets/images/bluefabric.jpeg', 0, 0, 1),
+(2, "Tissu vert", "Un joli tissu vert", 4, '/assets/images/greenfabric.jpeg', 0, 0, 3),
+(3, "Tissu jaune", "Un joli tissu jaune", 2.5, '/assets/images/yellowfabric.jpeg', 1, 0, 4),
+(4, "Tissu rouge", "Un joli tissu rouge", 150, '/assets/images/redfabric.jpeg', 0, 1, 2),
+(5, "Tissu violet", "Un joli tissu violet", 1, '/assets/images/purplefabric.jpeg', 1, 1, 1),
+(6, "Tissu orange", "Un joli tissu orange", 4.5, '/assets/images/orangefabric.jpeg', 1, 0, 4);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`machines`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`machines` (
+CREATE TABLE IF NOT EXISTS `machines` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `description` TEXT NULL,
@@ -106,15 +106,15 @@ ENGINE = InnoDB;
 -- -- Content `tissus_jaures`.`machines`
 -- -- -----------------------------------------------------
 INSERT INTO `machines` (`id`, `name`, `description`, `price`, `image`,`is_on_sale`, `is_new`) VALUES
-(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/mchn1', 0, 0),
-(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/mchn1', 1, 1),
-(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/mchn1', 1, 0),
-(4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/mchn1', 0, 1);
+(1, "Machine Singe", "Une machine Singer", 400, '/assets/images/machine1.jpeg', 0, 0),
+(2, "Machine Singed", "Une belle machine Singer", 300, '/assets/images/machine2.jpeg', 1, 1),
+(3, "Machine Singei", "Une superbe machine Singer", 150.5, '/assets/images/machine3.jpeg', 1, 0),
+(4, "Machine Singer", "Une magnifique machine Singer", 10000, '/assets/images/machine4.jpeg', 0, 1);
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips_and_tricks_categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips_and_tricks_categories` (
+CREATE TABLE IF NOT EXISTS `tips_and_tricks_categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `link` VARCHAR(100) NOT NULL,
@@ -132,7 +132,7 @@ INSERT INTO `tips_and_tricks_categories` (`id`, `name`, `link`) VALUES
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tutorials`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tutorials` (
+CREATE TABLE IF NOT EXISTS `tutorials` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -164,7 +164,7 @@ Pourquoi ne pas poser un voilage léger porté par une tringlerie fine, des doub
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`lexicon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`lexicon` (
+CREATE TABLE IF NOT EXISTS `lexicon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `definition` TEXT NOT NULL,
@@ -183,7 +183,7 @@ ENGINE = InnoDB;
 -- -- -----------------------------------------------------
 INSERT INTO `lexicon` (`id`, `name`, `definition`, `tips_and_tricks_categories_id`) VALUES
 (1, "Appliqué", " Technique. Coudre à point invisibles (rentré de 5mm) un motif sur un tissu de fond.", 3),
-(2, "Biais", " Bande de tissus étroite et en diagonale (45°du droit fil) utilisé pour border.", 3),
+(2, "Biais", " Bande de tissus étroite et en diagonale (45°du droit fil) utilisée pour border.", 3),
 (3, "Boutis", " Technique « provençale ». Matelassage de plusieurs tissus à la main. Les deux cotés pouvant être exposés.", 3),
 (4, "Charm quilt", " Ouvrage réalisé avec un gabarit unique et une multitude de tissus tous différents.", 3),
 (5, "Cording", " Technique. Introduction d’un cordon entre deux lignes de matelassage pour donner du relief à un ouvrage.", 3),
@@ -194,13 +194,13 @@ INSERT INTO `lexicon` (`id`, `name`, `definition`, `tips_and_tricks_categories_i
 (10, "Quilt", " Traduction américaine de patchwork.", 3),
 (11, "Toile à beurre", " Toile de coton très fine à maille lâche", 3),
 (12, "Stippling", " Quilting serré.", 3),
-(13, "Viseline", "non-tissé thermocollant utilisé en appliqué.", 3);
+(13, "Viseline", "Non-tissé, thermocollant utilisé en appliqué.", 3);
 
 
 -- -----------------------------------------------------
 -- Table `tissus_jaures`.`tips`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tissus_jaures`.`tips` (
+CREATE TABLE IF NOT EXISTS `tips` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
@@ -221,16 +221,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 INSERT INTO `tips` (`id`, `name`, `image`, `content`, `is_monthly_tip`, `tips_and_tricks_categories_id`) VALUES
 (1, "L'ourlet parfait", "/assets/images/ourlet.jpg", "Plutôt que d’utiliser plusieurs fois votre mètre pour vérifier que votre ourlet est égal en tout point, utilisez plutôt cette astuce :
-Faites un cran dans un rectangle de carton a la hauteur désirée et reportez votre ourlet grâce à un crayon en utilisant la marque du carton !", 1, 1),
+Faites un cran dans un rectangle de carton à la hauteur désirée et reportez votre ourlet grâce à un crayon en utilisant la marque du carton !", 1, 1),
 (2, "Détacher un linge", "/assets/images/tache.jpg", "Epongez la tâche avec un papier absorbant et un fer chaud. Frottez ensuite avec du savon de Marseille sec que vous laisserez agir quelques minutes. Rincez à l'eau chaude.", 0, 1),
-(3, "Taches de bougie", "/assets/images/tachebougie.jpg", "Une tâche de bougie sur votre vêtement ou votre sol? Prenez un buvard et déposé le sur la tâche. Passez ensuite un fer à repasser bien chaud sur le buvard. La cire va se décoller se venir se déposer sur le buvard. ", 0, 1),
-(4, "Taches de peintures", "/assets/images/tachepeinture.jpg", "Trempez les vêtements tachés de peinture immédiatement dans du lait puis lavez normalement. Cette astuce est notamment utilisée dans les écoles maternelles.", 0 , 1),
+(3, "Tâches de bougie", "/assets/images/tachebougie.jpg", "Une tâche de bougie sur votre vêtement ou votre sol? Prenez un buvard et déposez-le sur la tâche. Passez ensuite un fer à repasser bien chaud sur le buvard. La cire va se décoller et venir se déposer sur le buvard. ", 0, 1),
+(4, "Tâches de peintures", "/assets/images/tachepeinture.jpg", "Trempez les vêtements tachés de peinture immédiatement dans du lait puis lavez normalement. Cette astuce est notamment utilisée dans les écoles maternelles.", 0 , 1),
 (5, "Coudre de la toile cirée", "/assets/images/toileciree.jpg", "Pour coudre de la toile enduite, nous recommandons un pied presseur RN téflon.
 
 Les toiles enduites ou cirées collent au pied. Voilà pourquoi lorsque vous les piquez avec un pied de biche normal, vous obtenez des plis non désirés et autres bonnes surprises!
 Ce pied étant assez cher pour des travaux occasionnels, nous avons une astuces à vous confier...
 Celle-ci consiste à coller sous un pied presseur normal, du ruban adhésif de peintre (ruban de masquage). Vous devrez ensuite couper le surplus de ruban adhésif afin qu’il ne dépasse pas du pied…
-….vous avez un pied pour coudre de la toile enduite.", 0, 1);
+Et vous avez un pied pour coudre de la toile enduite.", 0, 1);
 
 
 

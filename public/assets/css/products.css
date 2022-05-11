@@ -1,11 +1,15 @@
+body {
+    box-sizing: border-box;
+}
 .header {
     background-image: url("../images/headerproduits.jpeg");
     height: 300px;
 }
 
 .header h1 {
+    --product-header-font-size: calc(var(--header-font-size) - 20px);
     font-family: var(--header-font);
-    font-size: var(--header-font-size);
+    font-size: clamp(1.5rem, var(--product-header-font-size), 6rem); 
     text-shadow: 2px 2px var(--bs-dark);
 }
 
@@ -51,6 +55,10 @@ h3 {
     box-shadow: var(--shadow);
 }
 
+.search-form {
+    max-width: 300px;
+}
+
 .card {
     box-shadow: var(--shadow);
     outline: 1.5px dashed var(--bs-dark);
@@ -84,4 +92,21 @@ h3 {
 
 .search-items {
     height: 24rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.h-60 {
+    height: 60%;
+}
+
+.product-cards {
+    height: 400px;
+    width: 320px;
+}
+
+.categories {
+    width: 22rem;
 }
