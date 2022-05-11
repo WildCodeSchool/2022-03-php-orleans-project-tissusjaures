@@ -20,7 +20,7 @@ class LoginController extends AbstractController
                 if ($user) {
                     if (password_verify($connection['password'], $user['password'])) {
                         $_SESSION['user'] = $user['id'];
-                        header('Location: /admin/categories-tissus');
+                        header('Location: /admin/');
                     } else {
                         $errors[] = 'Mauvais identifiants';
                     }
