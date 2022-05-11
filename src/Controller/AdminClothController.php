@@ -14,8 +14,8 @@ class AdminClothController extends AbstractController
     public function index(): string
     {
         if ($this->getUser() === null) {
-            header('HTTP/1.0 403 Forbidden');
-            return "Vous n'êtes pas autorisé à visiter cette page.";
+            header('Location:/connexion');
+            return "";
         }
 
         $clothList = new ClothManager();
@@ -27,6 +27,11 @@ class AdminClothController extends AbstractController
 
     public function addCloth()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $clothItems = $formErrors = $checkboxErrors = $errors = [];
         $adminCategories = new ClothCategoryManager();
         $categories = $adminCategories->selectAll();
@@ -60,6 +65,12 @@ class AdminClothController extends AbstractController
 
     public function editCloth($id): string
     {
+
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $formErrors = $clothItems = $checkboxErrors = $errors = [];
 
         $adminCategories = new ClothCategoryManager();
@@ -78,6 +89,12 @@ class AdminClothController extends AbstractController
 
             /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $clothItems['image'] = $imageName;
                 $clothList->update($clothItems);
                 header('Location: /admin/tissus/');
             }
@@ -88,8 +105,13 @@ class AdminClothController extends AbstractController
         ]);
     }
 
-    public function deleteCloth(): void
+    public function deleteCloth()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $clothManager = new ClothManager();

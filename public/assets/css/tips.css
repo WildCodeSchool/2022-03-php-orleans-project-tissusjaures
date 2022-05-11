@@ -47,14 +47,12 @@ h3 {
     outline-offset: -4px;
 }
 
-.title-container {
-    width: 30rem;
-}
-
-.img-tip {
-    height: 38vh;
-    width: 38vw;
-}
+.img-tip{
+    height: 20vh;
+    width: fit-content;
+    object-fit: cover;
+    object-position:bottom;
+    }
 
 .monthlyTip {
     box-shadow: var(--shadow);
@@ -70,8 +68,8 @@ h3 {
 }
 
 .monthlyTitle {
-    font-size: calc(var(--font-size-link) + 0.75rem);
-}
+    font-size: var(--font-size-nav);
+    }
 
 .card {
     box-shadow: var(--shadow);

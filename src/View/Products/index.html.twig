@@ -29,9 +29,9 @@
 				</div>
 				<div class="row justify-content-center mb-4">
 					{% for clothCategory in clothCategories %}
-						<div class="col-lg-3 mb-3">
+						<div class="col-lg-3 product-cards mb-3">
 							<figure class="card h-100">
-								<img src="https://picsum.photos/id/535/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="{{ cloth.name }}">
+								<img src="{{ clothCategory.image }}" class="card-img-top h-60 w-auto px-1 pt-1 bg-primary" alt="{{ cloth.name }}">
 								<div class="card-body bg-primary">
 									<h5 class="card-title text-dark mb-5 text-center">{{ clothCategory.name }}</h5>
 									<a href="/tissus/categorie?id={{ clothCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
@@ -39,9 +39,9 @@
 							</div>
 						{% endfor %}
 						{% for machineCategory in machineCategories %}
-							<div class="col-lg-3 mb-3">
+							<div class="col-lg-3 product-cards mb-3">
 								<figure class="card h-100">
-									<img src="https://picsum.photos/id/885/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="{{ machine.name }}">
+									<img src="{{ machineCategory.image }}" class="card-img-top h-60 w-auto px-1 pt-1 bg-primary" alt="{{ machine.name }}">
 									<div class="card-body bg-primary">
 										<h5 class="card-title text-dark text-center mb-5">{{ machineCategory.name }}</h5>
 										<a href="/machines" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
