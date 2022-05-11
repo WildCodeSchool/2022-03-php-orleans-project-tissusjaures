@@ -6,6 +6,9 @@
 
 .title-footer {
     height: 42px;
+}
+
+.title-footer h3 {
     font-family: var(--title-font);
 }
 
@@ -18,8 +21,8 @@
     border: none;
     border-radius:1rem;
     opacity: 100%;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 .button-facebook:hover {
@@ -40,8 +43,8 @@
 
 .icon-facebook {
     fill: var(--bs-light);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .icon-top {
@@ -49,6 +52,17 @@
     border-radius: 50%;
     width: 1.5rem;
     height: 1.5rem;
+}
+.icon-phone {
+    width: 1rem;
+    height: 1rem;
+    fill: var(--bs-secondary);
+}
+
+.icon-adress {
+    width: 1rem;
+    height: 1rem;
+    fill: var(--bs-secondary);
 }
 
 tbody {
