@@ -6,6 +6,10 @@ use App\Model\MachineManager;
 
 class AdminMachineController extends AbstractController
 {
+    public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+    public const MAX_FILE_SIZE = 1000000;
+    public const MAX_NAME_LENGTH = 100;
+
     public function index(): string
     {
         if ($this->getUser() === null) {
@@ -29,9 +33,20 @@ class AdminMachineController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $machine = array_map('trim', $_POST);
-            $errors = $this->machineValidate($machine);
+            $imageFile = $_FILES['image'];
+            $formErrors = $this->machineValidate($machine);
+            $checkboxErrors = $this->checkboxValidate($machine);
+            $imageErrors = $this->validateImage($imageFile);
+            $errors = [...$formErrors, ...$checkboxErrors, ...$imageErrors];
 
+            /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $machine['image'] = $imageName;
                 $machineManager = new MachineManager();
                 $machineManager->insert($machine);
                 header('Location: /admin/machines/');
@@ -54,9 +69,20 @@ class AdminMachineController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $machine = array_map('trim', $_POST);
             $machine['id'] = $id;
-            $errors = $this->machineValidate($machine);
+            $imageFile = $_FILES['image'];
+            $formErrors = $this->machineValidate($machine);
+            $checkboxErrors = $this->checkboxValidate($machine);
+            $imageErrors = $this->validateImage($imageFile);
+            $errors = [...$formErrors, ...$checkboxErrors, ...$imageErrors];
 
+            /** @phpstan-ignore-next-line */
             if (empty($errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+
+                $machine['image'] = $imageName;
                 $machineManager->update($machine);
                 header('Location: /admin/machines/');
             }
@@ -107,5 +133,37 @@ class AdminMachineController extends AbstractController
             $errors[] = 'Le champ description est obligatoire';
         }
         return $errors;
+    }
+
+    public function checkboxValidate(array $clothItems): array
+    {
+        $checkboxErrors = [];
+        if (!empty($clothItems['is_on_sale']) && (intval($clothItems['is_on_sale']) !== 1)) {
+            $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
+        }
+
+        if (!empty($clothItems['is_new']) && intval($clothItems['is_new']) !== 1) {
+            $checkboxErrors[] = 'Ceci n\'est pas une option valide !';
+        }
+        return $checkboxErrors;
+    }
+
+    private function validateImage(array $files): array
+    {
+        $imageErrors = [];
+        if ($files['error'] === UPLOAD_ERR_NO_FILE) {
+            $imageErrors[] = 'Le fichier est obligatoire';
+        } elseif ($files['error'] !== UPLOAD_ERR_OK) {
+            $imageErrors[] = 'Problème de téléchargement du fichier';
+        } else {
+            if ($files['size'] > self::MAX_FILE_SIZE) {
+                $imageErrors[] = 'Le fichier doit faire moins de ' . self::MAX_FILE_SIZE / 1000000 . 'Mo';
+            }
+
+            if (!in_array(mime_content_type($files['tmp_name']), self::AUTHORIZED_MIMES)) {
+                $imageErrors[] = 'Le fichier doit être de type ' . implode(', ', self::AUTHORIZED_MIMES);
+            }
+        }
+        return $imageErrors;
     }
 }

@@ -11,7 +11,7 @@ class ClothCategoryManager extends AbstractManager
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `image`) 
         VALUES (:name, :image)");
         $statement->bindValue('name', $clothCategory['name'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $clothCategory['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $clothCategory['image'], \PDO::PARAM_STR);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
@@ -23,7 +23,7 @@ class ClothCategoryManager extends AbstractManager
         WHERE `id` = :id");
         $statement->bindValue('id', $clothCategory['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $clothCategory['name'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $clothCategory['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $clothCategory['image'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }

@@ -3,8 +3,18 @@
 	<link rel="stylesheet" href="/assets/css/tutorials.css">
 {% endblock %}
 {% block content %}
-	<div class="d-flex justify-content-center align-items-center header">
-		<h1 class="text-light text-center">Tutoriels</h1>
+<div class="d-flex justify-content-center align-items-center header">
+	<h1 class="text-light text-center">Tutoriels</h1>
+</div>
+<div class="container w-60 d-flex flex-column align-items-center justify-content-around">
+	<div class="w-100 mt-3 mx-auto p-0">
+		<div class="row justify-content-center">
+			{% for tipCategory in tipCategories %}
+				<div class="col-lg-4 mt-1 categories">
+					<a href='/{{ tipCategory.name|lower }}' class="btn btn-lg w-100 {% if tipCategory.name is same as 'Tutoriels' %} bg-secondary text-light {% else %} bg-primary {% endif %} m-1">{{ tipCategory.name }}</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 	<div class="container w-60 d-flex flex-column align-items-center justify-content-around">
 		<div class="w-100 mt-3 mx-auto p-0">

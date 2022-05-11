@@ -36,7 +36,7 @@ class ClothManager extends AbstractManager
         VALUES (:name, :price, :image, :description, :cloth_categories_id, :is_on_sale, :is_new)");
         $statement->bindValue('name', $cloth['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $cloth['price'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $cloth['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $cloth['image'], \PDO::PARAM_STR);
         $statement->bindValue('description', $cloth['description'], \PDO::PARAM_STR);
         $statement->bindValue('cloth_categories_id', $cloth['cloth_categories_id'], \PDO::PARAM_INT);
         $statement->bindValue('is_on_sale', $cloth['is_on_sale'] ?? 0, \PDO::PARAM_INT);
@@ -53,7 +53,7 @@ class ClothManager extends AbstractManager
          `is_on_sale` = :is_on_sale, `is_new` = :is_new WHERE id=:id");
         $statement->bindValue('name', $cloth['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $cloth['price'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $cloth['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $cloth['image'], \PDO::PARAM_STR);
         $statement->bindValue('id', $cloth['id'], \PDO::PARAM_INT);
         $statement->bindValue('description', $cloth['description'], \PDO::PARAM_STR);
         $statement->bindValue('cloth_categories_id', $cloth['cloth_categories_id'], \PDO::PARAM_INT);

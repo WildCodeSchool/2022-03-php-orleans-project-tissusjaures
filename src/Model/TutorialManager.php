@@ -12,7 +12,7 @@ class TutorialManager extends AbstractManager
         , `tips_and_tricks_categories_id`) 
         VALUES (:name, :image, :content, :tips_and_tricks_categories_id)");
         $statement->bindValue('name', $tutorial['name'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $tutorial['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $tutorial['image'], \PDO::PARAM_STR);
         $statement->bindValue('content', $tutorial['content'], \PDO::PARAM_STR);
         $statement->bindValue('tips_and_tricks_categories_id', 2, \PDO::PARAM_INT);
 
@@ -27,7 +27,7 @@ class TutorialManager extends AbstractManager
           WHERE `id` = :id");
         $statement->bindValue('name', $tutorial['name'], \PDO::PARAM_STR);
         $statement->bindValue('id', $tutorial['id'], \PDO::PARAM_INT);
-        $statement->bindValue('image', $tutorial['image'], \PDO::PARAM_STR);
+        $statement->bindValue('image', '/uploads/' . $tutorial['image'], \PDO::PARAM_STR);
         $statement->bindValue('content', $tutorial['content'], \PDO::PARAM_STR);
         $statement->bindValue('tips_and_tricks_categories_id', 2, \PDO::PARAM_INT);
 
