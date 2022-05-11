@@ -90,7 +90,7 @@ a {
 }
 .textHome {
     color: var(--admin-color);
-    font-size: var(--title-font-size);
+    font-size: calc(var(--font-size) + 0.5rem);
     font-family: var(--title-font);
     padding: var(--spacing)
 }
