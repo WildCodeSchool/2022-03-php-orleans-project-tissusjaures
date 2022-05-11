@@ -9,10 +9,11 @@ class LexiconManager extends AbstractManager
     public function insert(array $lexicon): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`,
-        `definition`) 
-        VALUES (:name, :definition)");
+        `definition`, `tips_and_tricks_categories_id` ) 
+        VALUES (:name, :definition, :tips_and_tricks_categories_id)");
         $statement->bindValue('name', $lexicon['name'], \PDO::PARAM_STR);
         $statement->bindValue('definition', $lexicon['definition'], \PDO::PARAM_STR);
+        $statement->bindValue('tips_and_tricks_categories_id', 3, \PDO::PARAM_INT);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
