@@ -96,7 +96,7 @@ class AdminLexiconController extends AbstractController
         }
 
         if (empty($lexicon['definition'])) {
-            $errors[] = 'Le champ definition est obligatoire';
+            $errors[] = 'Le champ définition est obligatoire';
         }
         return $errors;
     }
