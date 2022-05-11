@@ -24,7 +24,7 @@ div.title {
     outline-offset: -6px;
 }
 
-h3 {
+h5 {
     font-family: var(--header-font);
     font-size: calc(var(--title-font-size) - 4px);
 }
