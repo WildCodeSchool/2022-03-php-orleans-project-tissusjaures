@@ -10,7 +10,7 @@
 	<div class="row justify-content-center m-0">
 		{% for tipCategory in tipCategories %}
 			<div class="col-lg-4 mt-1 categories">
-				<a href='/{{ tipCategory.name|lower }}' class="btn btn-lg w-100 m-1 bg-primary">{{ tipCategory.name }}</a>
+				<a href='/{{ tipCategory.name|lower }}' class="btn btn-lg {% if tipCategory.name is same as 'Tutoriels' %} bg-secondary text-light {% else %} bg-primary {% endif %} w-100 m-1 bg-primary">{{ tipCategory.name }}</a>
 			</div>
 		{% endfor %}
 	</div>
