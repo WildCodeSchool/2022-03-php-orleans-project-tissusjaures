@@ -33,12 +33,13 @@
     opacity: 100%;
 }
 
-.title {
-    font-family: var(--header-font);
-    font-size: var(--title-font-size);
-}
-
 .lexiconContent{
     box-shadow: var(--shadow);
     border-radius: 0.3rem;
+    outline: 1.5px dashed var(--bs-dark);
+    outline-offset: -6px;
+}
+
+.lexicon {
+    font-size: var(--font-size);
 }
