@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">
+		<h1 class="text-light text-center">
 			{% for tipCategory in tipCategories %}
 				{% if id == tipCategory.id %}
 					{{ tipCategory.name }}
@@ -24,7 +24,7 @@
 			{% endfor %}
 		</div>
 	</div>
-	<div class="card-tip w-50 mx-auto bg-primary mt-3 p-2">
+	<div class="card-tip mx-auto bg-primary mt-3 p-2">
 		<div class="d-flex justify-content-center">
 			<h2 class="title-tip text-center text-light bg-secondary px-4 py-2 mt-3 mb-2">{{tip.name}}</h2>
 		</div>
