@@ -95,8 +95,8 @@ class AdminLexiconController extends AbstractController
             $errors[] = 'Le nom ne doit pas dépasser les 100 caractères';
         }
 
-        if (empty($lexicon['description'])) {
-            $errors[] = 'Le champ description est obligatoire';
+        if (empty($lexicon['definition'])) {
+            $errors[] = 'Le champ definition est obligatoire';
         }
         return $errors;
     }
