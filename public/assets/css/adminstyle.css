@@ -94,3 +94,9 @@ a {
     font-family: var(--title-font);
     padding: var(--spacing)
 }
+
+.deconnect:hover{
+    transform: initial;
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
