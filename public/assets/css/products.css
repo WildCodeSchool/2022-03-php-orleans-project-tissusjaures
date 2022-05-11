@@ -79,7 +79,7 @@ h3 {
 }
 
 .sign {
-    font-size: calc(var(--font-size) /1.5);
+    font-size: calc(var(--font-size) /1.5) ;
 }
 
 .search-items {

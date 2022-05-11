@@ -15,10 +15,10 @@
 	<div class="container mt-3">
 		<div class="row justify-content-center">
 			{% for clothCategory in clothCategories %}
-					<div class="col-lg-3 mt-1 w-25">
-						<a href='/tissus/categorie?id={{ clothCategory.id }}' class="
-						btn btn-lg {% if id is same as clothCategory.id %} btn-cat bg-secondary text-primary {% else %} bg-primary {% endif %} w-100 m-1">{{ clothCategory.name }}</a>
-					</div>
+				<div class="col-lg-3 mt-1 w-25">
+					<a href='/tissus/categorie?id={{ clothCategory.id }}' class="
+												btn btn-lg {% if id is same as clothCategory.id %} btn-cat bg-secondary text-primary {% else %} bg-primary {% endif %} w-100 m-1">{{ clothCategory.name }}</a>
+				</div>
 			{% endfor %}
 			{% for machineCategory in machineCategories %}
 				<div class="col-lg-3 mt-1 ">
@@ -55,9 +55,9 @@
 										€
 									</div>
 									<div class="sign card-text bg-secondary text-light text-center w-25 position-absolute top-0 start-0 m-2 rounded">
-										{% if cloth.is_on_sale == true %}
+										{% if cloth.is_on_sale == true  %}
 											promo
-										{% elseif cloth.is_new == true %}
+										{% elseif cloth.is_new == true  %}
 											nouveau
 										{% endif %}
 									</div>
