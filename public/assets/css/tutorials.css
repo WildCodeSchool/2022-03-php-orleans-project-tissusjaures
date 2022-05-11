@@ -5,7 +5,8 @@
 
 .header h1 {
     font-family: var(--header-font);
-    font-size: var(--header-font-size);
+    --home-header-font-size: calc(var(--header-font-size) - 20px);
+    font-size: clamp(1.5rem, var(--home-header-font-size), 6rem);
     text-shadow: 2px 2px var(--bs-dark);
 }
 
@@ -39,6 +40,7 @@ h3 {
     box-shadow: var(--shadow);
     outline: 1.5px dashed var(--bs-dark);
     outline-offset: -12px;
+    width: 85vw;
 }
 
 .card {

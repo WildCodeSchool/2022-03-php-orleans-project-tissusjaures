@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
 	<div class="container-fluid d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">
+		<h1 class="text-light text-center">
 			{% for tipCategory in tipCategories %}
 				{% if id == tipCategory.id %}
 					{{ tipCategory.name }}
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<section>
-		<div class="card-tip w-50 h-100 mx-auto bg-primary mt-3 p-2">
+		<div class="card-tip h-100 mx-auto bg-primary mt-3 p-2">
 			<div class="d-flex justify-content-center">
 				<h2 class="title-tip text-center text-light bg-secondary px-4 py-2 mt-3 mb-2">Astuce du mois</h2>
 			</div>
@@ -38,16 +38,19 @@
 		</div>
 	</section>
 	<section>
-		<div class="row mb-4 m-0">
-			{% for tip in tips %}
-				<div class="col-md-3 d-flex justify-content-around mt-4">
-					<figure class="card h-100 w-75">
-						<img src="{{ tip.image }}" class="card-img-top img-fluid h-50 px-1 pt-1 bg-primary" alt="{{ tip.name }}">
-						<div class="card-body bg-primary">
-							<h3 class="card-title text-dark my-4 d-flex justify-content-center">{{ tip.name }}</h3>
-							<a href="/astuces/trucs-et-astuces/?id={{ tip.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
-						</figure>
-					</div>
-				{% endfor %}
-			</section>
-		{% endblock %}
+		<div class="container mt-3 ">
+			<div class="row m-0 ">
+				{% for tip in tips %}
+					<div class="col-md-3 d-flex justify-content-around mt-4 p-lg-2 ">
+						<figure class="card ">
+							<img src="{{ tip.image }}" class="card-img-top img-fluid h-50 px-1 pt-1 bg-primary" alt="{{ tip.name }}">
+							<div class="card-body bg-primary">
+								<h3 class="card-title text-dark my-4 d-flex justify-content-center">{{ tip.name }}</h3>
+								<a href="/astuces/trucs-et-astuces/?id={{ tip.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+							</figure>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% endblock %}
