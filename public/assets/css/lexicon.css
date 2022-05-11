@@ -12,27 +12,34 @@
 
 .header h1 {
     font-family: var(--header-font);
-    font-size: var(--header-font-size);
+    --home-header-font-size: calc(var(--header-font-size) - 20px);
+    font-size: clamp(1.5rem, var(--home-header-font-size), 6rem);
     text-shadow: 2px 2px var(--bs-dark);
+}
+
+.categories {
+    width: 19rem;
 }
 
 .btn {
     box-shadow: var(--shadow);
     position: initial;
     font-family: var(--text-font);
+    opacity: 90%;
 }
 
 .btn:hover {
     color: var(--bs-secondary);
-    transform: scale(1.03);
-}
-
-.title {
-    font-family: var(--header-font);
-    font-size: var(--title-font-size);
+    opacity: 100%;
 }
 
 .lexiconContent{
     box-shadow: var(--shadow);
     border-radius: 0.3rem;
+    outline: 1.5px dashed var(--bs-dark);
+    outline-offset: -6px;
+}
+
+.lexicon {
+    font-size: var(--font-size);
 }

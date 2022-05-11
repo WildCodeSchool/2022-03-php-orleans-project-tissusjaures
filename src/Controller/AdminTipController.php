@@ -13,8 +13,8 @@ class AdminTipController extends AbstractController
     public function index(): string
     {
         if ($this->getUser() === null) {
-            header('HTTP/1.0 403 Forbidden');
-            return "Vous n'êtes pas autorisé à visiter cette page.";
+            header('Location:/connexion');
+            return "";
         }
 
         $tipManager = new TipManager();
@@ -26,6 +26,11 @@ class AdminTipController extends AbstractController
 
     public function addTip(): ?string
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $tip = $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -58,6 +63,11 @@ class AdminTipController extends AbstractController
 
     public function editTip($id): ?string
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $tip = $errors = [];
         $tipManager = new TipManager();
         $tip = $tipManager->selectOneById($id);
@@ -131,8 +141,13 @@ class AdminTipController extends AbstractController
         return $imageErrors;
     }
 
-    public function deleteTip(): void
+    public function deleteTip()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $tipManager = new TipManager();
