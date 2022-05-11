@@ -11,16 +11,16 @@
 		<div class="form-row">
 			<div class="form-group col-8 col-md-6 mb-5 mx-auto">
 				<label for="name">Nom</label>
-				<input type="text" class="form-control" value="{{ clothCategory.name }}" id="name" name="name" placeholder="Tissu d'ameublement">
+				<input type="text" class="form-control" value="{{ clothCategories.name }}" id="name" name="name" placeholder="Tissu d'ameublement">
 			</div>
 			<div class="form-group col-8 col-md-6 mb-5 mx-auto">
 				<label for="image">Image</label>
-				{% if clothCategory.image is not empty %}
+				{% if clothCategories.image is not empty %}
 					<div class="col-8 col-md-6 mx-auto d-flex justify-content-center">
-						<img src="{{clothCategory.image}}"  class="w-50 h-50 mb-2" alt="{{clothCategory.name}}">
+						<img src="{{clothCategories.image}}"  class="w-50 h-50 mb-2" alt="{{clothCategories.name}}">
 					</div>
 				{% endif %}
-				<input type="file" class="form-control" value="{{ clothCategory.image }}" id="image" name="image">
+				<input type="file" class="form-control" value="{{ clothCategories.image }}" id="image" name="image">
 			</div>
 			<div class="form-group col-8 col-md-6 mb-3 mx-auto">
 				<button type="submit" class="d-flex justify-content-around align-items-center btn btn-md">

@@ -96,7 +96,7 @@ class AdminClothCategoryController extends AbstractController
             }
         }
         return $this->twig->render('Admin/ClothCategory/edit.html.twig', [
-            'errors' => $errors
+            'errors' => $errors, 'clothCategories' => $clothCategories
         ]);
     }
 
