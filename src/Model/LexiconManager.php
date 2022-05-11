@@ -9,10 +9,10 @@ class LexiconManager extends AbstractManager
     public function insert(array $lexicon): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`,
-        `description`) 
-        VALUES (:name, :description)");
+        `definition`) 
+        VALUES (:name, :definition)");
         $statement->bindValue('name', $lexicon['name'], \PDO::PARAM_STR);
-        $statement->bindValue('description', $lexicon['description'], \PDO::PARAM_STR);
+        $statement->bindValue('definition', $lexicon['definition'], \PDO::PARAM_STR);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
@@ -21,10 +21,10 @@ class LexiconManager extends AbstractManager
     public function update(array $lexicon): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name,
-        `description` = :description WHERE id=:id");
+        `definition` = :definition WHERE id=:id");
         $statement->bindValue('id', $lexicon['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $lexicon['name'], \PDO::PARAM_STR);
-        $statement->bindValue('description', $lexicon['description'], \PDO::PARAM_STR);
+        $statement->bindValue('definition', $lexicon['definition'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }

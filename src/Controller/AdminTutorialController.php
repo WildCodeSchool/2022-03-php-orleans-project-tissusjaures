@@ -12,6 +12,11 @@ class AdminTutorialController extends AbstractController
 
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $tutorialManager = new TutorialManager();
         $tutorials = $tutorialManager->selectAll();
         return $this->twig->render('Admin/Tutorials/index.html.twig', ['tutorials' => $tutorials]);
@@ -19,6 +24,11 @@ class AdminTutorialController extends AbstractController
 
     public function addTutorial(): ?string
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $tutorial = $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -50,6 +60,11 @@ class AdminTutorialController extends AbstractController
 
     public function editTutorial($id): ?string
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         $tutorial = $errors = [];
         $tutorialManager = new TutorialManager();
         $tutorial = $tutorialManager->selectOneById($id);
@@ -119,8 +134,13 @@ class AdminTutorialController extends AbstractController
         return $imageErrors;
     }
 
-    public function deleteTutorial(): void
+    public function deleteTutorial()
     {
+        if ($this->getUser() === null) {
+            header('Location:/connexion');
+            return "";
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $tipManager = new TutorialManager();

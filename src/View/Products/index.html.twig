@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
 	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<h1 class="text-light">Nos produits</h1>
+		<h1 class="text-light text-center">Nos produits</h1>
 	</div>
 	<div class="container cards-products mt-3">
 		<section id="products">
@@ -17,9 +17,9 @@
 				</div>
 			</div>
 			<div class="row justify-content-end">
-				<div class="col-lg-4 mb-3">
-					<form type="hidden" class="input-group w-100" method="GET" action="/produits/chercher">
-						<input type="search" name="search" class="form-control search rounded w-25 bg-light text-dark" placeholder="Rechercher" aria-label="Search" aria-describedby="search"/>
+				<div class="col-lg-4 col-md-6 mb-3">
+					<form type="hidden" class="input-group search-form mx-auto w-100" method="GET" action="/produits/chercher">
+						<input type="search" name="search" class="form-control search rounded bg-light text-dark" placeholder="Rechercher" aria-label="Search" aria-describedby="search"/>
 						<button class="input-group-btn search-btn bg-primary btn-lg rounded border-0 ms-1" id="search">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewbox="0 0 16 16">
 								<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -27,28 +27,29 @@
 						</button>
 					</form>
 				</div>
-				<div class="row justify-content-center mb-4">
-					{% for clothCategory in clothCategories %}
-						<div class="col-lg-3 mb-3">
+			</div>
+			<div class="row justify-content-center align-items-center mb-4">
+				{% for clothCategory in clothCategories %}
+					<div class="col-lg-3 product-cards mb-4">
+						<figure class="card h-100">
+							<img src="{{ clothCategory.image }}" class="card-img-top h-60 w-auto px-1 pt-1 bg-primary" alt="{{ cloth.name }}">
+							<div class="card-body bg-primary">
+								<h5 class="card-title text-dark mb-5 text-center">{{ clothCategory.name }}</h5>
+								<a href="/tissus/categorie?id={{ clothCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+							</figure>
+						</div>
+					{% endfor %}
+					{% for machineCategory in machineCategories %}
+						<div class="col-lg-3 product-cards mb-4">
 							<figure class="card h-100">
-								<img src="https://picsum.photos/id/535/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="{{ cloth.name }}">
+								<img src="{{ machineCategory.image }}" class="card-img-top h-60 w-auto px-1 pt-1 bg-primary" alt="{{ machine.name }}">
 								<div class="card-body bg-primary">
-									<h5 class="card-title text-dark mb-5 text-center">{{ clothCategory.name }}</h5>
-									<a href="/tissus/categorie?id={{ clothCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
+									<h5 class="card-title text-dark mb-5 text-center">{{ machineCategory.name }}</h5>
+									<a href="/tissus/categorie?id={{ machineCategory.id }}" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
 								</figure>
 							</div>
 						{% endfor %}
-						{% for machineCategory in machineCategories %}
-							<div class="col-lg-3 mb-3">
-								<figure class="card h-100">
-									<img src="https://picsum.photos/id/885/200/150" class="card-img-top px-1 pt-1 bg-primary" alt="{{ machine.name }}">
-									<div class="card-body bg-primary">
-										<h5 class="card-title text-dark text-center mb-5">{{ machineCategory.name }}</h5>
-										<a href="/machines" class="btn w-75 text-light bg-secondary position-absolute bottom-0 ms-4 mb-3">Découvrir</a>
-									</figure>
-								</div>
-							{% endfor %}
-						</div>
-					</section>
-				</div>
-			{% endblock %}
+					</div>
+				</section>
+			</div>
+		{% endblock %}
