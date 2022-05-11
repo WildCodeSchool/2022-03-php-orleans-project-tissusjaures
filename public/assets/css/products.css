@@ -82,8 +82,12 @@ h3 {
 }
 
 .price {
-    font-size: var(--font-size);
+    font-size: calc(var(--font-size) /1.4);
     box-shadow: var(--shadow);
+}
+
+.sign {
+    font-size: calc(var(--font-size) /1.5);
 }
 
 .search-items {

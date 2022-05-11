@@ -54,6 +54,13 @@
 										{{ cloth.price }}
 										€
 									</div>
+									<div class="sign card-text bg-secondary text-light text-center w-25 position-absolute top-0 start-0 m-2 rounded">
+										{% if cloth.is_on_sale == true %}
+											Promo
+										{% elseif cloth.is_new == true %}
+											Nouveau
+										{% endif %}
+									</div>
 								</figure>
 							</div>
 						{% endfor %}
