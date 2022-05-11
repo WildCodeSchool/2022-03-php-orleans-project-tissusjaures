@@ -34,7 +34,7 @@ class AdminLexiconController extends AbstractController
             if (empty($errors)) {
                 $lexiconManager = new LexiconManager();
                 $lexiconManager->insert($lexicon);
-                header('Location: /admin/lexicons/');
+                header('Location: /admin/lexiques/');
             }
         }
         return $this->twig->render('Admin/Lexicon/add.html.twig');
