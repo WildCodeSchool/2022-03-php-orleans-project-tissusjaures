@@ -18,9 +18,9 @@ class MachineManager extends AbstractManager
 
     public function insert(array $machine): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `price`, 
-        `description`) 
-        VALUES (:name, :price, :description)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `price`, `image`, 
+        `description`, `is_on_sale`, `is_new`) 
+        VALUES (:name, :price, :image, :description, :is_on_sale, :is_new)");
         $statement->bindValue('name', $machine['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $machine['price'], \PDO::PARAM_STR);
         $statement->bindValue('image', $machine['image'], \PDO::PARAM_STR);
